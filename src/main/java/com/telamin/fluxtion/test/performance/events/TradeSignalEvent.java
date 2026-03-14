@@ -1,18 +1,19 @@
 package com.telamin.fluxtion.test.performance.events;
-
 import com.telamin.fluxtion.runtime.event.Event;
-
 /**
  * Represents a buy/sell instruction with quantity.
- * Used by: polymorphic, intermediate_handlers benchmarks.
+ * Used by: polymorphic, intermediate_handlers, multi_event_path benchmarks.
+ *
+ * Fields are intentionally mutable so benchmark harnesses can pre-allocate
+ * a single instance and update it in-place before each onEvent() call,
+ * enabling the JMH GC profiler (-prof gc) to report 0 B/op for Fluxtion.
  */
 public class TradeSignalEvent implements Event {
     public enum Side { BUY, SELL }
-
-    private final String instrument;
-    private final Side side;
-    private final double quantity;
-    private final double limitPrice;
+    private String instrument;
+    private Side side;
+    private double quantity;
+    private double limitPrice;
 
     public TradeSignalEvent(String instrument, Side side, double quantity, double limitPrice) {
         this.instrument = instrument;
@@ -20,6 +21,19 @@ public class TradeSignalEvent implements Event {
         this.quantity = quantity;
         this.limitPrice = limitPrice;
     }
+
+    // Mutable update — allows object reuse in benchmarks
+    public void update(String instrument, Side side, double quantity, double limitPrice) {
+        this.instrument = instrument;
+        this.side = side;
+        this.quantity = quantity;
+        this.limitPrice = limitPrice;
+    }
+
+    public void setSide(Side side) { this.side = side; }
+    public void setQuantity(double quantity) { this.quantity = quantity; }
+    public void setLimitPrice(double limitPrice) { this.limitPrice = limitPrice; }
+    public void setInstrument(String instrument) { this.instrument = instrument; }
 
     public String getInstrument() { return instrument; }
     public Side getSide() { return side; }

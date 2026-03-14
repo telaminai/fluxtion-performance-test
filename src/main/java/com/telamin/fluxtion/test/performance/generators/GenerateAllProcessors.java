@@ -32,6 +32,7 @@ public class GenerateAllProcessors {
         GENERATORS.put("benchmark-configs/polymorphic.yaml",          PolymorphicGraphGenerator.class);
         GENERATORS.put("benchmark-configs/dirty_filter.yaml",         DirtyFilterGraphGenerator.class);
         GENERATORS.put("benchmark-configs/intermediate_handlers.yaml", IntermediateHandlersGraphGenerator.class);
+        GENERATORS.put("benchmark-configs/multi_event_path.yaml",     MultiEventPathGraphGenerator.class);
     }
 
     public static void main(String[] args) throws Exception {

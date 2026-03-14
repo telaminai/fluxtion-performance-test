@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <!-- === Market Data chain (MarketDataEvent -> BaseNode x 10) === -->
+  <bean id="md_root" class="com.telamin.fluxtion.test.performance.nodes.MarketDataRootNode"/>
+  <bean id="md_1" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="md_root"/>
+  </bean>
+  <bean id="md_2" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="md_1"/>
+  </bean>
+  <bean id="md_3" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="md_2"/>
+  </bean>
+  <bean id="md_4" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="md_3"/>
+  </bean>
+  <bean id="md_5" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="md_4"/>
+  </bean>
+  <bean id="md_6" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="md_5"/>
+  </bean>
+  <bean id="md_7" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="md_6"/>
+  </bean>
+  <bean id="md_8" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="md_7"/>
+  </bean>
+  <bean id="md_9" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="md_8"/>
+  </bean>
+  <bean id="md_10" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="md_9"/>
+  </bean>
+  <bean id="md_sink" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="md_10"/>
+  </bean>
+
+  <!-- === Trade Signal chain (TradeSignalEvent -> AccumulatorNode x 5) === -->
+  <bean id="ts_root" class="com.telamin.fluxtion.test.performance.nodes.TradeSignalRootNode"/>
+  <bean id="ts_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="ts_root"/>
+  </bean>
+  <bean id="ts_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="ts_1"/>
+  </bean>
+  <bean id="ts_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="ts_2"/>
+  </bean>
+  <bean id="ts_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="ts_3"/>
+  </bean>
+  <bean id="ts_5" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="ts_4"/>
+  </bean>
+  <bean id="ts_sink" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="ts_5"/>
+  </bean>
+
+  <!-- === Control chain (ControlEvent -> FilteringNode x 2) === -->
+  <bean id="ctrl_root" class="com.telamin.fluxtion.test.performance.nodes.ControlRootNode"/>
+  <bean id="ctrl_1" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="ctrl_root"/>
+  </bean>
+  <bean id="ctrl_2" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="ctrl_1"/>
+  </bean>
+  <bean id="ctrl_sink" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="ctrl_2"/>
+  </bean>
+</beans>

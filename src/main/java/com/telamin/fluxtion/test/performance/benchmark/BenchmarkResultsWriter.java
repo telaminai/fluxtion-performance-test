@@ -66,19 +66,20 @@ public class BenchmarkResultsWriter {
 
     /** Print a summary table to stdout for quick inspection. */
     public static void printSummary() {
-        System.out.printf("%n%-50s %10s %10s %10s %10s %10s%n",
-                "Label", "p50(ns)", "p90(ns)", "p99(ns)", "p99.9(ns)", "max(ns)");
-        System.out.println("-".repeat(102));
+        System.out.printf("%n%-50s %10s %10s %10s %10s %10s %10s%n",
+                "Label", "p50(ns)", "p90(ns)", "p99(ns)", "p99.9(ns)", "p99.99(ns)", "max(ns)");
+        System.out.println("-".repeat(114));
         HISTOGRAMS.entrySet().stream()
                 .sorted(Map.Entry.comparingByKey())
                 .forEach(e -> {
                     Histogram h = e.getValue();
-                    System.out.printf("%-50s %10d %10d %10d %10d %10d%n",
+                    System.out.printf("%-50s %10d %10d %10d %10d %10d %10d%n",
                             e.getKey(),
                             h.getValueAtPercentile(50),
                             h.getValueAtPercentile(90),
                             h.getValueAtPercentile(99),
                             h.getValueAtPercentile(99.9),
+                            h.getValueAtPercentile(99.99),
                             h.getMaxValue());
                 });
     }

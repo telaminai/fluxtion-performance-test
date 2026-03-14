@@ -35,7 +35,7 @@ public class ResultsAnalyzer {
         }
     }
 
-    record Stats(long p50, long p90, long p99, long p999, long max, long count) {}
+    record Stats(long p50, long p90, long p99, long p999, long p9999, long max, long count) {}
 
     // -----------------------------------------------------------------------
 
@@ -118,6 +118,7 @@ public class ResultsAnalyzer {
                     h.getValueAtPercentile(90),
                     h.getValueAtPercentile(99),
                     h.getValueAtPercentile(99.9),
+                    h.getValueAtPercentile(99.99),
                     h.getMaxValue(),
                     h.getTotalCount());
         }
@@ -128,13 +129,13 @@ public class ResultsAnalyzer {
     // -----------------------------------------------------------------------
 
     private static void printRawTable(Map<ResultKey, Stats> data) {
-        System.out.printf("%n%-30s %-10s %6s %10s %10s %10s %10s %10s%n",
-                "Dimension", "Framework", "Size", "p50(ns)", "p90(ns)", "p99(ns)", "p99.9(ns)", "max(ns)");
-        System.out.println("-".repeat(100));
+        System.out.printf("%n%-30s %-10s %6s %10s %10s %10s %10s %10s %10s%n",
+                "Dimension", "Framework", "Size", "p50(ns)", "p90(ns)", "p99(ns)", "p99.9(ns)", "p99.99(ns)", "max(ns)");
+        System.out.println("-".repeat(112));
         data.forEach((k, s) ->
-                System.out.printf("%-30s %-10s %6d %10d %10d %10d %10d %10d%n",
+                System.out.printf("%-30s %-10s %6d %10d %10d %10d %10d %10d %10d%n",
                         k.dimension(), k.framework(), k.size(),
-                        s.p50(), s.p90(), s.p99(), s.p999(), s.max()));
+                        s.p50(), s.p90(), s.p99(), s.p999(), s.p9999(), s.max()));
     }
 
     private static void printSpeedupTable(Map<ResultKey, Stats> data) {
@@ -145,10 +146,11 @@ public class ResultsAnalyzer {
                         .computeIfAbsent(k.size(), sz -> new HashMap<>())
                         .put(k.framework(), s));
 
-        System.out.printf("%n%-30s %6s %12s %12s %10s %10s%n",
+        // ---- p50 comparison table ----
+        System.out.printf("%n=== Multi-Dimension Latency: p50 (ns/op) ===%n");
+        System.out.printf("%-30s %6s %12s %12s %10s %s%n",
                 "Dimension", "Size", "Fluxtion p50", "RxJava p50", "Speedup", "Fluxtion wins?");
-        System.out.println("-".repeat(90));
-
+        System.out.println("-".repeat(92));
         grouped.forEach((dim, sizes) ->
                 sizes.forEach((size, fwMap) -> {
                     Stats fx = fwMap.get("fluxtion");
@@ -158,6 +160,26 @@ public class ResultsAnalyzer {
                     String winner = speedup >= 1.0 ? "YES  (" + String.format("%.1f", speedup) + "x)" : "no";
                     System.out.printf("%-30s %6d %12d %12d %10.2f %s%n",
                             dim, size, fx.p50(), rx.p50(), speedup, winner);
+                }));
+
+        // ---- Tail latency comparison: p99 / p99.9 / p99.99 ----
+        System.out.printf("%n=== Tail Latency Comparison (ns) — GC pressure shows up here ===%n");
+        System.out.printf("%-30s %6s %10s %10s %10s %10s %10s %10s%n",
+                "Dimension", "Size",
+                "Fx p99", "Rx p99",
+                "Fx p99.9", "Rx p99.9",
+                "Fx p99.99", "Rx p99.99");
+        System.out.println("-".repeat(108));
+        grouped.forEach((dim, sizes) ->
+                sizes.forEach((size, fwMap) -> {
+                    Stats fx = fwMap.get("fluxtion");
+                    Stats rx = fwMap.get("rxjava");
+                    if (fx == null || rx == null) return;
+                    System.out.printf("%-30s %6d %10d %10d %10d %10d %10d %10d%n",
+                            dim, size,
+                            fx.p99(), rx.p99(),
+                            fx.p999(), rx.p999(),
+                            fx.p9999(), rx.p9999());
                 }));
     }
 

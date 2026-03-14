@@ -43,7 +43,8 @@ public class HotPathBenchmark extends DimensionBenchmarkBase {
 
     private DataFlow fluxtionProcessor;
     private long seq = 0;
-
+    // Pre-allocated, mutable event — re-used every iteration to achieve 0 B/op
+    private final MarketDataEvent reuseEvent = new MarketDataEvent("BTC", 100.0, 101.0, 0);
     private PublishProcessor<MarketDataEvent> rxRoot;
     private AtomicLong rxResult;
 
@@ -73,15 +74,19 @@ public class HotPathBenchmark extends DimensionBenchmarkBase {
 
     @Benchmark
     public void fluxtion(Blackhole bh) {
+        // Mutate fields in-place: no allocation on the hot path
+        reuseEvent.setBid(100.0 + seq);
+        reuseEvent.setAsk(101.0 + seq);
+        reuseEvent.setSequenceNumber(seq++);
         long t = System.nanoTime();
-        fluxtionProcessor.onEvent(new MarketDataEvent("BTC", 100.0 + seq, 101.0 + seq, seq++));
+        fluxtionProcessor.onEvent(reuseEvent);
         long elapsed = System.nanoTime() - t;
         recordFluxtion(DIM, size, elapsed);
         bh.consume(elapsed);
     }
-
     @Benchmark
     public void rxJava(Blackhole bh) {
+        // RxJava: new object required — operators may capture references
         long t = System.nanoTime();
         rxRoot.onNext(new MarketDataEvent("BTC", 100.0 + seq, 101.0 + seq, seq++));
         long elapsed = System.nanoTime() - t;

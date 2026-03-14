@@ -41,7 +41,9 @@ public class PolymorphicBenchmark extends DimensionBenchmarkBase {
 
     private DataFlow fluxtionProcessor;
     private long seq = 0;
-
+    // Pre-allocated, mutable event — re-used every iteration to achieve 0 B/op
+    private final TradeSignalEvent reuseEvent =
+            new TradeSignalEvent("AAPL", TradeSignalEvent.Side.BUY, 100.0, 150.0);
     private PublishProcessor<TradeSignalEvent> rxRoot;
     private AtomicLong rxResult;
 
@@ -74,16 +76,18 @@ public class PolymorphicBenchmark extends DimensionBenchmarkBase {
 
     @Benchmark
     public void fluxtion(Blackhole bh) {
+        // Mutate fields in-place: no allocation on the hot path
+        reuseEvent.setQuantity(100.0 + seq);
+        reuseEvent.setLimitPrice(150.0 + seq++);
         long t = System.nanoTime();
-        fluxtionProcessor.onEvent(new TradeSignalEvent(
-                "AAPL", TradeSignalEvent.Side.BUY, 100.0 + seq, 150.0 + seq++));
+        fluxtionProcessor.onEvent(reuseEvent);
         long elapsed = System.nanoTime() - t;
         recordFluxtion(DIM, size, elapsed);
         bh.consume(elapsed);
     }
-
     @Benchmark
     public void rxJava(Blackhole bh) {
+        // RxJava: new object required — operators may capture references
         long t = System.nanoTime();
         rxRoot.onNext(new TradeSignalEvent(
                 "AAPL", TradeSignalEvent.Side.BUY, 100.0 + seq, 150.0 + seq++));

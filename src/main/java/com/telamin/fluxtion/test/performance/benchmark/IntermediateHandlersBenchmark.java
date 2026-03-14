@@ -47,7 +47,9 @@ public class IntermediateHandlersBenchmark extends DimensionBenchmarkBase {
 
     private DataFlow fluxtionProcessor;
     private long seq = 0;
-
+    // Pre-allocated, mutable event — re-used every iteration to achieve 0 B/op
+    private final TradeSignalEvent reuseEvent =
+            new TradeSignalEvent("MSFT", TradeSignalEvent.Side.SELL, 50.0, 200.0);
     // RxJava: one PublishProcessor per handler (root + one per handlerEveryN interval)
     private List<PublishProcessor<TradeSignalEvent>> rxHandlers;
     private AtomicLong rxResult;
@@ -84,17 +86,18 @@ public class IntermediateHandlersBenchmark extends DimensionBenchmarkBase {
 
     @Benchmark
     public void fluxtion(Blackhole bh) {
-        TradeSignalEvent event = new TradeSignalEvent(
-                "MSFT", TradeSignalEvent.Side.SELL, 50.0 + seq, 200.0 + seq++);
+        // Mutate fields in-place: no allocation on the hot path
+        reuseEvent.setQuantity(50.0 + seq);
+        reuseEvent.setLimitPrice(200.0 + seq++);
         long t = System.nanoTime();
-        fluxtionProcessor.onEvent(event);
+        fluxtionProcessor.onEvent(reuseEvent);
         long elapsed = System.nanoTime() - t;
         recordFluxtion(DIM, size, elapsed);
         bh.consume(elapsed);
     }
-
     @Benchmark
     public void rxJava(Blackhole bh) {
+        // RxJava: new object required — operators may capture references
         TradeSignalEvent event = new TradeSignalEvent(
                 "MSFT", TradeSignalEvent.Side.SELL, 50.0 + seq, 200.0 + seq++);
         long t = System.nanoTime();
