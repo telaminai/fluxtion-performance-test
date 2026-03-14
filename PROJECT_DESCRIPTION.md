@@ -427,6 +427,172 @@ The allocation gap directly causes the tail-latency divergence observed at p99.9
 
 ---
 
+## Validation Framework
+
+The `validation/` sub-package provides **correctness tests** that prove multi-path, multi-event,
+and stateful propagation work correctly for both Fluxtion and RxJava, and that highlight where
+RxJava's model breaks down without explicit workarounds.
+
+---
+
+### Validation Architecture
+
+```
+validation/
+├── events/                  # Base ValidationEvent (carries activeIds Set) + 3 subtypes
+│   ├── ValidationEvent.java             # Base: activeIds Set<String> controls propagation
+│   ├── ValidationMarketEvent.java       # Carries bid/ask price data
+│   ├── ValidationTradeEvent.java        # Carries side, quantity, limitPrice
+│   └── ValidationControlEvent.java      # Carries command (ENABLE/DISABLE/RESET), threshold
+├── nodes/                   # Node hierarchy with ID-based propagation control
+│   ├── EventContext.java                # Shared: holds current event's activeIds
+│   ├── DataCollector.java               # Shared: records which nodes fired and in what order
+│   ├── ValidationNodeBase.java          # Abstract: nodeId, isIdPropagating(), recordFiring()
+│   ├── ValidationBaseNode.java          # Sums upstreams + 1, propagates if ID active
+│   ├── ValidationAccumulatorNode.java   # Running sum (stateful), propagates if ID active
+│   ├── ValidationSinkNode.java          # Terminal: records result, never propagates
+│   ├── ValidationMarketRootNode.java    # @OnEventHandler for ValidationMarketEvent
+│   ├── ValidationTradeRootNode.java     # @OnEventHandler for ValidationTradeEvent
+│   └── ValidationControlRootNode.java   # @OnEventHandler for ValidationControlEvent
+├── generator/
+│   └── ValidationDiamondGenerator.java  # Spring XML generator: 3 diamond chains per size
+├── generated/               # AOT-compiled processors (size=3, 5, 10)
+└── benchmark/
+    └── ValidationBenchmark.java         # JMH: Fluxtion vs RxJava, all 3 event types
+```
+
+---
+
+### How ID-Based Propagation Works
+
+Every `ValidationEvent` carries a `Set<String> activeIds`.  Each node has a `nodeId` field.
+When a node's `@OnTrigger` method fires, it:
+
+1. Calls `recordFiring()` — appends `nodeId` to the shared `DataCollector`.
+2. Calls `isIdPropagating()` — returns `eventContext.isActive(nodeId)`.
+3. Returns the boolean result — Fluxtion's compiled guard uses this to decide whether downstream nodes execute.
+
+This allows any event to carry a "routing mask" that selectively activates sub-graphs without
+any runtime conditional branching in framework code.
+
+**Key pattern for Spring XML wiring:**
+```xml
+<bean id="md_l1_n0" class="...ValidationBaseNode">
+  <property name="nodeId" value="md_l1_n0"/>
+  <property name="eventContext" ref="eventContext"/>   <!-- shared -->
+  <property name="dataCollector" ref="dataCollector"/> <!-- shared -->
+  <property name="upstream1" ref="md_root"/>
+  <property name="upstream2" ref="md_root"/>
+</bean>
+```
+
+> **Note:** Fluxtion wires `eventContext` and `dataCollector` into generated processor fields
+> because `EventContext` and `DataCollector` carry `@Initialise` lifecycle annotations and
+> full getter+setter Java-bean properties. Tests and benchmarks do one post-init reflection
+> pass to wire these into all `ValidationNodeBase` instances (a one-time setup cost, not on
+> the hot path).
+
+---
+
+### Diamond Topology per Dimension
+
+Three independent chains in one Spring context (one processor handles all three event types):
+
+| Chain | Event type | Depth (size=3) | Node types |
+|-------|-----------|----------------|------------|
+| `md_*` | `ValidationMarketEvent` | 3 layers × 3 nodes | Odd=BaseNode, Even=AccumulatorNode |
+| `ts_*` | `ValidationTradeEvent` | 2 layers × 3 nodes | Same alternation |
+| `ctrl_*` | `ValidationControlEvent` | 2 layers × 3 nodes | Same alternation |
+
+Diamond join pattern: layer `l` node `n` has `upstream1 = (l-1, n % npl)` and `upstream2 = (l-1, (n+1) % npl)`.
+This creates the fan-in ("diamond problem") that requires rank-ordered execution to avoid glitches.
+
+---
+
+### What the JUnit5 Tests Prove
+
+**`FluxtionValidationTest`** (13 tests — all pass):
+
+| Test | What is proved |
+|------|----------------|
+| `testGlitchFree_eachNodeFiresExactlyOnce` | Every node fires **exactly once** in a diamond — no duplicate firings from multiple paths |
+| `testTotalFiredCount_matchesActiveIdCount` | Fired count = activeIds size — no extras, no missing |
+| `testSelectivePropagation_rootAndLayer1Only` | Nodes whose ID is not in activeIds still record (invoked by upstream) but return false → their downstream is arrested |
+| `testSelectivePropagation_emptyActiveIds` | Only root fires with empty activeIds — entire downstream arrested immediately |
+| `testSelectivePropagation_partialActiveIds` | Layer-3 invoked (layer-2 returned true) but returns false → sink never called |
+| `testMultiEventIsolation_marketOnly/tradeOnly/controlOnly` | Firing MarketEvent never touches trade/control chains; each event type is fully isolated |
+| `testMultiEventIsolation_sequential` | All three types in sequence — isolation holds across consecutive events |
+| `testTopologicalOrder` | Parent node IDs appear before child IDs in DataCollector — proves rank-ordered execution |
+| `testPolymorphicPropagation` | `ValidationBaseNode` and `ValidationAccumulatorNode` both honour `isIdPropagating()` |
+| `testStatefulAccumulation_acrossCycles` | AccumulatorNode accumulates state across 5 cycles; DataCollector history verifies cycle-by-cycle consistency |
+| `testDeterministicReplay` | Identical fired-node list across two consecutive cycles — Fluxtion is deterministically replayable |
+
+**`RxJavaValidationTest`** (7 tests — all pass):
+
+| Test | What is proved |
+|------|----------------|
+| `testCorrectDiamond_eachNodeFiresOnce` | RxJava **can** be correct — but only with explicit `share()+zip()` at every join |
+| `testCorrectDiamond_rootEmitsOnce` | With `share()`, root emits exactly once per event |
+| `testCorrectDiamond_topologicalOrder` | Correct order is preserved when manually wired |
+| `testCorrectDiamond_deterministicReplay` | Same order across cycles — but requires the developer to enforce it |
+| `testNaiveDiamond_glitchDemonstration` | **GLITCH PROVED**: without `share()`, root fires **twice** for a 2-branch diamond |
+| `testNaiveDiamond_glitchScalesWithDepth` | Glitch scales exponentially — root fires ≥ 4× in a 2-level naive diamond |
+| `testRxJava_idFilteringDeadlocksZipOnHotStreams` | **DEADLOCK PROVED**: `filter()+zip()` on a hot stream stalls when one branch is filtered out — `defaultIfEmpty` cannot fix this on non-completing streams; Fluxtion handles it via compiled guards automatically |
+
+---
+
+### How to Run the Validation Tests
+
+```bash
+# Run all correctness tests
+mvn test
+
+# Run only Fluxtion tests
+mvn test -Dtest=FluxtionValidationTest
+
+# Run only RxJava tests (including glitch + deadlock proofs)
+mvn test -Dtest=RxJavaValidationTest
+```
+
+Expected output: `Tests run: 20, Failures: 0, Errors: 0`
+
+---
+
+### How to Run the Validation Benchmark
+
+```bash
+# Quick smoke run (sizes 3, 5, 10 — all 3 event types x 2 frameworks)
+mvn compile exec:java -Dexec.mainClass="org.openjdk.jmh.Main" \
+  -Dexec.args="ValidationBenchmark -f 0 -wi 3 -i 3"
+
+# With GC profiling to show allocation difference
+mvn exec:java -Dexec.mainClass="org.openjdk.jmh.Main" \
+  -Dexec.args="ValidationBenchmark -f 0 -wi 5 -i 5 -prof gc"
+```
+
+### Validation Benchmark Results (representative, size=3 and size=5)
+
+| Benchmark | size | Fluxtion (ns/op) | RxJava (ns/op) | Speedup |
+|-----------|------|-----------------|----------------|---------|
+| Market (full depth) | 3 | ~97 | ~237 | **2.4×** |
+| Market (full depth) | 5 | ~154 | ~537 | **3.5×** |
+| Trade (half depth) | 3 | ~78 | ~84 | ~1.1× |
+| Trade (half depth) | 5 | ~74 | ~96 | **1.3×** |
+| Control (third depth) | 3 | ~73 | ~114 | **1.6×** |
+| Control (third depth) | 5 | ~76 | ~108 | **1.4×** |
+
+**Key insight — event bias in the validation graph:**  
+The market chain (deepest) shows the largest Fluxtion advantage because each extra layer adds
+proportional cost to the zip+share RxJava graph but only a linear compiled guard to Fluxtion.
+At size=5 the market path is 3.5× faster. The control chain (shallowest) shows the smallest
+gap — at shallow depth, both systems are close to baseline dispatch overhead.
+
+**Memory (with `-prof gc`):**
+- Fluxtion: `0 B/op` — pre-allocated mutable events, zero heap pressure
+- RxJava: `~48–250 B/op` — ZipSubscriber coordination objects, lambda captures, boxed Doubles
+
+---
+
 ## Dependencies
 
 | Dependency | Version | Purpose |
@@ -439,4 +605,5 @@ The allocation gap directly causes the tail-latency divergence observed at p99.9
 | `HdrHistogram` | 2.2.1 | Latency distribution recording |
 | `spring-context` | 6.2.3 | Spring XML graph realisation |
 | `snakeyaml` | 2.3 | YAML config loading |
+| `junit-jupiter` | 5.11.4 | Correctness validation tests |
 | `lombok` | 1.18.34 | Boilerplate reduction |

@@ -33,6 +33,8 @@ public class GenerateAllProcessors {
         GENERATORS.put("benchmark-configs/dirty_filter.yaml",         DirtyFilterGraphGenerator.class);
         GENERATORS.put("benchmark-configs/intermediate_handlers.yaml", IntermediateHandlersGraphGenerator.class);
         GENERATORS.put("benchmark-configs/multi_event_path.yaml",     MultiEventPathGraphGenerator.class);
+        GENERATORS.put("benchmark-configs/validation_diamond.yaml",
+                com.telamin.fluxtion.test.performance.validation.generator.ValidationDiamondGenerator.class);
     }
 
     public static void main(String[] args) throws Exception {
