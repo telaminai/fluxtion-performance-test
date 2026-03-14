@@ -1,0 +1,17 @@
+dimension: short_chain
+title: "Short Chain — @ExportService vs onEvent vs RxJava"
+description: >
+  A strictly linear chain using @ExportService for direct strongly-typed dispatch.
+  Compares three dispatch paths:
+    1. Fluxtion onEvent(Object)  - standard dynamic dispatch (instanceof chain)
+    2. Fluxtion @ExportService   - strongly-typed direct call, no instanceof overhead
+    3. RxJava Observable chain   - reactive dynamic dispatch baseline
+  For short chains (3-10 nodes) the dispatch overhead is a significant fraction
+  of total execution time, making the service path advantage most visible.
+sizes: [3, 5, 10]
+generatorClass: com.telamin.fluxtion.test.performance.generators.ShortChainGraphGenerator
+generatedPackage: com.telamin.fluxtion.test.performance.generated.shortchain
+params:
+  rootNodeClass: com.telamin.fluxtion.test.performance.service.ShortChainRootNode
+  nodeClass:     com.telamin.fluxtion.test.performance.service.ShortChainNode
+  sinkNodeClass: com.telamin.fluxtion.test.performance.service.ShortChainSinkNode

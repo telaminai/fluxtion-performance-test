@@ -35,6 +35,7 @@ public class GenerateAllProcessors {
         GENERATORS.put("benchmark-configs/multi_event_path.yaml",     MultiEventPathGraphGenerator.class);
         GENERATORS.put("benchmark-configs/validation_diamond.yaml",
                 com.telamin.fluxtion.test.performance.validation.generator.ValidationDiamondGenerator.class);
+        GENERATORS.put("benchmark-configs/short_chain.yaml",          ShortChainGraphGenerator.class);
     }
 
     public static void main(String[] args) throws Exception {
