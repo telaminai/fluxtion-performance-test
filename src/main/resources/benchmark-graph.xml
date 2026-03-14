@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+  <bean id="node_0_0" class="com.telamin.fluxtion.test.performance.RootNode"/>
+  <bean id="node_1_0" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_0_0"/>
+    <property name="upstream2" ref="node_0_0"/>
+  </bean>
+  <bean id="node_1_1" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_0_0"/>
+    <property name="upstream2" ref="node_0_0"/>
+  </bean>
+  <bean id="node_1_2" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_0_0"/>
+    <property name="upstream2" ref="node_0_0"/>
+  </bean>
+  <bean id="node_1_3" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_0_0"/>
+    <property name="upstream2" ref="node_0_0"/>
+  </bean>
+  <bean id="node_1_4" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_0_0"/>
+    <property name="upstream2" ref="node_0_0"/>
+  </bean>
+  <bean id="node_1_5" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_0_0"/>
+    <property name="upstream2" ref="node_0_0"/>
+  </bean>
+  <bean id="node_1_6" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_0_0"/>
+    <property name="upstream2" ref="node_0_0"/>
+  </bean>
+  <bean id="node_1_7" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_0_0"/>
+    <property name="upstream2" ref="node_0_0"/>
+  </bean>
+  <bean id="node_1_8" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_0_0"/>
+    <property name="upstream2" ref="node_0_0"/>
+  </bean>
+  <bean id="node_1_9" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_0_0"/>
+    <property name="upstream2" ref="node_0_0"/>
+  </bean>
+  <bean id="node_2_0" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_1_0"/>
+    <property name="upstream2" ref="node_1_1"/>
+  </bean>
+  <bean id="node_2_1" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_1_1"/>
+    <property name="upstream2" ref="node_1_2"/>
+  </bean>
+  <bean id="node_2_2" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_1_2"/>
+    <property name="upstream2" ref="node_1_3"/>
+  </bean>
+  <bean id="node_2_3" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_1_3"/>
+    <property name="upstream2" ref="node_1_4"/>
+  </bean>
+  <bean id="node_2_4" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_1_4"/>
+    <property name="upstream2" ref="node_1_5"/>
+  </bean>
+  <bean id="node_2_5" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_1_5"/>
+    <property name="upstream2" ref="node_1_6"/>
+  </bean>
+  <bean id="node_2_6" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_1_6"/>
+    <property name="upstream2" ref="node_1_7"/>
+  </bean>
+  <bean id="node_2_7" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_1_7"/>
+    <property name="upstream2" ref="node_1_8"/>
+  </bean>
+  <bean id="node_2_8" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_1_8"/>
+    <property name="upstream2" ref="node_1_9"/>
+  </bean>
+  <bean id="node_2_9" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_1_9"/>
+    <property name="upstream2" ref="node_1_0"/>
+  </bean>
+  <bean id="node_3_0" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_2_0"/>
+    <property name="upstream2" ref="node_2_1"/>
+  </bean>
+  <bean id="node_3_1" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_2_1"/>
+    <property name="upstream2" ref="node_2_2"/>
+  </bean>
+  <bean id="node_3_2" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_2_2"/>
+    <property name="upstream2" ref="node_2_3"/>
+  </bean>
+  <bean id="node_3_3" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_2_3"/>
+    <property name="upstream2" ref="node_2_4"/>
+  </bean>
+  <bean id="node_3_4" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_2_4"/>
+    <property name="upstream2" ref="node_2_5"/>
+  </bean>
+  <bean id="node_3_5" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_2_5"/>
+    <property name="upstream2" ref="node_2_6"/>
+  </bean>
+  <bean id="node_3_6" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_2_6"/>
+    <property name="upstream2" ref="node_2_7"/>
+  </bean>
+  <bean id="node_3_7" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_2_7"/>
+    <property name="upstream2" ref="node_2_8"/>
+  </bean>
+  <bean id="node_3_8" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_2_8"/>
+    <property name="upstream2" ref="node_2_9"/>
+  </bean>
+  <bean id="node_3_9" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_2_9"/>
+    <property name="upstream2" ref="node_2_0"/>
+  </bean>
+  <bean id="node_4_0" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_3_0"/>
+    <property name="upstream2" ref="node_3_1"/>
+  </bean>
+  <bean id="node_4_1" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_3_1"/>
+    <property name="upstream2" ref="node_3_2"/>
+  </bean>
+  <bean id="node_4_2" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_3_2"/>
+    <property name="upstream2" ref="node_3_3"/>
+  </bean>
+  <bean id="node_4_3" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_3_3"/>
+    <property name="upstream2" ref="node_3_4"/>
+  </bean>
+  <bean id="node_4_4" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_3_4"/>
+    <property name="upstream2" ref="node_3_5"/>
+  </bean>
+  <bean id="node_4_5" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_3_5"/>
+    <property name="upstream2" ref="node_3_6"/>
+  </bean>
+  <bean id="node_4_6" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_3_6"/>
+    <property name="upstream2" ref="node_3_7"/>
+  </bean>
+  <bean id="node_4_7" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_3_7"/>
+    <property name="upstream2" ref="node_3_8"/>
+  </bean>
+  <bean id="node_4_8" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_3_8"/>
+    <property name="upstream2" ref="node_3_9"/>
+  </bean>
+  <bean id="node_4_9" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_3_9"/>
+    <property name="upstream2" ref="node_3_0"/>
+  </bean>
+  <bean id="node_5_0" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_4_0"/>
+    <property name="upstream2" ref="node_4_1"/>
+  </bean>
+  <bean id="node_5_1" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_4_1"/>
+    <property name="upstream2" ref="node_4_2"/>
+  </bean>
+  <bean id="node_5_2" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_4_2"/>
+    <property name="upstream2" ref="node_4_3"/>
+  </bean>
+  <bean id="node_5_3" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_4_3"/>
+    <property name="upstream2" ref="node_4_4"/>
+  </bean>
+  <bean id="node_5_4" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_4_4"/>
+    <property name="upstream2" ref="node_4_5"/>
+  </bean>
+  <bean id="node_5_5" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_4_5"/>
+    <property name="upstream2" ref="node_4_6"/>
+  </bean>
+  <bean id="node_5_6" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_4_6"/>
+    <property name="upstream2" ref="node_4_7"/>
+  </bean>
+  <bean id="node_5_7" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_4_7"/>
+    <property name="upstream2" ref="node_4_8"/>
+  </bean>
+  <bean id="node_5_8" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_4_8"/>
+    <property name="upstream2" ref="node_4_9"/>
+  </bean>
+  <bean id="node_5_9" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_4_9"/>
+    <property name="upstream2" ref="node_4_0"/>
+  </bean>
+  <bean id="node_6_0" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_5_0"/>
+    <property name="upstream2" ref="node_5_1"/>
+  </bean>
+  <bean id="node_6_1" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_5_1"/>
+    <property name="upstream2" ref="node_5_2"/>
+  </bean>
+  <bean id="node_6_2" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_5_2"/>
+    <property name="upstream2" ref="node_5_3"/>
+  </bean>
+  <bean id="node_6_3" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_5_3"/>
+    <property name="upstream2" ref="node_5_4"/>
+  </bean>
+  <bean id="node_6_4" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_5_4"/>
+    <property name="upstream2" ref="node_5_5"/>
+  </bean>
+  <bean id="node_6_5" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_5_5"/>
+    <property name="upstream2" ref="node_5_6"/>
+  </bean>
+  <bean id="node_6_6" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_5_6"/>
+    <property name="upstream2" ref="node_5_7"/>
+  </bean>
+  <bean id="node_6_7" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_5_7"/>
+    <property name="upstream2" ref="node_5_8"/>
+  </bean>
+  <bean id="node_6_8" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_5_8"/>
+    <property name="upstream2" ref="node_5_9"/>
+  </bean>
+  <bean id="node_6_9" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_5_9"/>
+    <property name="upstream2" ref="node_5_0"/>
+  </bean>
+  <bean id="node_7_0" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_6_0"/>
+    <property name="upstream2" ref="node_6_1"/>
+  </bean>
+  <bean id="node_7_1" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_6_1"/>
+    <property name="upstream2" ref="node_6_2"/>
+  </bean>
+  <bean id="node_7_2" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_6_2"/>
+    <property name="upstream2" ref="node_6_3"/>
+  </bean>
+  <bean id="node_7_3" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_6_3"/>
+    <property name="upstream2" ref="node_6_4"/>
+  </bean>
+  <bean id="node_7_4" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_6_4"/>
+    <property name="upstream2" ref="node_6_5"/>
+  </bean>
+  <bean id="node_7_5" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_6_5"/>
+    <property name="upstream2" ref="node_6_6"/>
+  </bean>
+  <bean id="node_7_6" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_6_6"/>
+    <property name="upstream2" ref="node_6_7"/>
+  </bean>
+  <bean id="node_7_7" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_6_7"/>
+    <property name="upstream2" ref="node_6_8"/>
+  </bean>
+  <bean id="node_7_8" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_6_8"/>
+    <property name="upstream2" ref="node_6_9"/>
+  </bean>
+  <bean id="node_7_9" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_6_9"/>
+    <property name="upstream2" ref="node_6_0"/>
+  </bean>
+  <bean id="node_8_0" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_7_0"/>
+    <property name="upstream2" ref="node_7_1"/>
+  </bean>
+  <bean id="node_8_1" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_7_1"/>
+    <property name="upstream2" ref="node_7_2"/>
+  </bean>
+  <bean id="node_8_2" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_7_2"/>
+    <property name="upstream2" ref="node_7_3"/>
+  </bean>
+  <bean id="node_8_3" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_7_3"/>
+    <property name="upstream2" ref="node_7_4"/>
+  </bean>
+  <bean id="node_8_4" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_7_4"/>
+    <property name="upstream2" ref="node_7_5"/>
+  </bean>
+  <bean id="node_8_5" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_7_5"/>
+    <property name="upstream2" ref="node_7_6"/>
+  </bean>
+  <bean id="node_8_6" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_7_6"/>
+    <property name="upstream2" ref="node_7_7"/>
+  </bean>
+  <bean id="node_8_7" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_7_7"/>
+    <property name="upstream2" ref="node_7_8"/>
+  </bean>
+  <bean id="node_8_8" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_7_8"/>
+    <property name="upstream2" ref="node_7_9"/>
+  </bean>
+  <bean id="node_8_9" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_7_9"/>
+    <property name="upstream2" ref="node_7_0"/>
+  </bean>
+  <bean id="node_9_0" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_8_0"/>
+    <property name="upstream2" ref="node_8_1"/>
+  </bean>
+  <bean id="node_9_1" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_8_1"/>
+    <property name="upstream2" ref="node_8_2"/>
+  </bean>
+  <bean id="node_9_2" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_8_2"/>
+    <property name="upstream2" ref="node_8_3"/>
+  </bean>
+  <bean id="node_9_3" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_8_3"/>
+    <property name="upstream2" ref="node_8_4"/>
+  </bean>
+  <bean id="node_9_4" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_8_4"/>
+    <property name="upstream2" ref="node_8_5"/>
+  </bean>
+  <bean id="node_9_5" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_8_5"/>
+    <property name="upstream2" ref="node_8_6"/>
+  </bean>
+  <bean id="node_9_6" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_8_6"/>
+    <property name="upstream2" ref="node_8_7"/>
+  </bean>
+  <bean id="node_9_7" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_8_7"/>
+    <property name="upstream2" ref="node_8_8"/>
+  </bean>
+  <bean id="node_9_8" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_8_8"/>
+    <property name="upstream2" ref="node_8_9"/>
+  </bean>
+  <bean id="node_9_9" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_8_9"/>
+    <property name="upstream2" ref="node_8_0"/>
+  </bean>
+  <bean id="node_10_0" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_9_0"/>
+    <property name="upstream2" ref="node_9_1"/>
+  </bean>
+  <bean id="node_10_1" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_9_1"/>
+    <property name="upstream2" ref="node_9_2"/>
+  </bean>
+  <bean id="node_10_2" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_9_2"/>
+    <property name="upstream2" ref="node_9_3"/>
+  </bean>
+  <bean id="node_10_3" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_9_3"/>
+    <property name="upstream2" ref="node_9_4"/>
+  </bean>
+  <bean id="node_10_4" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_9_4"/>
+    <property name="upstream2" ref="node_9_5"/>
+  </bean>
+  <bean id="node_10_5" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_9_5"/>
+    <property name="upstream2" ref="node_9_6"/>
+  </bean>
+  <bean id="node_10_6" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_9_6"/>
+    <property name="upstream2" ref="node_9_7"/>
+  </bean>
+  <bean id="node_10_7" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_9_7"/>
+    <property name="upstream2" ref="node_9_8"/>
+  </bean>
+  <bean id="node_10_8" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_9_8"/>
+    <property name="upstream2" ref="node_9_9"/>
+  </bean>
+  <bean id="node_10_9" class="com.telamin.fluxtion.test.performance.BenchmarkNode">
+    <property name="upstream1" ref="node_9_9"/>
+    <property name="upstream2" ref="node_9_0"/>
+  </bean>
+</beans>

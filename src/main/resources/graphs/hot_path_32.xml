@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+  <bean id="root" class="com.telamin.fluxtion.test.performance.nodes.MarketDataRootNode"/>
+  <bean id="hot_0" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="root"/>
+  </bean>
+  <bean id="hot_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="hot_0"/>
+  </bean>
+  <bean id="hot_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="hot_1"/>
+  </bean>
+  <bean id="hot_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="hot_2"/>
+  </bean>
+  <bean id="hot_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="hot_3"/>
+  </bean>
+  <bean id="hot_5" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="hot_4"/>
+  </bean>
+  <bean id="hot_6" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="hot_5"/>
+  </bean>
+  <bean id="hot_7" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="hot_6"/>
+  </bean>
+  <bean id="hot_8" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="hot_7"/>
+  </bean>
+  <bean id="hot_9" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="hot_8"/>
+  </bean>
+  <bean id="sink_hot" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="hot_9"/>
+  </bean>
+  <bean id="cold_1_filter" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="root"/>
+    <property name="threshold" value="1.0E15"/>
+  </bean>
+  <bean id="cold_1_0" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_1_filter"/>
+  </bean>
+  <bean id="cold_1_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_1_0"/>
+  </bean>
+  <bean id="cold_1_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_1_1"/>
+  </bean>
+  <bean id="cold_1_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_1_2"/>
+  </bean>
+  <bean id="cold_1_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_1_3"/>
+  </bean>
+  <bean id="sink_cold_1" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="cold_1_4"/>
+  </bean>
+  <bean id="cold_2_filter" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="root"/>
+    <property name="threshold" value="1.0E15"/>
+  </bean>
+  <bean id="cold_2_0" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_2_filter"/>
+  </bean>
+  <bean id="cold_2_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_2_0"/>
+  </bean>
+  <bean id="cold_2_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_2_1"/>
+  </bean>
+  <bean id="cold_2_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_2_2"/>
+  </bean>
+  <bean id="cold_2_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_2_3"/>
+  </bean>
+  <bean id="sink_cold_2" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="cold_2_4"/>
+  </bean>
+  <bean id="cold_3_filter" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="root"/>
+    <property name="threshold" value="1.0E15"/>
+  </bean>
+  <bean id="cold_3_0" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_3_filter"/>
+  </bean>
+  <bean id="cold_3_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_3_0"/>
+  </bean>
+  <bean id="cold_3_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_3_1"/>
+  </bean>
+  <bean id="cold_3_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_3_2"/>
+  </bean>
+  <bean id="cold_3_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_3_3"/>
+  </bean>
+  <bean id="sink_cold_3" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="cold_3_4"/>
+  </bean>
+  <bean id="cold_4_filter" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="root"/>
+    <property name="threshold" value="1.0E15"/>
+  </bean>
+  <bean id="cold_4_0" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_4_filter"/>
+  </bean>
+  <bean id="cold_4_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_4_0"/>
+  </bean>
+  <bean id="cold_4_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_4_1"/>
+  </bean>
+  <bean id="cold_4_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_4_2"/>
+  </bean>
+  <bean id="cold_4_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_4_3"/>
+  </bean>
+  <bean id="sink_cold_4" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="cold_4_4"/>
+  </bean>
+  <bean id="cold_5_filter" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="root"/>
+    <property name="threshold" value="1.0E15"/>
+  </bean>
+  <bean id="cold_5_0" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_5_filter"/>
+  </bean>
+  <bean id="cold_5_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_5_0"/>
+  </bean>
+  <bean id="cold_5_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_5_1"/>
+  </bean>
+  <bean id="cold_5_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_5_2"/>
+  </bean>
+  <bean id="cold_5_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_5_3"/>
+  </bean>
+  <bean id="sink_cold_5" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="cold_5_4"/>
+  </bean>
+  <bean id="cold_6_filter" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="root"/>
+    <property name="threshold" value="1.0E15"/>
+  </bean>
+  <bean id="cold_6_0" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_6_filter"/>
+  </bean>
+  <bean id="cold_6_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_6_0"/>
+  </bean>
+  <bean id="cold_6_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_6_1"/>
+  </bean>
+  <bean id="cold_6_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_6_2"/>
+  </bean>
+  <bean id="cold_6_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_6_3"/>
+  </bean>
+  <bean id="sink_cold_6" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="cold_6_4"/>
+  </bean>
+  <bean id="cold_7_filter" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="root"/>
+    <property name="threshold" value="1.0E15"/>
+  </bean>
+  <bean id="cold_7_0" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_7_filter"/>
+  </bean>
+  <bean id="cold_7_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_7_0"/>
+  </bean>
+  <bean id="cold_7_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_7_1"/>
+  </bean>
+  <bean id="cold_7_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_7_2"/>
+  </bean>
+  <bean id="cold_7_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_7_3"/>
+  </bean>
+  <bean id="sink_cold_7" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="cold_7_4"/>
+  </bean>
+  <bean id="cold_8_filter" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="root"/>
+    <property name="threshold" value="1.0E15"/>
+  </bean>
+  <bean id="cold_8_0" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_8_filter"/>
+  </bean>
+  <bean id="cold_8_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_8_0"/>
+  </bean>
+  <bean id="cold_8_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_8_1"/>
+  </bean>
+  <bean id="cold_8_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_8_2"/>
+  </bean>
+  <bean id="cold_8_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_8_3"/>
+  </bean>
+  <bean id="sink_cold_8" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="cold_8_4"/>
+  </bean>
+  <bean id="cold_9_filter" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="root"/>
+    <property name="threshold" value="1.0E15"/>
+  </bean>
+  <bean id="cold_9_0" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_9_filter"/>
+  </bean>
+  <bean id="cold_9_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_9_0"/>
+  </bean>
+  <bean id="cold_9_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_9_1"/>
+  </bean>
+  <bean id="cold_9_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_9_2"/>
+  </bean>
+  <bean id="cold_9_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_9_3"/>
+  </bean>
+  <bean id="sink_cold_9" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="cold_9_4"/>
+  </bean>
+  <bean id="cold_10_filter" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="root"/>
+    <property name="threshold" value="1.0E15"/>
+  </bean>
+  <bean id="cold_10_0" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_10_filter"/>
+  </bean>
+  <bean id="cold_10_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_10_0"/>
+  </bean>
+  <bean id="cold_10_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_10_1"/>
+  </bean>
+  <bean id="cold_10_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_10_2"/>
+  </bean>
+  <bean id="cold_10_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_10_3"/>
+  </bean>
+  <bean id="sink_cold_10" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="cold_10_4"/>
+  </bean>
+  <bean id="cold_11_filter" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="root"/>
+    <property name="threshold" value="1.0E15"/>
+  </bean>
+  <bean id="cold_11_0" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_11_filter"/>
+  </bean>
+  <bean id="cold_11_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_11_0"/>
+  </bean>
+  <bean id="cold_11_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_11_1"/>
+  </bean>
+  <bean id="cold_11_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_11_2"/>
+  </bean>
+  <bean id="cold_11_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_11_3"/>
+  </bean>
+  <bean id="sink_cold_11" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="cold_11_4"/>
+  </bean>
+  <bean id="cold_12_filter" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="root"/>
+    <property name="threshold" value="1.0E15"/>
+  </bean>
+  <bean id="cold_12_0" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_12_filter"/>
+  </bean>
+  <bean id="cold_12_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_12_0"/>
+  </bean>
+  <bean id="cold_12_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_12_1"/>
+  </bean>
+  <bean id="cold_12_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_12_2"/>
+  </bean>
+  <bean id="cold_12_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_12_3"/>
+  </bean>
+  <bean id="sink_cold_12" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="cold_12_4"/>
+  </bean>
+  <bean id="cold_13_filter" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="root"/>
+    <property name="threshold" value="1.0E15"/>
+  </bean>
+  <bean id="cold_13_0" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_13_filter"/>
+  </bean>
+  <bean id="cold_13_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_13_0"/>
+  </bean>
+  <bean id="cold_13_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_13_1"/>
+  </bean>
+  <bean id="cold_13_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_13_2"/>
+  </bean>
+  <bean id="cold_13_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_13_3"/>
+  </bean>
+  <bean id="sink_cold_13" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="cold_13_4"/>
+  </bean>
+  <bean id="cold_14_filter" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="root"/>
+    <property name="threshold" value="1.0E15"/>
+  </bean>
+  <bean id="cold_14_0" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_14_filter"/>
+  </bean>
+  <bean id="cold_14_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_14_0"/>
+  </bean>
+  <bean id="cold_14_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_14_1"/>
+  </bean>
+  <bean id="cold_14_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_14_2"/>
+  </bean>
+  <bean id="cold_14_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_14_3"/>
+  </bean>
+  <bean id="sink_cold_14" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="cold_14_4"/>
+  </bean>
+  <bean id="cold_15_filter" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="root"/>
+    <property name="threshold" value="1.0E15"/>
+  </bean>
+  <bean id="cold_15_0" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_15_filter"/>
+  </bean>
+  <bean id="cold_15_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_15_0"/>
+  </bean>
+  <bean id="cold_15_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_15_1"/>
+  </bean>
+  <bean id="cold_15_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_15_2"/>
+  </bean>
+  <bean id="cold_15_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_15_3"/>
+  </bean>
+  <bean id="sink_cold_15" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="cold_15_4"/>
+  </bean>
+  <bean id="cold_16_filter" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="root"/>
+    <property name="threshold" value="1.0E15"/>
+  </bean>
+  <bean id="cold_16_0" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_16_filter"/>
+  </bean>
+  <bean id="cold_16_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_16_0"/>
+  </bean>
+  <bean id="cold_16_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_16_1"/>
+  </bean>
+  <bean id="cold_16_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_16_2"/>
+  </bean>
+  <bean id="cold_16_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_16_3"/>
+  </bean>
+  <bean id="sink_cold_16" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="cold_16_4"/>
+  </bean>
+  <bean id="cold_17_filter" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="root"/>
+    <property name="threshold" value="1.0E15"/>
+  </bean>
+  <bean id="cold_17_0" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_17_filter"/>
+  </bean>
+  <bean id="cold_17_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_17_0"/>
+  </bean>
+  <bean id="cold_17_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_17_1"/>
+  </bean>
+  <bean id="cold_17_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_17_2"/>
+  </bean>
+  <bean id="cold_17_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_17_3"/>
+  </bean>
+  <bean id="sink_cold_17" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="cold_17_4"/>
+  </bean>
+  <bean id="cold_18_filter" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="root"/>
+    <property name="threshold" value="1.0E15"/>
+  </bean>
+  <bean id="cold_18_0" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_18_filter"/>
+  </bean>
+  <bean id="cold_18_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_18_0"/>
+  </bean>
+  <bean id="cold_18_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_18_1"/>
+  </bean>
+  <bean id="cold_18_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_18_2"/>
+  </bean>
+  <bean id="cold_18_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_18_3"/>
+  </bean>
+  <bean id="sink_cold_18" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="cold_18_4"/>
+  </bean>
+  <bean id="cold_19_filter" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="root"/>
+    <property name="threshold" value="1.0E15"/>
+  </bean>
+  <bean id="cold_19_0" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_19_filter"/>
+  </bean>
+  <bean id="cold_19_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_19_0"/>
+  </bean>
+  <bean id="cold_19_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_19_1"/>
+  </bean>
+  <bean id="cold_19_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_19_2"/>
+  </bean>
+  <bean id="cold_19_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_19_3"/>
+  </bean>
+  <bean id="sink_cold_19" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="cold_19_4"/>
+  </bean>
+  <bean id="cold_20_filter" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="root"/>
+    <property name="threshold" value="1.0E15"/>
+  </bean>
+  <bean id="cold_20_0" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_20_filter"/>
+  </bean>
+  <bean id="cold_20_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_20_0"/>
+  </bean>
+  <bean id="cold_20_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_20_1"/>
+  </bean>
+  <bean id="cold_20_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_20_2"/>
+  </bean>
+  <bean id="cold_20_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_20_3"/>
+  </bean>
+  <bean id="sink_cold_20" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="cold_20_4"/>
+  </bean>
+  <bean id="cold_21_filter" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="root"/>
+    <property name="threshold" value="1.0E15"/>
+  </bean>
+  <bean id="cold_21_0" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_21_filter"/>
+  </bean>
+  <bean id="cold_21_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_21_0"/>
+  </bean>
+  <bean id="cold_21_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_21_1"/>
+  </bean>
+  <bean id="cold_21_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_21_2"/>
+  </bean>
+  <bean id="cold_21_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_21_3"/>
+  </bean>
+  <bean id="sink_cold_21" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="cold_21_4"/>
+  </bean>
+  <bean id="cold_22_filter" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="root"/>
+    <property name="threshold" value="1.0E15"/>
+  </bean>
+  <bean id="cold_22_0" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_22_filter"/>
+  </bean>
+  <bean id="cold_22_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_22_0"/>
+  </bean>
+  <bean id="cold_22_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_22_1"/>
+  </bean>
+  <bean id="cold_22_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_22_2"/>
+  </bean>
+  <bean id="cold_22_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_22_3"/>
+  </bean>
+  <bean id="sink_cold_22" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="cold_22_4"/>
+  </bean>
+  <bean id="cold_23_filter" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="root"/>
+    <property name="threshold" value="1.0E15"/>
+  </bean>
+  <bean id="cold_23_0" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_23_filter"/>
+  </bean>
+  <bean id="cold_23_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_23_0"/>
+  </bean>
+  <bean id="cold_23_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_23_1"/>
+  </bean>
+  <bean id="cold_23_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_23_2"/>
+  </bean>
+  <bean id="cold_23_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_23_3"/>
+  </bean>
+  <bean id="sink_cold_23" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="cold_23_4"/>
+  </bean>
+  <bean id="cold_24_filter" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="root"/>
+    <property name="threshold" value="1.0E15"/>
+  </bean>
+  <bean id="cold_24_0" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_24_filter"/>
+  </bean>
+  <bean id="cold_24_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_24_0"/>
+  </bean>
+  <bean id="cold_24_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_24_1"/>
+  </bean>
+  <bean id="cold_24_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_24_2"/>
+  </bean>
+  <bean id="cold_24_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_24_3"/>
+  </bean>
+  <bean id="sink_cold_24" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="cold_24_4"/>
+  </bean>
+  <bean id="cold_25_filter" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="root"/>
+    <property name="threshold" value="1.0E15"/>
+  </bean>
+  <bean id="cold_25_0" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_25_filter"/>
+  </bean>
+  <bean id="cold_25_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_25_0"/>
+  </bean>
+  <bean id="cold_25_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_25_1"/>
+  </bean>
+  <bean id="cold_25_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_25_2"/>
+  </bean>
+  <bean id="cold_25_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_25_3"/>
+  </bean>
+  <bean id="sink_cold_25" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="cold_25_4"/>
+  </bean>
+  <bean id="cold_26_filter" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="root"/>
+    <property name="threshold" value="1.0E15"/>
+  </bean>
+  <bean id="cold_26_0" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_26_filter"/>
+  </bean>
+  <bean id="cold_26_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_26_0"/>
+  </bean>
+  <bean id="cold_26_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_26_1"/>
+  </bean>
+  <bean id="cold_26_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_26_2"/>
+  </bean>
+  <bean id="cold_26_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_26_3"/>
+  </bean>
+  <bean id="sink_cold_26" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="cold_26_4"/>
+  </bean>
+  <bean id="cold_27_filter" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="root"/>
+    <property name="threshold" value="1.0E15"/>
+  </bean>
+  <bean id="cold_27_0" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_27_filter"/>
+  </bean>
+  <bean id="cold_27_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_27_0"/>
+  </bean>
+  <bean id="cold_27_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_27_1"/>
+  </bean>
+  <bean id="cold_27_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_27_2"/>
+  </bean>
+  <bean id="cold_27_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_27_3"/>
+  </bean>
+  <bean id="sink_cold_27" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="cold_27_4"/>
+  </bean>
+  <bean id="cold_28_filter" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="root"/>
+    <property name="threshold" value="1.0E15"/>
+  </bean>
+  <bean id="cold_28_0" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_28_filter"/>
+  </bean>
+  <bean id="cold_28_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_28_0"/>
+  </bean>
+  <bean id="cold_28_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_28_1"/>
+  </bean>
+  <bean id="cold_28_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_28_2"/>
+  </bean>
+  <bean id="cold_28_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_28_3"/>
+  </bean>
+  <bean id="sink_cold_28" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="cold_28_4"/>
+  </bean>
+  <bean id="cold_29_filter" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="root"/>
+    <property name="threshold" value="1.0E15"/>
+  </bean>
+  <bean id="cold_29_0" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_29_filter"/>
+  </bean>
+  <bean id="cold_29_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_29_0"/>
+  </bean>
+  <bean id="cold_29_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_29_1"/>
+  </bean>
+  <bean id="cold_29_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_29_2"/>
+  </bean>
+  <bean id="cold_29_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_29_3"/>
+  </bean>
+  <bean id="sink_cold_29" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="cold_29_4"/>
+  </bean>
+  <bean id="cold_30_filter" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="root"/>
+    <property name="threshold" value="1.0E15"/>
+  </bean>
+  <bean id="cold_30_0" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_30_filter"/>
+  </bean>
+  <bean id="cold_30_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_30_0"/>
+  </bean>
+  <bean id="cold_30_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_30_1"/>
+  </bean>
+  <bean id="cold_30_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_30_2"/>
+  </bean>
+  <bean id="cold_30_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_30_3"/>
+  </bean>
+  <bean id="sink_cold_30" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="cold_30_4"/>
+  </bean>
+  <bean id="cold_31_filter" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="root"/>
+    <property name="threshold" value="1.0E15"/>
+  </bean>
+  <bean id="cold_31_0" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_31_filter"/>
+  </bean>
+  <bean id="cold_31_1" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_31_0"/>
+  </bean>
+  <bean id="cold_31_2" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_31_1"/>
+  </bean>
+  <bean id="cold_31_3" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_31_2"/>
+  </bean>
+  <bean id="cold_31_4" class="com.telamin.fluxtion.test.performance.nodes.AccumulatorNode">
+    <property name="upstream1" ref="cold_31_3"/>
+  </bean>
+  <bean id="sink_cold_31" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="cold_31_4"/>
+  </bean>
+</beans>

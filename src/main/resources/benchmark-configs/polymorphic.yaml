@@ -1,0 +1,17 @@
+dimension: polymorphic
+title: "Polymorphic Nodes"
+description: >
+  A linear chain where nodes alternate between BaseNode, AccumulatorNode, and
+  TransformNode subtypes. All implement ProcessingNode but have distinct
+  @OnTrigger logic. In Fluxtion every call-site in the generated SEG is
+  monomorphic — the JIT sees a single concrete target and can inline fully.
+  In a dynamic observer framework the call-site is polymorphic, forcing the JVM
+  into an expensive megamorphic dispatch as the number of distinct subtypes grows.
+rootEventClass: com.telamin.fluxtion.test.performance.events.TradeSignalEvent
+sizes: [5, 10, 20, 50, 100]
+generatorClass: com.telamin.fluxtion.test.performance.generators.PolymorphicGraphGenerator
+generatedPackage: com.telamin.fluxtion.test.performance.generated.polymorphic
+params:
+  rootNodeClass: com.telamin.fluxtion.test.performance.nodes.TradeSignalRootNode
+  sinkNodeClass: com.telamin.fluxtion.test.performance.nodes.PublisherNode
+  transformFactor: 1.001

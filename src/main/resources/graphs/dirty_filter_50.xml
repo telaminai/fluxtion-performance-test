@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+  <bean id="root" class="com.telamin.fluxtion.test.performance.nodes.ControlRootNode"/>
+  <bean id="node_1" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="root"/>
+  </bean>
+  <bean id="node_2" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_1"/>
+  </bean>
+  <bean id="node_3" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="node_2"/>
+    <property name="threshold" value="0.5"/>
+  </bean>
+  <bean id="node_4" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_3"/>
+  </bean>
+  <bean id="node_5" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_4"/>
+  </bean>
+  <bean id="node_6" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="node_5"/>
+    <property name="threshold" value="0.5"/>
+  </bean>
+  <bean id="node_7" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_6"/>
+  </bean>
+  <bean id="node_8" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_7"/>
+  </bean>
+  <bean id="node_9" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="node_8"/>
+    <property name="threshold" value="0.5"/>
+  </bean>
+  <bean id="node_10" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_9"/>
+  </bean>
+  <bean id="node_11" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_10"/>
+  </bean>
+  <bean id="node_12" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="node_11"/>
+    <property name="threshold" value="0.5"/>
+  </bean>
+  <bean id="node_13" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_12"/>
+  </bean>
+  <bean id="node_14" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_13"/>
+  </bean>
+  <bean id="node_15" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="node_14"/>
+    <property name="threshold" value="0.5"/>
+  </bean>
+  <bean id="node_16" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_15"/>
+  </bean>
+  <bean id="node_17" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_16"/>
+  </bean>
+  <bean id="node_18" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="node_17"/>
+    <property name="threshold" value="0.5"/>
+  </bean>
+  <bean id="node_19" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_18"/>
+  </bean>
+  <bean id="node_20" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_19"/>
+  </bean>
+  <bean id="node_21" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="node_20"/>
+    <property name="threshold" value="0.5"/>
+  </bean>
+  <bean id="node_22" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_21"/>
+  </bean>
+  <bean id="node_23" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_22"/>
+  </bean>
+  <bean id="node_24" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="node_23"/>
+    <property name="threshold" value="0.5"/>
+  </bean>
+  <bean id="node_25" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_24"/>
+  </bean>
+  <bean id="node_26" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_25"/>
+  </bean>
+  <bean id="node_27" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="node_26"/>
+    <property name="threshold" value="0.5"/>
+  </bean>
+  <bean id="node_28" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_27"/>
+  </bean>
+  <bean id="node_29" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_28"/>
+  </bean>
+  <bean id="node_30" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="node_29"/>
+    <property name="threshold" value="0.5"/>
+  </bean>
+  <bean id="node_31" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_30"/>
+  </bean>
+  <bean id="node_32" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_31"/>
+  </bean>
+  <bean id="node_33" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="node_32"/>
+    <property name="threshold" value="0.5"/>
+  </bean>
+  <bean id="node_34" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_33"/>
+  </bean>
+  <bean id="node_35" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_34"/>
+  </bean>
+  <bean id="node_36" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="node_35"/>
+    <property name="threshold" value="0.5"/>
+  </bean>
+  <bean id="node_37" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_36"/>
+  </bean>
+  <bean id="node_38" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_37"/>
+  </bean>
+  <bean id="node_39" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="node_38"/>
+    <property name="threshold" value="0.5"/>
+  </bean>
+  <bean id="node_40" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_39"/>
+  </bean>
+  <bean id="node_41" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_40"/>
+  </bean>
+  <bean id="node_42" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="node_41"/>
+    <property name="threshold" value="0.5"/>
+  </bean>
+  <bean id="node_43" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_42"/>
+  </bean>
+  <bean id="node_44" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_43"/>
+  </bean>
+  <bean id="node_45" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="node_44"/>
+    <property name="threshold" value="0.5"/>
+  </bean>
+  <bean id="node_46" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_45"/>
+  </bean>
+  <bean id="node_47" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_46"/>
+  </bean>
+  <bean id="node_48" class="com.telamin.fluxtion.test.performance.nodes.FilteringNode">
+    <property name="upstream1" ref="node_47"/>
+    <property name="threshold" value="0.5"/>
+  </bean>
+  <bean id="node_49" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_48"/>
+  </bean>
+  <bean id="node_50" class="com.telamin.fluxtion.test.performance.nodes.BaseNode">
+    <property name="upstream1" ref="node_49"/>
+  </bean>
+  <bean id="sink" class="com.telamin.fluxtion.test.performance.nodes.PublisherNode">
+    <property name="upstream1" ref="node_50"/>
+  </bean>
+</beans>

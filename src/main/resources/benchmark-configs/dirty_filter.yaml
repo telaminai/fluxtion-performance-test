@@ -1,0 +1,20 @@
+dimension: dirty_filter
+title: "Dirty Propagation On/Off"
+description: >
+  A mixed chain where every third node is a FilteringNode with a threshold set
+  so that 90% of ControlEvents suppress downstream propagation. Measures the
+  cost of the guard-check path when most events are filtered. Fluxtion executes
+  a single compiled boolean check per guard; dynamic frameworks pay traversal
+  cost regardless of whether the handler actually does work. Also demonstrates
+  the ControlRootNode returning false to arrest the entire graph cheaply.
+rootEventClass: com.telamin.fluxtion.test.performance.events.ControlEvent
+sizes: [10, 20, 50, 100]
+generatorClass: com.telamin.fluxtion.test.performance.generators.DirtyFilterGraphGenerator
+generatedPackage: com.telamin.fluxtion.test.performance.generated.dirtyfilter
+params:
+  rootNodeClass: com.telamin.fluxtion.test.performance.nodes.ControlRootNode
+  baseNodeClass: com.telamin.fluxtion.test.performance.nodes.BaseNode
+  filterNodeClass: com.telamin.fluxtion.test.performance.nodes.FilteringNode
+  sinkNodeClass: com.telamin.fluxtion.test.performance.nodes.PublisherNode
+  filterEveryN: 3
+  activeThreshold: 0.5
