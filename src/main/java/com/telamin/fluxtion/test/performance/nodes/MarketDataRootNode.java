@@ -26,6 +26,5 @@ public class MarketDataRootNode implements ProcessingNode {
     @Override
     public String getNodeId() { return nodeId; }
 
-    public long getSequenceNumber() { return sequenceNumber; }
     public void setNodeId(String nodeId) { this.nodeId = nodeId; }
 }

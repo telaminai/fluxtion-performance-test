@@ -31,6 +31,5 @@ public class ControlRootNode implements ProcessingNode {
     public String getNodeId() { return nodeId; }
 
     public boolean isActive() { return active; }
-    public double getThreshold() { return threshold; }
     public void setNodeId(String nodeId) { this.nodeId = nodeId; }
 }

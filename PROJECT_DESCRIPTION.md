@@ -785,9 +785,9 @@ A **modulith** is a single-deployable application partitioned into cohesive modu
 
 | Dependency | Version | Purpose |
 |------------|---------|---------|
-| `fluxtion-runtime` | 0.9.14 | Runtime annotations and DataFlow interface |
-| `fluxtion-builder` | 0.9.14 | AOT compilation and Spring XML realisation |
-| `fluxtion-full-compiler` | 1.0.24-SNAPSHOT | Source code generation |
+| `fluxtion-runtime` | 0.9.15 | Runtime annotations and DataFlow interface |
+| `fluxtion-builder` | 0.9.15 | AOT compilation and Spring XML realisation |
+| `fluxtion-generator-core` | 1.0.29-SNAPSHOT | Source code generation (setter-only bean pattern support) |
 | `rxjava` | 3.1.8 | Baseline for comparison |
 | `jmh-core` + `jmh-generator-annprocess` | 1.37 | Benchmark harness |
 | `HdrHistogram` | 2.2.1 | Latency distribution recording |

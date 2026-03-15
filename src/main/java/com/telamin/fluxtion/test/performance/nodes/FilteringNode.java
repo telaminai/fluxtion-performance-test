@@ -33,6 +33,4 @@ public class FilteringNode implements ProcessingNode {
     public void setNodeId(String nodeId) { this.nodeId = nodeId; }
     public void setUpstream1(ProcessingNode upstream1) { this.upstream1 = upstream1; }
     public void setThreshold(double threshold) { this.threshold = threshold; }
-    public double getThreshold() { return threshold; }
-    public ProcessingNode getUpstream1() { return upstream1; }
 }

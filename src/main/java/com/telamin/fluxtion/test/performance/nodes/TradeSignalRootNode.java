@@ -26,6 +26,5 @@ public class TradeSignalRootNode implements ProcessingNode {
     @Override
     public String getNodeId() { return nodeId; }
 
-    public double getLimitPrice() { return limitPrice; }
     public void setNodeId(String nodeId) { this.nodeId = nodeId; }
 }

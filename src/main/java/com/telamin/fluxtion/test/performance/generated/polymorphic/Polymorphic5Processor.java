@@ -129,9 +129,9 @@ public class Polymorphic5Processor
     sink.setNodeId("publisher");
     sink.setUpstream1(node_5);
     root.setNodeId("tradeSignalRoot");
-    node_3.setFactor(1.001);
     node_3.setNodeId("transform");
     node_3.setUpstream1(node_2);
+    node_3.setFactor(1.001);
     //node auditors
     initialiseAuditor(clock);
     initialiseAuditor(nodeNameLookup);

@@ -27,9 +27,7 @@ public class PublisherNode implements ProcessingNode {
     @Override
     public String getNodeId() { return nodeId; }
 
-    public long getPublishCount() { return publishCount; }
 
     public void setNodeId(String nodeId) { this.nodeId = nodeId; }
     public void setUpstream1(ProcessingNode upstream1) { this.upstream1 = upstream1; }
-    public ProcessingNode getUpstream1() { return upstream1; }
 }

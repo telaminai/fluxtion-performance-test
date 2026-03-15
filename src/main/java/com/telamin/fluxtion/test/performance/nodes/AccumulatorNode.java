@@ -31,6 +31,4 @@ public class AccumulatorNode implements ProcessingNode {
 
     public void setNodeId(String nodeId) { this.nodeId = nodeId; }
     public void setUpstream1(ProcessingNode upstream1) { this.upstream1 = upstream1; }
-    public ProcessingNode getUpstream1() { return upstream1; }
-    public double getTotal() { return total; }
 }

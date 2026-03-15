@@ -31,6 +31,4 @@ public class TransformNode implements ProcessingNode {
     public void setNodeId(String nodeId) { this.nodeId = nodeId; }
     public void setUpstream1(ProcessingNode upstream1) { this.upstream1 = upstream1; }
     public void setFactor(double factor) { this.factor = factor; }
-    public double getFactor() { return factor; }
-    public ProcessingNode getUpstream1() { return upstream1; }
 }

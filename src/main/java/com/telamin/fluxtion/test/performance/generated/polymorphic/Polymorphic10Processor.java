@@ -145,15 +145,15 @@ public class Polymorphic10Processor
     sink.setNodeId("publisher");
     sink.setUpstream1(node_10);
     root.setNodeId("tradeSignalRoot");
-    node_3.setFactor(1.001);
     node_3.setNodeId("transform");
     node_3.setUpstream1(node_2);
-    node_6.setFactor(1.001);
+    node_3.setFactor(1.001);
     node_6.setNodeId("transform");
     node_6.setUpstream1(node_5);
-    node_9.setFactor(1.001);
+    node_6.setFactor(1.001);
     node_9.setNodeId("transform");
     node_9.setUpstream1(node_8);
+    node_9.setFactor(1.001);
     //node auditors
     initialiseAuditor(clock);
     initialiseAuditor(nodeNameLookup);
