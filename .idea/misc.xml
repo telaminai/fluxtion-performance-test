@@ -5,7 +5,6 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/../fluxtion-examples/pom.xml" />
       </list>
     </option>
   </component>
@@ -13,7 +12,7 @@
     <option name="pathToPandoc" value="/opt/homebrew/bin/pandoc" />
     <option name="pandocArguments" value="--filter /opt/homebrew/bin/mermaid-filter --pdf-engine=/Users/greg/.local/bin/weasyprint" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="openjdk-25" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" project-jdk-name="corretto-21" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

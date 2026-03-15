@@ -12,7 +12,8 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <fluxtion.version>0.9.14</fluxtion.version>
+        <fluxtion.version>0.9.15</fluxtion.version>
+        <fluxtion.compiler.version>1.0.29-SNAPSHOT</fluxtion.compiler.version>
     </properties>
 
     <dependencies>
@@ -29,12 +30,7 @@
         <dependency>
             <groupId>com.telamin.fluxtion</groupId>
             <artifactId>fluxtion-generator-core</artifactId>
-            <version>1.0.28-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.telamin.fluxtion</groupId>
-            <artifactId>fluxtion-full-compiler</artifactId>
-            <version>1.0.24-SNAPSHOT</version>
+            <version>${fluxtion.compiler.version}</version>
         </dependency>
         <dependency>
             <groupId>io.reactivex.rxjava3</groupId>
