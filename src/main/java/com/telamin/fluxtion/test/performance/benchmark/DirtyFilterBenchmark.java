@@ -42,7 +42,9 @@ public class DirtyFilterBenchmark extends DimensionBenchmarkBase {
 
     private DataFlow fluxtionProcessor;
     private long eventCount = 0;
-
+    // Pre-computed HDR keys — avoids String allocation on every hot-path iteration
+    private String fluxtionKey;
+    private String rxJavaKey;
     private PublishProcessor<ControlEvent> rxRoot;
     private AtomicLong rxResult;
 
@@ -52,6 +54,8 @@ public class DirtyFilterBenchmark extends DimensionBenchmarkBase {
 
     @Setup
     public void setup() throws Exception {
+        fluxtionKey = DIM + "/fluxtion/" + size;
+        rxJavaKey   = DIM + "/rxjava/"   + size;
         // --- Fluxtion ---
         fluxtionProcessor = buildFluxtionProcessor(
                 new DirtyFilterGraphGenerator(), CONFIG, size);
@@ -79,7 +83,7 @@ public class DirtyFilterBenchmark extends DimensionBenchmarkBase {
         fluxtionProcessor.onEvent(event);
         long elapsed = System.nanoTime() - t;
         eventCount++;
-        recordFluxtion(DIM, size, elapsed);
+        BenchmarkResultsWriter.record(fluxtionKey, elapsed);
         bh.consume(elapsed);
     }
 
@@ -90,7 +94,7 @@ public class DirtyFilterBenchmark extends DimensionBenchmarkBase {
         rxRoot.onNext(event);
         long elapsed = System.nanoTime() - t;
         eventCount++;
-        recordRxJava(DIM, size, elapsed);
+        BenchmarkResultsWriter.record(rxJavaKey, elapsed);
         bh.consume(rxResult.get());
     }
 

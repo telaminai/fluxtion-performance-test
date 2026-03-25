@@ -50,12 +50,17 @@ public class IntermediateHandlersBenchmark extends DimensionBenchmarkBase {
     // Pre-allocated, mutable event — re-used every iteration to achieve 0 B/op
     private final TradeSignalEvent reuseEvent =
             new TradeSignalEvent("MSFT", TradeSignalEvent.Side.SELL, 50.0, 200.0);
+    // Pre-computed HDR keys — avoids String allocation on every hot-path iteration
+    private String fluxtionKey;
+    private String rxJavaKey;
     // RxJava: one PublishProcessor per handler (root + one per handlerEveryN interval)
     private List<PublishProcessor<TradeSignalEvent>> rxHandlers;
     private AtomicLong rxResult;
 
     @Setup
     public void setup() throws Exception {
+        fluxtionKey = DIM + "/fluxtion/" + size;
+        rxJavaKey   = DIM + "/rxjava/"   + size;
         // --- Fluxtion ---
         fluxtionProcessor = buildFluxtionProcessor(
                 new IntermediateHandlersGraphGenerator(), CONFIG, size);
@@ -92,7 +97,7 @@ public class IntermediateHandlersBenchmark extends DimensionBenchmarkBase {
         long t = System.nanoTime();
         fluxtionProcessor.onEvent(reuseEvent);
         long elapsed = System.nanoTime() - t;
-        recordFluxtion(DIM, size, elapsed);
+        BenchmarkResultsWriter.record(fluxtionKey, elapsed);
         bh.consume(elapsed);
     }
     @Benchmark
@@ -106,7 +111,7 @@ public class IntermediateHandlersBenchmark extends DimensionBenchmarkBase {
             proc.onNext(event);
         }
         long elapsed = System.nanoTime() - t;
-        recordRxJava(DIM, size, elapsed);
+        BenchmarkResultsWriter.record(rxJavaKey, elapsed);
         bh.consume(rxResult.get());
     }
 

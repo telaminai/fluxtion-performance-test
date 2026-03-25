@@ -66,6 +66,9 @@ public class MultiEventPathBenchmark extends DimensionBenchmarkBase {
     @Param({"5", "10", "20", "50"})
     public int size;
 
+    // Pre-computed HDR keys — avoids String allocation on every hot-path iteration
+    private String fluxtionMdKey, fluxtionTsKey, fluxtionCtrlKey;
+    private String rxMdKey, rxTsKey, rxCtrlKey;
     // -------------------------------------------------------------------------
     // Fluxtion — single pre-compiled processor handles all event types
     // -------------------------------------------------------------------------
@@ -90,6 +93,12 @@ public class MultiEventPathBenchmark extends DimensionBenchmarkBase {
 
     @Setup
     public void setup() throws Exception {
+        fluxtionMdKey   = DIM_MD   + "/fluxtion/" + size;
+        fluxtionTsKey   = DIM_TS   + "/fluxtion/" + size;
+        fluxtionCtrlKey = DIM_CTRL + "/fluxtion/" + size;
+        rxMdKey         = DIM_MD   + "/rxjava/"   + size;
+        rxTsKey         = DIM_TS   + "/rxjava/"   + size;
+        rxCtrlKey       = DIM_CTRL + "/rxjava/"   + size;
         // ---- Fluxtion ----
         fluxtionProcessor = buildFluxtionProcessor(
                 new MultiEventPathGraphGenerator(), CONFIG, size);
@@ -139,7 +148,7 @@ public class MultiEventPathBenchmark extends DimensionBenchmarkBase {
         long t = System.nanoTime();
         fluxtionProcessor.onEvent(mdEvent);
         long elapsed = System.nanoTime() - t;
-        recordFluxtion(DIM_MD, size, elapsed);
+        BenchmarkResultsWriter.record(fluxtionMdKey, elapsed);
         bh.consume(elapsed);
     }
 
@@ -151,7 +160,7 @@ public class MultiEventPathBenchmark extends DimensionBenchmarkBase {
         long t = System.nanoTime();
         fluxtionProcessor.onEvent(tsEvent);
         long elapsed = System.nanoTime() - t;
-        recordFluxtion(DIM_TS, size, elapsed);
+        BenchmarkResultsWriter.record(fluxtionTsKey, elapsed);
         bh.consume(elapsed);
     }
 
@@ -163,7 +172,7 @@ public class MultiEventPathBenchmark extends DimensionBenchmarkBase {
         long t = System.nanoTime();
         fluxtionProcessor.onEvent(ctrlEvent);
         long elapsed = System.nanoTime() - t;
-        recordFluxtion(DIM_CTRL, size, elapsed);
+        BenchmarkResultsWriter.record(fluxtionCtrlKey, elapsed);
         bh.consume(elapsed);
     }
 
@@ -177,7 +186,7 @@ public class MultiEventPathBenchmark extends DimensionBenchmarkBase {
         long t = System.nanoTime();
         rxMdRoot.onNext(new MarketDataEvent("BTC", 100.0 + seq, 101.0 + seq, seq++));
         long elapsed = System.nanoTime() - t;
-        recordRxJava(DIM_MD, size, elapsed);
+        BenchmarkResultsWriter.record(rxMdKey, elapsed);
         bh.consume(rxMdResult.get());
     }
 
@@ -188,7 +197,7 @@ public class MultiEventPathBenchmark extends DimensionBenchmarkBase {
         rxTsRoot.onNext(new TradeSignalEvent(
                 "AAPL", TradeSignalEvent.Side.BUY, 100.0 + seq, 150.0 + seq++));
         long elapsed = System.nanoTime() - t;
-        recordRxJava(DIM_TS, size, elapsed);
+        BenchmarkResultsWriter.record(rxTsKey, elapsed);
         bh.consume(rxTsResult.get());
     }
 
@@ -199,7 +208,7 @@ public class MultiEventPathBenchmark extends DimensionBenchmarkBase {
         rxCtrlRoot.onNext(seq++ % 10 == 0
                 ? ControlEvent.enable("path") : ControlEvent.disable("path"));
         long elapsed = System.nanoTime() - t;
-        recordRxJava(DIM_CTRL, size, elapsed);
+        BenchmarkResultsWriter.record(rxCtrlKey, elapsed);
         bh.consume(rxCtrlResult.get());
     }
 

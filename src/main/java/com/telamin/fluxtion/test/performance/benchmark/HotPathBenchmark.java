@@ -45,11 +45,16 @@ public class HotPathBenchmark extends DimensionBenchmarkBase {
     private long seq = 0;
     // Pre-allocated, mutable event — re-used every iteration to achieve 0 B/op
     private final MarketDataEvent reuseEvent = new MarketDataEvent("BTC", 100.0, 101.0, 0);
+    // Pre-computed HDR keys — avoids String allocation on every hot-path iteration
+    private String fluxtionKey;
+    private String rxJavaKey;
     private PublishProcessor<MarketDataEvent> rxRoot;
     private AtomicLong rxResult;
 
     @Setup
     public void setup() throws Exception {
+        fluxtionKey = DIM + "/fluxtion/" + size;
+        rxJavaKey   = DIM + "/rxjava/"   + size;
         // --- Fluxtion ---
         fluxtionProcessor = buildFluxtionProcessor(
                 new HotPathGraphGenerator(), CONFIG, size);
@@ -81,7 +86,7 @@ public class HotPathBenchmark extends DimensionBenchmarkBase {
         long t = System.nanoTime();
         fluxtionProcessor.onEvent(reuseEvent);
         long elapsed = System.nanoTime() - t;
-        recordFluxtion(DIM, size, elapsed);
+        BenchmarkResultsWriter.record(fluxtionKey, elapsed);
         bh.consume(elapsed);
     }
     @Benchmark
@@ -90,7 +95,7 @@ public class HotPathBenchmark extends DimensionBenchmarkBase {
         long t = System.nanoTime();
         rxRoot.onNext(new MarketDataEvent("BTC", 100.0 + seq, 101.0 + seq, seq++));
         long elapsed = System.nanoTime() - t;
-        recordRxJava(DIM, size, elapsed);
+        BenchmarkResultsWriter.record(rxJavaKey, elapsed);
         bh.consume(rxResult.get());
     }
 

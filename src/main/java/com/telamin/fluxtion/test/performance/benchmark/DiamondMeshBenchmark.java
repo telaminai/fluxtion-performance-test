@@ -55,7 +55,9 @@ public class DiamondMeshBenchmark extends DimensionBenchmarkBase {
 
     private static final String DIM  = "diamond_mesh";
     private static final int    SIZE = 101; // fixed: 101 nodes in benchmark-graph.xml
-
+    // Pre-computed HDR keys — static because SIZE is fixed, avoids per-iteration String allocation
+    private static final String FLUXTION_KEY = DIM + "/fluxtion/" + SIZE;
+    private static final String RX_KEY       = DIM + "/rxjava/"   + SIZE;
     // Fluxtion
     private DiamondMeshProcessor fluxtionProcessor;
     private int eventValue = 0;
@@ -110,7 +112,7 @@ public class DiamondMeshBenchmark extends DimensionBenchmarkBase {
         long t = System.nanoTime();
         fluxtionProcessor.onEvent(++eventValue);
         long elapsed = System.nanoTime() - t;
-        recordFluxtion(DIM, SIZE, elapsed);
+        BenchmarkResultsWriter.record(FLUXTION_KEY, elapsed);
         bh.consume(fluxtionProcessor.node_10_0.getValue());
     }
 
@@ -119,7 +121,7 @@ public class DiamondMeshBenchmark extends DimensionBenchmarkBase {
         long t = System.nanoTime();
         rxRoot.onNext(++eventValue);
         long elapsed = System.nanoTime() - t;
-        recordRxJava(DIM, SIZE, elapsed);
+        BenchmarkResultsWriter.record(RX_KEY, elapsed);
         bh.consume(rxResult.get());
     }
 

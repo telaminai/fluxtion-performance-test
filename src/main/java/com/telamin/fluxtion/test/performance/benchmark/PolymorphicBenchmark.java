@@ -44,6 +44,9 @@ public class PolymorphicBenchmark extends DimensionBenchmarkBase {
     // Pre-allocated, mutable event — re-used every iteration to achieve 0 B/op
     private final TradeSignalEvent reuseEvent =
             new TradeSignalEvent("AAPL", TradeSignalEvent.Side.BUY, 100.0, 150.0);
+    // Pre-computed HDR keys — avoids String allocation on every hot-path iteration
+    private String fluxtionKey;
+    private String rxJavaKey;
     private PublishProcessor<TradeSignalEvent> rxRoot;
     private AtomicLong rxResult;
 
@@ -52,6 +55,8 @@ public class PolymorphicBenchmark extends DimensionBenchmarkBase {
 
     @Setup
     public void setup() throws Exception {
+        fluxtionKey = DIM + "/fluxtion/" + size;
+        rxJavaKey   = DIM + "/rxjava/"   + size;
         // --- Fluxtion ---
         fluxtionProcessor = buildFluxtionProcessor(
                 new PolymorphicGraphGenerator(), CONFIG, size);
@@ -82,7 +87,7 @@ public class PolymorphicBenchmark extends DimensionBenchmarkBase {
         long t = System.nanoTime();
         fluxtionProcessor.onEvent(reuseEvent);
         long elapsed = System.nanoTime() - t;
-        recordFluxtion(DIM, size, elapsed);
+        BenchmarkResultsWriter.record(fluxtionKey, elapsed);
         bh.consume(elapsed);
     }
     @Benchmark
@@ -92,7 +97,7 @@ public class PolymorphicBenchmark extends DimensionBenchmarkBase {
         rxRoot.onNext(new TradeSignalEvent(
                 "AAPL", TradeSignalEvent.Side.BUY, 100.0 + seq, 150.0 + seq++));
         long elapsed = System.nanoTime() - t;
-        recordRxJava(DIM, size, elapsed);
+        BenchmarkResultsWriter.record(rxJavaKey, elapsed);
         bh.consume(rxResult.get());
     }
 

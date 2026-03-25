@@ -70,6 +70,10 @@ public class ServiceDispatchBenchmark extends DimensionBenchmarkBase {
     @Param({"3", "5", "10"})
     public int size;
 
+    // Pre-computed HDR keys — avoids String allocation on every hot-path iteration
+    private String fluxtionOnEventKey;
+    private String fluxtionServiceKey;
+    private String rxJavaKey;
     // --- Fluxtion shared processor (implements both DataFlow and IShortChainProcessor) ---
     private DataFlow             fluxtionProcessor;
     private IShortChainProcessor serviceProcessor;
@@ -84,6 +88,9 @@ public class ServiceDispatchBenchmark extends DimensionBenchmarkBase {
 
     @Setup
     public void setup() throws Exception {
+        fluxtionOnEventKey = DIM_ONEVENT + "/fluxtion/" + size;
+        fluxtionServiceKey = DIM_SERVICE + "/fluxtion/" + size;
+        rxJavaKey          = DIM_SERVICE + "/rxjava/"   + size;
         // --- Fluxtion ---
         fluxtionProcessor = buildFluxtionProcessor(new ShortChainGraphGenerator(), CONFIG, size);
         // The generated processor implements @ExportService IShortChainProcessor — safe cast
@@ -110,7 +117,7 @@ public class ServiceDispatchBenchmark extends DimensionBenchmarkBase {
         long t = System.nanoTime();
         fluxtionProcessor.onEvent(reuseEvent);
         long elapsed = System.nanoTime() - t;
-        recordFluxtion(DIM_ONEVENT, size, elapsed);
+        BenchmarkResultsWriter.record(fluxtionOnEventKey, elapsed);
         bh.consume(elapsed);
     }
 
@@ -125,7 +132,7 @@ public class ServiceDispatchBenchmark extends DimensionBenchmarkBase {
         long t = System.nanoTime();
         serviceProcessor.processChain(reuseEvent);
         long elapsed = System.nanoTime() - t;
-        recordFluxtion(DIM_SERVICE, size, elapsed);
+        BenchmarkResultsWriter.record(fluxtionServiceKey, elapsed);
         bh.consume(elapsed);
     }
 
@@ -139,7 +146,7 @@ public class ServiceDispatchBenchmark extends DimensionBenchmarkBase {
         long t = System.nanoTime();
         rxRoot.onNext(100.0 + seq++);
         long elapsed = System.nanoTime() - t;
-        recordRxJava(DIM_SERVICE, size, elapsed);
+        BenchmarkResultsWriter.record(rxJavaKey, elapsed);
         bh.consume(rxResult.get());
     }
 
