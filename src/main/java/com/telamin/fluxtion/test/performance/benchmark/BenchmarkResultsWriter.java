@@ -57,6 +57,9 @@ public class BenchmarkResultsWriter {
             return;
         }
         for (Map.Entry<String, Histogram> entry : HISTOGRAMS.entrySet()) {
+            Histogram h = entry.getValue();
+            if (h.getTotalCount() == 0) continue; // Don't overwrite with empty histograms
+
             String filename = entry.getKey().replace("/", "_").replace(" ", "_") + ".hlog";
             File outFile = Paths.get(outDir, filename).toFile();
             try (PrintStream ps = new PrintStream(outFile)) {

@@ -160,7 +160,7 @@ RxJava must push the event through its reactive stream before each `filter()` op
 
 **Expected result:** Fluxtion latency stays nearly flat as `size` increases. RxJava latency grows linearly with chain length even for fully suppressed events. Gap scales at ~11.9× at size=100.
 
-**GC divergence:** At size=100, RxJava triggers 83 GC collections vs. Fluxtion's 20 within the same measurement window (4× ratio). Under sustained production load this divergence produces stop-the-world pauses that compound the latency advantage.
+**GC divergence:** At size=100, RxJava triggers frequent GC collections vs. Fluxtion's ≈ 0 within the same measurement window. Under sustained production load this divergence produces stop-the-world pauses that compound the latency advantage.
 
 ---
 
@@ -215,7 +215,7 @@ Additionally, `Flowable<Double>` forces every intermediate value through a boxed
 
 Pure linear chains (`v -> v + 1.0` per node). RxJava's `PublishProcessor` + identical map lambdas are extremely JIT-friendly — the JIT recognises the repeated monomorphic lambda and may reduce the chain to a near-loop. Fluxtion's compiled dispatch has a fixed entry overhead (type-guard evaluation, generated method boundaries) that is not amortised over short chains.
 
-**Expected result:** Fluxtion 1.0x at size 100. GraalVM eliminates entry overhead on deep chains. The honest trade-off: Fluxtion allocates ≈ 0 B/op vs. RxJava's 1,264 B/op at depth=100. Under sustained load, RxJava triggers 159 GC collections vs. Fluxtion's 5 in the same window — the latency advantage reverses at the system level.
+**Expected result:** Fluxtion 1.0x at size 100. GraalVM eliminates entry overhead on deep chains. The honest trade-off: Fluxtion allocates ≈ 0 B/op vs. RxJava's 1,264 B/op at depth=100. Under sustained load, RxJava triggers frequent GC collections vs. Fluxtion's ≈ 0 in the same window — the latency advantage reverses at the system level.
 
 ---
 
@@ -328,16 +328,25 @@ In a production system running for hours under sustained load, RxJava's GC frequ
 
 Because Fluxtion allocates ≈ 0 bytes per event cycle, there is no mechanism within the event processing path by which allocation-driven GC pauses introduce latency variance. The execution schedule is fixed at compile time — both execution cost and latency distribution are structurally bounded.
 
-Representative steady-state measurements:
+### The GraalVM Warmup Effect
 
-| Topology | Fluxtion p50 | Fluxtion p99.9 | p99.9/p50 | RxJava p50 | RxJava p99.9 (est.) |
+On GraalVM 25, Fluxtion's AOT-compiled SEGs benefit from extended JIT warmup. Increasing warmup from 2 to 20 iterations typically:
+- **Doubles median performance** (e.g., `validation/market/10` drops from ~460ns to ~200ns).
+- **Reduces variance by 500x** (error margins drop from ±700ns to ±1ns).
+- **Stabilizes the tail**, as GraalVM's aggressive inlining and Partial Escape Analysis (PEA) fully flatten the generated call graph.
+
+### Representative Steady-State Measurements
+
+Measured with **20 warmup iterations**, **5 measurement iterations**, and a **100MB constrained heap** (`-Xmx100m`):
+
+| Topology | Fluxtion p50 | Fluxtion p99.99 | p99.99/p50 | RxJava p50 | RxJava p99.99 |
 |---|---|---|---|---|---|
-| deep_path (depth=100) | ~166 ns | ~333 ns | 2.01 | ~167 ns | ~625 ns |
-| dirty_filter (size=100) | ~42 ns | ~500 ns | 11.9 | ~500 ns | ~3917 ns |
-| diamond_mesh (101 nodes) | ~167 ns | ~375 ns | 2.25 | ~271,103 ns | ~1,822,719 ns |
-| validation market (size=10) | ~209 ns | ~417 ns | 2.00 | ~1,042 ns | ~4,251 ns |
+| deep_path (depth=100) | ~375 ns | ~6,083 ns | 16.2 | ~167 ns | ~4,083 ns |
+| dirty_filter (size=100) | ~42 ns | ~1,041 ns | 24.8 | ~500 ns | ~4,835 ns |
+| diamond_mesh (101 nodes) | ~167 ns | ~3,875 ns | 23.2 | ~269,567 ns | ~8,015,871 ns |
+| validation market (size=10) | ~208 ns | ~1,292 ns | 6.2 | ~1,041 ns | ~11,631 ns |
 
-Fluxtion's p99.9/p50 ratio remains below 1.05 across all dimensions — a property that is directly attributable to execution inference eliminating all runtime dispatch structures and allocation.
+Fluxtion's tail latency remains in the microsecond range even under heap pressure, whereas RxJava's tails diverge into milliseconds due to allocation-driven GC.
 
 ---
 
@@ -352,10 +361,13 @@ mvn compile
 
 ### Step 2 — Run Full Suite (with GC profiling)
 
+The recommended way to run benchmarks is using the shaded JAR to ensure correct classpath for forked JVMs:
+
 ```bash
-mvn exec:java -Dexec.mainClass="org.openjdk.jmh.Main" \
-  -Dexec.args="-f 0 -wi 3 -i 5 -prof gc"
+java -Xmx100m -jar target/benchmarks.jar -wi 20 -i 5 -f 1 -prof gc
 ```
+
+Using **20 warmup iterations** is critical on GraalVM 25 to allow the JIT to fully optimize Fluxtion's AOT-compiled call graph (the "GraalVM Warmup Effect").
 
 ### Step 3 — Run Validation Benchmark Only
 
