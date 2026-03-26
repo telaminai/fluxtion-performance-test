@@ -45,15 +45,16 @@ import java.util.function.Consumer;
  *
  *
  * <pre>
- * generation time                 : Not available
- * eventProcessorGenerator version : ${generator_version_information}
- * api version                     : ${api_version_information}
+ * generation time           : Not available
+ * api version               : unknown api version
+ * analyser version          : unknown analyser version
+ * target generator version  : unknown generator version
  * </pre>
  *
  * Event classes supported:
  *
  * <ul>
- *   <li>com.telamin.fluxtion.runtime.time.ClockStrategy$ClockStrategyEvent
+ *   <li>com.telamin.fluxtion.runtime.time.ClockStrategy.ClockStrategyEvent
  *   <li>com.telamin.fluxtion.test.performance.events.MarketDataEvent
  * </ul>
  *
@@ -314,11 +315,10 @@ public class HotPath32Processor
   private boolean processing = false;
   private boolean buffering = false;
   private final transient IdentityHashMap<Object, BooleanSupplier> dirtyFlagSupplierMap =
-      new IdentityHashMap<>(198);
+      new IdentityHashMap<>(197);
   private final transient IdentityHashMap<Object, Consumer<Boolean>> dirtyFlagUpdateMap =
-      new IdentityHashMap<>(198);
+      new IdentityHashMap<>(197);
 
-  private boolean isDirty_clock = false;
   private boolean isDirty_cold_1_0 = false;
   private boolean isDirty_cold_1_1 = false;
   private boolean isDirty_cold_1_2 = false;
@@ -861,98 +861,98 @@ public class HotPath32Processor
     hot_9.setNodeId("accumulator");
     hot_9.setUpstream1(hot_8);
     cold_1_filter.setNodeId("filter");
-    cold_1_filter.setThreshold(1.0E15);
     cold_1_filter.setUpstream1(root);
+    cold_1_filter.setThreshold(1.0E15);
     cold_2_filter.setNodeId("filter");
-    cold_2_filter.setThreshold(1.0E15);
     cold_2_filter.setUpstream1(root);
+    cold_2_filter.setThreshold(1.0E15);
     cold_3_filter.setNodeId("filter");
-    cold_3_filter.setThreshold(1.0E15);
     cold_3_filter.setUpstream1(root);
+    cold_3_filter.setThreshold(1.0E15);
     cold_4_filter.setNodeId("filter");
-    cold_4_filter.setThreshold(1.0E15);
     cold_4_filter.setUpstream1(root);
+    cold_4_filter.setThreshold(1.0E15);
     cold_5_filter.setNodeId("filter");
-    cold_5_filter.setThreshold(1.0E15);
     cold_5_filter.setUpstream1(root);
+    cold_5_filter.setThreshold(1.0E15);
     cold_6_filter.setNodeId("filter");
-    cold_6_filter.setThreshold(1.0E15);
     cold_6_filter.setUpstream1(root);
+    cold_6_filter.setThreshold(1.0E15);
     cold_7_filter.setNodeId("filter");
-    cold_7_filter.setThreshold(1.0E15);
     cold_7_filter.setUpstream1(root);
+    cold_7_filter.setThreshold(1.0E15);
     cold_8_filter.setNodeId("filter");
-    cold_8_filter.setThreshold(1.0E15);
     cold_8_filter.setUpstream1(root);
+    cold_8_filter.setThreshold(1.0E15);
     cold_9_filter.setNodeId("filter");
-    cold_9_filter.setThreshold(1.0E15);
     cold_9_filter.setUpstream1(root);
+    cold_9_filter.setThreshold(1.0E15);
     cold_10_filter.setNodeId("filter");
-    cold_10_filter.setThreshold(1.0E15);
     cold_10_filter.setUpstream1(root);
+    cold_10_filter.setThreshold(1.0E15);
     cold_11_filter.setNodeId("filter");
-    cold_11_filter.setThreshold(1.0E15);
     cold_11_filter.setUpstream1(root);
+    cold_11_filter.setThreshold(1.0E15);
     cold_12_filter.setNodeId("filter");
-    cold_12_filter.setThreshold(1.0E15);
     cold_12_filter.setUpstream1(root);
+    cold_12_filter.setThreshold(1.0E15);
     cold_13_filter.setNodeId("filter");
-    cold_13_filter.setThreshold(1.0E15);
     cold_13_filter.setUpstream1(root);
+    cold_13_filter.setThreshold(1.0E15);
     cold_14_filter.setNodeId("filter");
-    cold_14_filter.setThreshold(1.0E15);
     cold_14_filter.setUpstream1(root);
+    cold_14_filter.setThreshold(1.0E15);
     cold_15_filter.setNodeId("filter");
-    cold_15_filter.setThreshold(1.0E15);
     cold_15_filter.setUpstream1(root);
+    cold_15_filter.setThreshold(1.0E15);
     cold_16_filter.setNodeId("filter");
-    cold_16_filter.setThreshold(1.0E15);
     cold_16_filter.setUpstream1(root);
+    cold_16_filter.setThreshold(1.0E15);
     cold_17_filter.setNodeId("filter");
-    cold_17_filter.setThreshold(1.0E15);
     cold_17_filter.setUpstream1(root);
+    cold_17_filter.setThreshold(1.0E15);
     cold_18_filter.setNodeId("filter");
-    cold_18_filter.setThreshold(1.0E15);
     cold_18_filter.setUpstream1(root);
+    cold_18_filter.setThreshold(1.0E15);
     cold_19_filter.setNodeId("filter");
-    cold_19_filter.setThreshold(1.0E15);
     cold_19_filter.setUpstream1(root);
+    cold_19_filter.setThreshold(1.0E15);
     cold_20_filter.setNodeId("filter");
-    cold_20_filter.setThreshold(1.0E15);
     cold_20_filter.setUpstream1(root);
+    cold_20_filter.setThreshold(1.0E15);
     cold_21_filter.setNodeId("filter");
-    cold_21_filter.setThreshold(1.0E15);
     cold_21_filter.setUpstream1(root);
+    cold_21_filter.setThreshold(1.0E15);
     cold_22_filter.setNodeId("filter");
-    cold_22_filter.setThreshold(1.0E15);
     cold_22_filter.setUpstream1(root);
+    cold_22_filter.setThreshold(1.0E15);
     cold_23_filter.setNodeId("filter");
-    cold_23_filter.setThreshold(1.0E15);
     cold_23_filter.setUpstream1(root);
+    cold_23_filter.setThreshold(1.0E15);
     cold_24_filter.setNodeId("filter");
-    cold_24_filter.setThreshold(1.0E15);
     cold_24_filter.setUpstream1(root);
+    cold_24_filter.setThreshold(1.0E15);
     cold_25_filter.setNodeId("filter");
-    cold_25_filter.setThreshold(1.0E15);
     cold_25_filter.setUpstream1(root);
+    cold_25_filter.setThreshold(1.0E15);
     cold_26_filter.setNodeId("filter");
-    cold_26_filter.setThreshold(1.0E15);
     cold_26_filter.setUpstream1(root);
+    cold_26_filter.setThreshold(1.0E15);
     cold_27_filter.setNodeId("filter");
-    cold_27_filter.setThreshold(1.0E15);
     cold_27_filter.setUpstream1(root);
+    cold_27_filter.setThreshold(1.0E15);
     cold_28_filter.setNodeId("filter");
-    cold_28_filter.setThreshold(1.0E15);
     cold_28_filter.setUpstream1(root);
+    cold_28_filter.setThreshold(1.0E15);
     cold_29_filter.setNodeId("filter");
-    cold_29_filter.setThreshold(1.0E15);
     cold_29_filter.setUpstream1(root);
+    cold_29_filter.setThreshold(1.0E15);
     cold_30_filter.setNodeId("filter");
-    cold_30_filter.setThreshold(1.0E15);
     cold_30_filter.setUpstream1(root);
+    cold_30_filter.setThreshold(1.0E15);
     cold_31_filter.setNodeId("filter");
-    cold_31_filter.setThreshold(1.0E15);
     cold_31_filter.setUpstream1(root);
+    cold_31_filter.setThreshold(1.0E15);
     root.setNodeId("marketDataRoot");
     sink_cold_1.setNodeId("publisher");
     sink_cold_1.setUpstream1(cold_1_4);
@@ -1137,7 +1137,6 @@ public class HotPath32Processor
   public void handleEvent(ClockStrategyEvent typedEvent) {
     auditEvent(typedEvent);
     //Default, no filter methods
-    isDirty_clock = true;
     clock.setClockStrategy(typedEvent);
     afterEvent();
   }
@@ -1838,7 +1837,7 @@ public class HotPath32Processor
   @Override
   public void deRegisterService(com.telamin.fluxtion.runtime.service.Service<?> arg0) {
     beforeServiceCall(
-        "public void com.telamin.fluxtion.runtime.service.ServiceRegistryNode.deRegisterService(com.telamin.fluxtion.runtime.service.Service<?>)");
+        "@Override\npublic void deRegisterService(com.telamin.fluxtion.runtime.service.Service<?> arg0)");
     ExportFunctionAuditEvent typedEvent = functionAudit;
     serviceRegistry.deRegisterService(arg0);
     afterServiceCall();
@@ -1847,7 +1846,7 @@ public class HotPath32Processor
   @Override
   public void registerService(com.telamin.fluxtion.runtime.service.Service<?> arg0) {
     beforeServiceCall(
-        "public void com.telamin.fluxtion.runtime.service.ServiceRegistryNode.registerService(com.telamin.fluxtion.runtime.service.Service<?>)");
+        "@Override\npublic void registerService(com.telamin.fluxtion.runtime.service.Service<?> arg0)");
     ExportFunctionAuditEvent typedEvent = functionAudit;
     serviceRegistry.registerService(arg0);
     afterServiceCall();
@@ -1860,7 +1859,6 @@ public class HotPath32Processor
     if (event instanceof ClockStrategyEvent) {
       ClockStrategyEvent typedEvent = (ClockStrategyEvent) event;
       auditEvent(typedEvent);
-      isDirty_clock = true;
       clock.setClockStrategy(typedEvent);
     } else if (event instanceof MarketDataEvent) {
       MarketDataEvent typedEvent = (MarketDataEvent) event;
@@ -2824,11 +2822,9 @@ public class HotPath32Processor
   }
 
   private void afterEvent() {
-
     clock.processingComplete();
     nodeNameLookup.processingComplete();
     serviceRegistry.processingComplete();
-    isDirty_clock = false;
     isDirty_cold_1_0 = false;
     isDirty_cold_1_1 = false;
     isDirty_cold_1_2 = false;
@@ -3056,7 +3052,6 @@ public class HotPath32Processor
   @Override
   public BooleanSupplier dirtySupplier(Object node) {
     if (dirtyFlagSupplierMap.isEmpty()) {
-      dirtyFlagSupplierMap.put(clock, () -> isDirty_clock);
       dirtyFlagSupplierMap.put(cold_10_0, () -> isDirty_cold_10_0);
       dirtyFlagSupplierMap.put(cold_10_1, () -> isDirty_cold_10_1);
       dirtyFlagSupplierMap.put(cold_10_2, () -> isDirty_cold_10_2);
@@ -3261,7 +3256,6 @@ public class HotPath32Processor
   @Override
   public void setDirty(Object node, boolean dirtyFlag) {
     if (dirtyFlagUpdateMap.isEmpty()) {
-      dirtyFlagUpdateMap.put(clock, (b) -> isDirty_clock = b);
       dirtyFlagUpdateMap.put(cold_10_0, (b) -> isDirty_cold_10_0 = b);
       dirtyFlagUpdateMap.put(cold_10_1, (b) -> isDirty_cold_10_1 = b);
       dirtyFlagUpdateMap.put(cold_10_2, (b) -> isDirty_cold_10_2 = b);
@@ -3461,10 +3455,6 @@ public class HotPath32Processor
       dirtyFlagUpdateMap.put(root, (b) -> isDirty_root = b);
     }
     dirtyFlagUpdateMap.get(node).accept(dirtyFlag);
-  }
-
-  private boolean guardCheck_context() {
-    return isDirty_clock;
   }
 
   private boolean guardCheck_cold_1_0() {

@@ -45,15 +45,16 @@ import java.util.function.Consumer;
  *
  *
  * <pre>
- * generation time                 : Not available
- * eventProcessorGenerator version : ${generator_version_information}
- * api version                     : ${api_version_information}
+ * generation time           : Not available
+ * api version               : unknown api version
+ * analyser version          : unknown analyser version
+ * target generator version  : unknown generator version
  * </pre>
  *
  * Event classes supported:
  *
  * <ul>
- *   <li>com.telamin.fluxtion.runtime.time.ClockStrategy$ClockStrategyEvent
+ *   <li>com.telamin.fluxtion.runtime.time.ClockStrategy.ClockStrategyEvent
  *   <li>com.telamin.fluxtion.test.performance.events.ShortChainEvent
  * </ul>
  *
@@ -93,11 +94,10 @@ public class ShortChain5Processor
   private boolean processing = false;
   private boolean buffering = false;
   private final transient IdentityHashMap<Object, BooleanSupplier> dirtyFlagSupplierMap =
-      new IdentityHashMap<>(7);
+      new IdentityHashMap<>(6);
   private final transient IdentityHashMap<Object, Consumer<Boolean>> dirtyFlagUpdateMap =
-      new IdentityHashMap<>(7);
+      new IdentityHashMap<>(6);
 
-  private boolean isDirty_clock = false;
   private boolean isDirty_node_1 = false;
   private boolean isDirty_node_2 = false;
   private boolean isDirty_node_3 = false;
@@ -249,7 +249,6 @@ public class ShortChain5Processor
   public void handleEvent(ClockStrategyEvent typedEvent) {
     auditEvent(typedEvent);
     //Default, no filter methods
-    isDirty_clock = true;
     clock.setClockStrategy(typedEvent);
     afterEvent();
   }
@@ -284,7 +283,7 @@ public class ShortChain5Processor
   @Override
   public boolean processChain(com.telamin.fluxtion.test.performance.events.ShortChainEvent arg0) {
     beforeServiceCall(
-        "public boolean com.telamin.fluxtion.test.performance.service.ShortChainRootNode.processChain(com.telamin.fluxtion.test.performance.events.ShortChainEvent)");
+        "@Override\npublic boolean processChain(com.telamin.fluxtion.test.performance.events.ShortChainEvent arg0)");
     ExportFunctionAuditEvent typedEvent = functionAudit;
     isDirty_root = root.processChain(arg0);
     if (guardCheck_node_1()) {
@@ -312,7 +311,7 @@ public class ShortChain5Processor
   @Override
   public void deRegisterService(com.telamin.fluxtion.runtime.service.Service<?> arg0) {
     beforeServiceCall(
-        "public void com.telamin.fluxtion.runtime.service.ServiceRegistryNode.deRegisterService(com.telamin.fluxtion.runtime.service.Service<?>)");
+        "@Override\npublic void deRegisterService(com.telamin.fluxtion.runtime.service.Service<?> arg0)");
     ExportFunctionAuditEvent typedEvent = functionAudit;
     serviceRegistry.deRegisterService(arg0);
     afterServiceCall();
@@ -321,7 +320,7 @@ public class ShortChain5Processor
   @Override
   public void registerService(com.telamin.fluxtion.runtime.service.Service<?> arg0) {
     beforeServiceCall(
-        "public void com.telamin.fluxtion.runtime.service.ServiceRegistryNode.registerService(com.telamin.fluxtion.runtime.service.Service<?>)");
+        "@Override\npublic void registerService(com.telamin.fluxtion.runtime.service.Service<?> arg0)");
     ExportFunctionAuditEvent typedEvent = functionAudit;
     serviceRegistry.registerService(arg0);
     afterServiceCall();
@@ -334,7 +333,6 @@ public class ShortChain5Processor
     if (event instanceof ClockStrategyEvent) {
       ClockStrategyEvent typedEvent = (ClockStrategyEvent) event;
       auditEvent(typedEvent);
-      isDirty_clock = true;
       clock.setClockStrategy(typedEvent);
     } else if (event instanceof ShortChainEvent) {
       ShortChainEvent typedEvent = (ShortChainEvent) event;
@@ -410,11 +408,9 @@ public class ShortChain5Processor
   }
 
   private void afterEvent() {
-
     clock.processingComplete();
     nodeNameLookup.processingComplete();
     serviceRegistry.processingComplete();
-    isDirty_clock = false;
     isDirty_node_1 = false;
     isDirty_node_2 = false;
     isDirty_node_3 = false;
@@ -451,7 +447,6 @@ public class ShortChain5Processor
   @Override
   public BooleanSupplier dirtySupplier(Object node) {
     if (dirtyFlagSupplierMap.isEmpty()) {
-      dirtyFlagSupplierMap.put(clock, () -> isDirty_clock);
       dirtyFlagSupplierMap.put(node_1, () -> isDirty_node_1);
       dirtyFlagSupplierMap.put(node_2, () -> isDirty_node_2);
       dirtyFlagSupplierMap.put(node_3, () -> isDirty_node_3);
@@ -465,7 +460,6 @@ public class ShortChain5Processor
   @Override
   public void setDirty(Object node, boolean dirtyFlag) {
     if (dirtyFlagUpdateMap.isEmpty()) {
-      dirtyFlagUpdateMap.put(clock, (b) -> isDirty_clock = b);
       dirtyFlagUpdateMap.put(node_1, (b) -> isDirty_node_1 = b);
       dirtyFlagUpdateMap.put(node_2, (b) -> isDirty_node_2 = b);
       dirtyFlagUpdateMap.put(node_3, (b) -> isDirty_node_3 = b);
@@ -474,10 +468,6 @@ public class ShortChain5Processor
       dirtyFlagUpdateMap.put(root, (b) -> isDirty_root = b);
     }
     dirtyFlagUpdateMap.get(node).accept(dirtyFlag);
-  }
-
-  private boolean guardCheck_context() {
-    return isDirty_clock;
   }
 
   private boolean guardCheck_node_1() {

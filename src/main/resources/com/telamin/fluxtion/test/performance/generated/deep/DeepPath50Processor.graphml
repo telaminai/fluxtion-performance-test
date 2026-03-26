@@ -6,7 +6,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:context&#10;class:MutableDataFlowContext"/>
+                    <jGraph:label text="id:context&#10;class:com.telamin.fluxtion.runtime.node.MutableDataFlowContext"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -15,7 +15,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="&lt;&lt;EventHandle&gt;&gt;&#10;id:clock&#10;class:Clock"/>
+                    <jGraph:label text="&lt;&lt;EventHandle&gt;&gt;&#10;id:clock&#10;class:com.telamin.fluxtion.runtime.time.Clock"/>
                     <jGraph:Style properties="EVENTHANDLER"/>
                 </jGraph:ShapeNode>
             </data>
@@ -24,7 +24,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_1&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_1&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -33,7 +33,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="&lt;&lt;EventHandle&gt;&gt;&#10;id:root&#10;class:MarketDataRootNode"/>
+                    <jGraph:label text="&lt;&lt;EventHandle&gt;&gt;&#10;id:root&#10;class:com.telamin.fluxtion.test.performance.nodes.MarketDataRootNode"/>
                     <jGraph:Style properties="EVENTHANDLER"/>
                 </jGraph:ShapeNode>
             </data>
@@ -42,7 +42,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_2&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_2&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -51,7 +51,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_3&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_3&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -60,7 +60,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_4&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_4&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -69,7 +69,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_5&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_5&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -78,7 +78,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_6&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_6&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -87,7 +87,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_7&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_7&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -96,7 +96,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_8&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_8&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -105,7 +105,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_9&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_9&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -114,7 +114,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_10&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_10&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -123,7 +123,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_11&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_11&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -132,7 +132,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_12&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_12&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -141,7 +141,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_13&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_13&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -150,7 +150,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_14&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_14&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -159,7 +159,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_15&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_15&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -168,7 +168,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_16&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_16&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -177,7 +177,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_17&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_17&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -186,7 +186,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_18&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_18&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -195,7 +195,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_19&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_19&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -204,7 +204,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_20&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_20&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -213,7 +213,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_21&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_21&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -222,7 +222,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_22&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_22&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -231,7 +231,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_23&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_23&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -240,7 +240,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_24&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_24&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -249,7 +249,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_25&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_25&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -258,7 +258,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_26&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_26&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -267,7 +267,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_27&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_27&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -276,7 +276,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_28&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_28&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -285,7 +285,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_29&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_29&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -294,7 +294,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_30&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_30&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -303,7 +303,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_31&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_31&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -312,7 +312,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_32&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_32&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -321,7 +321,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_33&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_33&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -330,7 +330,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_34&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_34&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -339,7 +339,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_35&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_35&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -348,7 +348,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_36&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_36&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -357,7 +357,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_37&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_37&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -366,7 +366,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_38&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_38&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -375,7 +375,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_39&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_39&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -384,7 +384,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_40&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_40&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -393,7 +393,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_41&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_41&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -402,7 +402,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_42&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_42&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -411,7 +411,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_43&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_43&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -420,7 +420,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_44&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_44&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -429,7 +429,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_45&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_45&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -438,7 +438,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_46&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_46&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -447,7 +447,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_47&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_47&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -456,7 +456,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_48&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_48&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -465,7 +465,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_49&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_49&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -474,7 +474,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_50&#10;class:BaseNode"/>
+                    <jGraph:label text="id:node_50&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -483,7 +483,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:sink&#10;class:PublisherNode"/>
+                    <jGraph:label text="id:sink&#10;class:com.telamin.fluxtion.test.performance.nodes.PublisherNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -492,7 +492,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:serviceRegistry&#10;class:ServiceRegistryNode"/>
+                    <jGraph:label text="id:serviceRegistry&#10;class:com.telamin.fluxtion.runtime.service.ServiceRegistryNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -501,7 +501,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:nodeNameLookup&#10;class:NodeNameAuditor"/>
+                    <jGraph:label text="id:nodeNameLookup&#10;class:com.telamin.fluxtion.runtime.audit.NodeNameAuditor"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -510,7 +510,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:callbackDispatcher&#10;class:CallbackDispatcherImpl"/>
+                    <jGraph:label text="id:callbackDispatcher&#10;class:com.telamin.fluxtion.runtime.callback.CallbackDispatcherImpl"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -519,7 +519,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:subscriptionManager&#10;class:SubscriptionManagerNode"/>
+                    <jGraph:label text="id:subscriptionManager&#10;class:com.telamin.fluxtion.runtime.input.SubscriptionManagerNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -528,7 +528,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="&lt;&lt;Event&gt;&gt;&#10;ClockStrategyEvent"/>
+                    <jGraph:label text="&lt;&lt;Event&gt;&gt;&#10;ClockStrategyEvent&#10;class:com.telamin.fluxtion.runtime.time.ClockStrategy$ClockStrategyEvent&#10;"/>
                     <jGraph:Style properties="EVENT"/>
                 </jGraph:ShapeNode>
             </data>
@@ -537,7 +537,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="&lt;&lt;Event&gt;&gt;&#10;MarketDataEvent"/>
+                    <jGraph:label text="&lt;&lt;Event&gt;&gt;&#10;MarketDataEvent&#10;class:com.telamin.fluxtion.test.performance.events.MarketDataEvent&#10;"/>
                     <jGraph:Style properties="EVENT"/>
                 </jGraph:ShapeNode>
             </data>
@@ -546,7 +546,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="&lt;&lt;ExportService&gt;&gt;&#10;class:ServiceListener&#10;"/>
+                    <jGraph:label text="&lt;&lt;ExportService&gt;&gt;&#10;class:com.telamin.fluxtion.runtime.service.ServiceListener&#10;"/>
                     <jGraph:Style properties="EXPORTSERVICE"/>
                 </jGraph:ShapeNode>
             </data>

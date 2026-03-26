@@ -293,12 +293,12 @@ The following values were measured under **sustained pressure** to expose the "A
 
 | Benchmark Dimension | Size | Framework | p50 (ns) | p99 (ns) | p99.9 (ns) | p99.99 (ns) | Max (ns) |
 |---|---|---|---|---|---|---|---|
-| **Diamond Mesh** | 101 | **Fluxtion** | **167** | **209** | **292** | **3,083** | **172,000** |
-| (glitch-free) | | RxJava | 286,463 | 442,623 | 1,551,359 | 2,156,543 | 5,200,000 |
-| **Validation Market** | 10 | **Fluxtion** | **208** | **250** | **334** | **4,543** | **180,000** |
-| (multi-event path) | | RxJava | 1,000 | 1,375 | 4,001 | 13,503 | 2,100,000 |
-| **Deep Path** | 100 | **Fluxtion** | **333** | **459** | **583** | **7,503** | **164,000** |
-| (linear chain) | | RxJava | 208 | 458 | 1,167 | 8,839 | 2,200,000 |
+| **Diamond Mesh** | 101 | **Fluxtion** | **167** | **209** | **459** | **5,375** | **175,000** |
+| (glitch-free) | | RxJava | 287,743 | 468,991 | 1,592,319 | 2,082,815 | 5,500,000 |
+| **Validation Market** | 10 | **Fluxtion** | **208** | **250** | **542** | **5,835** | **190,000** |
+| (multi-event path) | | RxJava | 1,000 | 1,458 | 6,127 | 31,839 | 2,200,000 |
+| **Deep Path** | 100 | **Fluxtion** | **333** | **459** | **625** | **8,295** | **170,000** |
+| (linear chain) | | RxJava | 208 | 417 | 1,042 | 8,751 | 2,300,000 |
 
 ### 7.2 Key Findings for DEBS Paper
 

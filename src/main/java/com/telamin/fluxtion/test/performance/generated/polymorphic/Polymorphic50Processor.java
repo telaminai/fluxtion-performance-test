@@ -46,15 +46,16 @@ import java.util.function.Consumer;
  *
  *
  * <pre>
- * generation time                 : Not available
- * eventProcessorGenerator version : ${generator_version_information}
- * api version                     : ${api_version_information}
+ * generation time           : Not available
+ * api version               : unknown api version
+ * analyser version          : unknown analyser version
+ * target generator version  : unknown generator version
  * </pre>
  *
  * Event classes supported:
  *
  * <ul>
- *   <li>com.telamin.fluxtion.runtime.time.ClockStrategy$ClockStrategyEvent
+ *   <li>com.telamin.fluxtion.runtime.time.ClockStrategy.ClockStrategyEvent
  *   <li>com.telamin.fluxtion.test.performance.events.TradeSignalEvent
  * </ul>
  *
@@ -138,11 +139,10 @@ public class Polymorphic50Processor
   private boolean processing = false;
   private boolean buffering = false;
   private final transient IdentityHashMap<Object, BooleanSupplier> dirtyFlagSupplierMap =
-      new IdentityHashMap<>(52);
+      new IdentityHashMap<>(51);
   private final transient IdentityHashMap<Object, Consumer<Boolean>> dirtyFlagUpdateMap =
-      new IdentityHashMap<>(52);
+      new IdentityHashMap<>(51);
 
-  private boolean isDirty_clock = false;
   private boolean isDirty_node_1 = false;
   private boolean isDirty_node_2 = false;
   private boolean isDirty_node_3 = false;
@@ -280,53 +280,53 @@ public class Polymorphic50Processor
     sink.setUpstream1(node_50);
     root.setNodeId("tradeSignalRoot");
     node_3.setNodeId("transform");
-    node_3.setUpstream1(node_2);
     node_3.setFactor(1.001);
+    node_3.setUpstream1(node_2);
     node_6.setNodeId("transform");
-    node_6.setUpstream1(node_5);
     node_6.setFactor(1.001);
+    node_6.setUpstream1(node_5);
     node_9.setNodeId("transform");
-    node_9.setUpstream1(node_8);
     node_9.setFactor(1.001);
+    node_9.setUpstream1(node_8);
     node_12.setNodeId("transform");
-    node_12.setUpstream1(node_11);
     node_12.setFactor(1.001);
+    node_12.setUpstream1(node_11);
     node_15.setNodeId("transform");
-    node_15.setUpstream1(node_14);
     node_15.setFactor(1.001);
+    node_15.setUpstream1(node_14);
     node_18.setNodeId("transform");
-    node_18.setUpstream1(node_17);
     node_18.setFactor(1.001);
+    node_18.setUpstream1(node_17);
     node_21.setNodeId("transform");
-    node_21.setUpstream1(node_20);
     node_21.setFactor(1.001);
+    node_21.setUpstream1(node_20);
     node_24.setNodeId("transform");
-    node_24.setUpstream1(node_23);
     node_24.setFactor(1.001);
+    node_24.setUpstream1(node_23);
     node_27.setNodeId("transform");
-    node_27.setUpstream1(node_26);
     node_27.setFactor(1.001);
+    node_27.setUpstream1(node_26);
     node_30.setNodeId("transform");
-    node_30.setUpstream1(node_29);
     node_30.setFactor(1.001);
+    node_30.setUpstream1(node_29);
     node_33.setNodeId("transform");
-    node_33.setUpstream1(node_32);
     node_33.setFactor(1.001);
+    node_33.setUpstream1(node_32);
     node_36.setNodeId("transform");
-    node_36.setUpstream1(node_35);
     node_36.setFactor(1.001);
+    node_36.setUpstream1(node_35);
     node_39.setNodeId("transform");
-    node_39.setUpstream1(node_38);
     node_39.setFactor(1.001);
+    node_39.setUpstream1(node_38);
     node_42.setNodeId("transform");
-    node_42.setUpstream1(node_41);
     node_42.setFactor(1.001);
+    node_42.setUpstream1(node_41);
     node_45.setNodeId("transform");
-    node_45.setUpstream1(node_44);
     node_45.setFactor(1.001);
+    node_45.setUpstream1(node_44);
     node_48.setNodeId("transform");
-    node_48.setUpstream1(node_47);
     node_48.setFactor(1.001);
+    node_48.setUpstream1(node_47);
     //node auditors
     initialiseAuditor(clock);
     initialiseAuditor(nodeNameLookup);
@@ -446,7 +446,6 @@ public class Polymorphic50Processor
   public void handleEvent(ClockStrategyEvent typedEvent) {
     auditEvent(typedEvent);
     //Default, no filter methods
-    isDirty_clock = true;
     clock.setClockStrategy(typedEvent);
     afterEvent();
   }
@@ -616,7 +615,7 @@ public class Polymorphic50Processor
   @Override
   public void deRegisterService(com.telamin.fluxtion.runtime.service.Service<?> arg0) {
     beforeServiceCall(
-        "public void com.telamin.fluxtion.runtime.service.ServiceRegistryNode.deRegisterService(com.telamin.fluxtion.runtime.service.Service<?>)");
+        "@Override\npublic void deRegisterService(com.telamin.fluxtion.runtime.service.Service<?> arg0)");
     ExportFunctionAuditEvent typedEvent = functionAudit;
     serviceRegistry.deRegisterService(arg0);
     afterServiceCall();
@@ -625,7 +624,7 @@ public class Polymorphic50Processor
   @Override
   public void registerService(com.telamin.fluxtion.runtime.service.Service<?> arg0) {
     beforeServiceCall(
-        "public void com.telamin.fluxtion.runtime.service.ServiceRegistryNode.registerService(com.telamin.fluxtion.runtime.service.Service<?>)");
+        "@Override\npublic void registerService(com.telamin.fluxtion.runtime.service.Service<?> arg0)");
     ExportFunctionAuditEvent typedEvent = functionAudit;
     serviceRegistry.registerService(arg0);
     afterServiceCall();
@@ -638,7 +637,6 @@ public class Polymorphic50Processor
     if (event instanceof ClockStrategyEvent) {
       ClockStrategyEvent typedEvent = (ClockStrategyEvent) event;
       auditEvent(typedEvent);
-      isDirty_clock = true;
       clock.setClockStrategy(typedEvent);
     } else if (event instanceof TradeSignalEvent) {
       TradeSignalEvent typedEvent = (TradeSignalEvent) event;
@@ -894,11 +892,9 @@ public class Polymorphic50Processor
   }
 
   private void afterEvent() {
-
     clock.processingComplete();
     nodeNameLookup.processingComplete();
     serviceRegistry.processingComplete();
-    isDirty_clock = false;
     isDirty_node_1 = false;
     isDirty_node_2 = false;
     isDirty_node_3 = false;
@@ -980,7 +976,6 @@ public class Polymorphic50Processor
   @Override
   public BooleanSupplier dirtySupplier(Object node) {
     if (dirtyFlagSupplierMap.isEmpty()) {
-      dirtyFlagSupplierMap.put(clock, () -> isDirty_clock);
       dirtyFlagSupplierMap.put(node_1, () -> isDirty_node_1);
       dirtyFlagSupplierMap.put(node_10, () -> isDirty_node_10);
       dirtyFlagSupplierMap.put(node_11, () -> isDirty_node_11);
@@ -1039,7 +1034,6 @@ public class Polymorphic50Processor
   @Override
   public void setDirty(Object node, boolean dirtyFlag) {
     if (dirtyFlagUpdateMap.isEmpty()) {
-      dirtyFlagUpdateMap.put(clock, (b) -> isDirty_clock = b);
       dirtyFlagUpdateMap.put(node_1, (b) -> isDirty_node_1 = b);
       dirtyFlagUpdateMap.put(node_10, (b) -> isDirty_node_10 = b);
       dirtyFlagUpdateMap.put(node_11, (b) -> isDirty_node_11 = b);
@@ -1093,10 +1087,6 @@ public class Polymorphic50Processor
       dirtyFlagUpdateMap.put(root, (b) -> isDirty_root = b);
     }
     dirtyFlagUpdateMap.get(node).accept(dirtyFlag);
-  }
-
-  private boolean guardCheck_context() {
-    return isDirty_clock;
   }
 
   private boolean guardCheck_node_2() {

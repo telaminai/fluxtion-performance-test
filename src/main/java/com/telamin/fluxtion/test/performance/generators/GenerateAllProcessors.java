@@ -156,20 +156,26 @@ public class GenerateAllProcessors {
 
     private static void compileAot(String xmlFilePath, String processorName, String pkg)
             throws IOException {
-        FileSystemXmlApplicationContext ctx =
-                new FileSystemXmlApplicationContext(xmlFilePath);
+        ClassLoader originalClassLoader = Thread.currentThread().getContextClassLoader();
+        Thread.currentThread().setContextClassLoader(GenerateAllProcessors.class.getClassLoader());
         try {
-            FluxtionSpring.compileAot(ctx, processorName, pkg);
-        } catch (Exception e) {
-            // compileAot writes the Java source to disk before attempting in-memory
-            // compilation. The in-memory step fails in Maven exec because the
-            // tool's classpath is not visible to javax.tools.JavaCompiler.
-            // We catch (not rethrow) the error so the source file stays on disk;
-            // a subsequent "mvn compile" will compile it with the correct classpath.
-            System.out.printf("  [note] in-memory compile skipped for %s.%s " +
-                    "(source written to disk — recompile with 'mvn compile')%n", pkg, processorName);
+            FileSystemXmlApplicationContext ctx =
+                    new FileSystemXmlApplicationContext(xmlFilePath);
+            try {
+                FluxtionSpring.compileAot(ctx, processorName, pkg);
+            } catch (Exception e) {
+                // compileAot writes the Java source to disk before attempting in-memory
+                // compilation. The in-memory step fails in Maven exec because the
+                // tool's classpath is not visible to javax.tools.JavaCompiler.
+                // We catch (not rethrow) the error so the source file stays on disk;
+                // a subsequent "mvn compile" will compile it with the correct classpath.
+                System.out.printf("  [note] in-memory compile skipped for %s.%s " +
+                        "(source written to disk — recompile with 'mvn compile')%n", pkg, processorName);
+            } finally {
+                ctx.close();
+            }
         } finally {
-            ctx.close();
+            Thread.currentThread().setContextClassLoader(originalClassLoader);
         }
     }
 

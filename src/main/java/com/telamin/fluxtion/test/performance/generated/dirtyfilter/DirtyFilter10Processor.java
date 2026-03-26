@@ -45,15 +45,16 @@ import java.util.function.Consumer;
  *
  *
  * <pre>
- * generation time                 : Not available
- * eventProcessorGenerator version : ${generator_version_information}
- * api version                     : ${api_version_information}
+ * generation time           : Not available
+ * api version               : unknown api version
+ * analyser version          : unknown analyser version
+ * target generator version  : unknown generator version
  * </pre>
  *
  * Event classes supported:
  *
  * <ul>
- *   <li>com.telamin.fluxtion.runtime.time.ClockStrategy$ClockStrategyEvent
+ *   <li>com.telamin.fluxtion.runtime.time.ClockStrategy.ClockStrategyEvent
  *   <li>com.telamin.fluxtion.test.performance.events.ControlEvent
  * </ul>
  *
@@ -97,11 +98,10 @@ public class DirtyFilter10Processor
   private boolean processing = false;
   private boolean buffering = false;
   private final transient IdentityHashMap<Object, BooleanSupplier> dirtyFlagSupplierMap =
-      new IdentityHashMap<>(12);
+      new IdentityHashMap<>(11);
   private final transient IdentityHashMap<Object, Consumer<Boolean>> dirtyFlagUpdateMap =
-      new IdentityHashMap<>(12);
+      new IdentityHashMap<>(11);
 
-  private boolean isDirty_clock = false;
   private boolean isDirty_node_1 = false;
   private boolean isDirty_node_2 = false;
   private boolean isDirty_node_3 = false;
@@ -143,14 +143,14 @@ public class DirtyFilter10Processor
     node_10.setUpstream1(node_9);
     root.setNodeId("controlRoot");
     node_3.setNodeId("filter");
-    node_3.setThreshold(0.5);
     node_3.setUpstream1(node_2);
+    node_3.setThreshold(0.5);
     node_6.setNodeId("filter");
-    node_6.setThreshold(0.5);
     node_6.setUpstream1(node_5);
+    node_6.setThreshold(0.5);
     node_9.setNodeId("filter");
-    node_9.setThreshold(0.5);
     node_9.setUpstream1(node_8);
+    node_9.setThreshold(0.5);
     sink.setNodeId("publisher");
     sink.setUpstream1(node_10);
     //node auditors
@@ -272,7 +272,6 @@ public class DirtyFilter10Processor
   public void handleEvent(ClockStrategyEvent typedEvent) {
     auditEvent(typedEvent);
     //Default, no filter methods
-    isDirty_clock = true;
     clock.setClockStrategy(typedEvent);
     afterEvent();
   }
@@ -322,7 +321,7 @@ public class DirtyFilter10Processor
   @Override
   public void deRegisterService(com.telamin.fluxtion.runtime.service.Service<?> arg0) {
     beforeServiceCall(
-        "public void com.telamin.fluxtion.runtime.service.ServiceRegistryNode.deRegisterService(com.telamin.fluxtion.runtime.service.Service<?>)");
+        "@Override\npublic void deRegisterService(com.telamin.fluxtion.runtime.service.Service<?> arg0)");
     ExportFunctionAuditEvent typedEvent = functionAudit;
     serviceRegistry.deRegisterService(arg0);
     afterServiceCall();
@@ -331,7 +330,7 @@ public class DirtyFilter10Processor
   @Override
   public void registerService(com.telamin.fluxtion.runtime.service.Service<?> arg0) {
     beforeServiceCall(
-        "public void com.telamin.fluxtion.runtime.service.ServiceRegistryNode.registerService(com.telamin.fluxtion.runtime.service.Service<?>)");
+        "@Override\npublic void registerService(com.telamin.fluxtion.runtime.service.Service<?> arg0)");
     ExportFunctionAuditEvent typedEvent = functionAudit;
     serviceRegistry.registerService(arg0);
     afterServiceCall();
@@ -344,7 +343,6 @@ public class DirtyFilter10Processor
     if (event instanceof ClockStrategyEvent) {
       ClockStrategyEvent typedEvent = (ClockStrategyEvent) event;
       auditEvent(typedEvent);
-      isDirty_clock = true;
       clock.setClockStrategy(typedEvent);
     } else if (event instanceof ControlEvent) {
       ControlEvent typedEvent = (ControlEvent) event;
@@ -440,11 +438,9 @@ public class DirtyFilter10Processor
   }
 
   private void afterEvent() {
-
     clock.processingComplete();
     nodeNameLookup.processingComplete();
     serviceRegistry.processingComplete();
-    isDirty_clock = false;
     isDirty_node_1 = false;
     isDirty_node_2 = false;
     isDirty_node_3 = false;
@@ -486,7 +482,6 @@ public class DirtyFilter10Processor
   @Override
   public BooleanSupplier dirtySupplier(Object node) {
     if (dirtyFlagSupplierMap.isEmpty()) {
-      dirtyFlagSupplierMap.put(clock, () -> isDirty_clock);
       dirtyFlagSupplierMap.put(node_1, () -> isDirty_node_1);
       dirtyFlagSupplierMap.put(node_10, () -> isDirty_node_10);
       dirtyFlagSupplierMap.put(node_2, () -> isDirty_node_2);
@@ -505,7 +500,6 @@ public class DirtyFilter10Processor
   @Override
   public void setDirty(Object node, boolean dirtyFlag) {
     if (dirtyFlagUpdateMap.isEmpty()) {
-      dirtyFlagUpdateMap.put(clock, (b) -> isDirty_clock = b);
       dirtyFlagUpdateMap.put(node_1, (b) -> isDirty_node_1 = b);
       dirtyFlagUpdateMap.put(node_10, (b) -> isDirty_node_10 = b);
       dirtyFlagUpdateMap.put(node_2, (b) -> isDirty_node_2 = b);
@@ -519,10 +513,6 @@ public class DirtyFilter10Processor
       dirtyFlagUpdateMap.put(root, (b) -> isDirty_root = b);
     }
     dirtyFlagUpdateMap.get(node).accept(dirtyFlag);
-  }
-
-  private boolean guardCheck_context() {
-    return isDirty_clock;
   }
 
   private boolean guardCheck_node_1() {
