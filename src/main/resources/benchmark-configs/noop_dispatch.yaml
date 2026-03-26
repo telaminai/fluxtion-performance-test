@@ -1,0 +1,14 @@
+dimension: noop_dispatch
+title: "Pure Dispatch Overhead (No-Op)"
+description: >
+  A strictly linear chain of NoOpNodes.
+  The processing logic in each node is an empty method returning true.
+  Tests the pure framework dispatch overhead (dirty flag management, method calls).
+rootEventClass: com.telamin.fluxtion.test.performance.events.MarketDataEvent
+sizes: [5, 10, 20, 50, 100]
+generatorClass: com.telamin.fluxtion.test.performance.generators.DeepPathGraphGenerator
+generatedPackage: com.telamin.fluxtion.test.performance.generated.noop
+params:
+  nodeClass: com.telamin.fluxtion.test.performance.nodes.NoOpNode
+  rootNodeClass: com.telamin.fluxtion.test.performance.nodes.MarketDataRootNode
+  sinkNodeClass: com.telamin.fluxtion.test.performance.nodes.NoOpPublisherNode

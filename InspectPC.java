@@ -1,0 +1,1 @@
+import com.telamin.fluxtion.builder.compile.config.ProcessorConfig; import java.lang.reflect.Method; public class InspectPC { public static void main(String[] args) { for (Method m : ProcessorConfig.class.getMethods()) { System.out.println(m); } } }

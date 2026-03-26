@@ -1,0 +1,75 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------< com.telamin.fluxtion:fluxtion-performance-test >-----------
+[INFO] Building fluxtion-performance-test 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- exec:3.6.3:java (default-cli) @ fluxtion-performance-test ---
+
+Dimension                      Framework    Size    p50(ns)    p90(ns)    p99(ns)  p99.9(ns) p99.99(ns)    max(ns)
+----------------------------------------------------------------------------------------------------------------
+deep_path                      fluxtion        5         42         42         42         84        667   13574143
+deep_path                      fluxtion       10         42         42         42         84        750    6393855
+deep_path                      fluxtion       20         42         84         84        167       2917     606207
+deep_path                      fluxtion       50        167        208        250        250       6375     186879
+deep_path                      fluxtion      100        334        375        459        708       9047    2156543
+deep_path                      rxjava          5          0         42         42         42        167    2351103
+deep_path                      rxjava         10          0         42         42         84        417    1603583
+deep_path                      rxjava         20         42         42         84        125       1000    4034559
+deep_path                      rxjava         50         83        125        125        209       3251    2283519
+deep_path                      rxjava        100        167        208        250        375       4543    1757183
+diamond_mesh                   fluxtion      101        375        417        541        583       7083     320767
+diamond_mesh                   rxjava        101       3667       3793       5795      17887      66303    1968127
+dirty_filter                   fluxtion       10         41         42         42         83        625     139263
+dirty_filter                   fluxtion       20         42         42         42         84        666     175743
+dirty_filter                   fluxtion       50         42        125        167        209        833     686591
+dirty_filter                   fluxtion      100         42        166        250        292        959     401919
+dirty_filter                   rxjava         10         42         42         42        167        834   21020671
+dirty_filter                   rxjava         20         42         84         84        250       3043    2039807
+dirty_filter                   rxjava         50        417        459        583       1417       8003    3223551
+dirty_filter                   rxjava        100        542        584        709       3251       8799    1886207
+hot_path                       fluxtion        2         42         42         84        125        791    1398783
+hot_path                       fluxtion        4         42         42         84        125        834     755199
+hot_path                       fluxtion        8         42         42         84        125        917     134271
+hot_path                       fluxtion       16         42         83         84        167       1584    5459967
+hot_path                       fluxtion       32         83         84        125        250       3543     398335
+hot_path                       rxjava          2          0         42         42         84        583    1907711
+hot_path                       rxjava          4         41         42         42        125        708    1721343
+hot_path                       rxjava          8         42         42         84        125       1416    2347007
+hot_path                       rxjava         16         42         83         84        167       1875    1912831
+hot_path                       rxjava         32         83         84        125        250       4127    1791999
+intermediate_handlers          fluxtion       10         42         42         42         84        666     116543
+intermediate_handlers          fluxtion       20         41         42         42         84        792     556031
+intermediate_handlers          fluxtion       50         42         83         84        166       1250     147327
+intermediate_handlers          fluxtion      100         83        125        166        250       3209     198399
+intermediate_handlers          rxjava         10         42         42         84        125        917    1440767
+intermediate_handlers          rxjava         20         83         84        125        209       4543    8511487
+intermediate_handlers          rxjava         50        125        167        416        584       9919    3940351
+intermediate_handlers          rxjava        100        250        333        417        875       8463    1916927
+multi_event_ctrl               fluxtion        5         41         42         42         83        625     684031
+multi_event_ctrl               fluxtion       10         41         42         42         83        625     119935
+multi_event_ctrl               fluxtion       20         41         42         42         84        625     164479
+multi_event_ctrl               fluxtion       50         42         42         42         84        750     177919
+multi_event_ctrl               rxjava          5          0         42         42         42        125    4571135
+multi_event_ctrl               rxjava         10          0         41         42         42        125    1821695
+multi_event_ctrl               rxjava         20          0         42         42         83        166    2445311
+multi_event_ctrl               rxjava         50          0         42         83         84        250    2316287
+multi_event_md                 fluxtion        5         42         42         42         83        666     109887
+multi_event_md                 fluxtion       10         42         42         42         84        750     139903
+multi_event_md                 fluxtion       20         83         84        125        167       2835     196735
+multi_event_md                 fluxtion       50        208        250        250        333       7127     267263
+multi_event_md                 rxjava          5          0         42         42         83        208    1670143
+multi_event_md                 rxjava         10          0         42         42         84        458    2179071
+multi_event_md                 rxjava         20         42         42         83        125       1042    2168831
+multi_event_md                 rxjava         50         83        125        125        250       4083    1766399
+multi_event_ts                 fluxtion        5         42         42         42         84        625    2715647
+multi_event_ts                 fluxtion       10         42         42         42         84        625    4694015
+multi_event_ts                 fluxtion       20         42         42         84        125        792    2809855
+multi_event_ts                 fluxtion       50         42         83        125        167       1917     506623
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.473 s
+[INFO] Finished at: 2026-03-26T21:46:56Z
+[INFO] ------------------------------------------------------------------------
