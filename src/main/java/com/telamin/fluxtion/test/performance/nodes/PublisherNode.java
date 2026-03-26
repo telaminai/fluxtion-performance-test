@@ -8,26 +8,24 @@ import com.telamin.fluxtion.runtime.annotations.OnTrigger;
  * Always propagates (terminal nodes should not suppress).
  * Used in: all benchmark dimensions as the sink node.
  */
-public class PublisherNode implements ProcessingNode {
+public class PublisherNode implements GeneralNode {
     private String nodeId = "publisher";
-    private ProcessingNode upstream1;
+    private GeneralNode upstream1;
     private double value;
     private long publishCount;
 
     @OnTrigger
     public boolean onUpstreamUpdate() {
-        value = upstream1 == null ? 0.0 : upstream1.getValue();
+        value = upstream1.getValue();
         publishCount++;
         return true;
     }
 
     @Override
-    public double getValue() { return value; }
-
-    @Override
+    public final double getValue() { return value; }
     public String getNodeId() { return nodeId; }
 
 
     public void setNodeId(String nodeId) { this.nodeId = nodeId; }
-    public void setUpstream1(ProcessingNode upstream1) { this.upstream1 = upstream1; }
+    public void setUpstream1(GeneralNode upstream1) { this.upstream1 = upstream1; }
 }

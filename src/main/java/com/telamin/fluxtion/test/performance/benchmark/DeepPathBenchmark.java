@@ -4,6 +4,7 @@ import com.telamin.fluxtion.test.performance.events.MarketDataEvent;
 import com.telamin.fluxtion.test.performance.generators.BenchmarkConfig;
 import com.telamin.fluxtion.test.performance.generators.DeepPathGraphGenerator;
 import com.telamin.fluxtion.test.performance.generators.GraphGeneratorBase;
+import com.telamin.fluxtion.test.performance.nodes.LinearNodePublisher;
 import io.reactivex.rxjava3.core.Flowable;
 import io.reactivex.rxjava3.processors.PublishProcessor;
 import org.HdrHistogram.Histogram;
@@ -46,6 +47,7 @@ public class DeepPathBenchmark extends DimensionBenchmarkBase {
 
     // Fluxtion
     private DataFlow fluxtionProcessor;
+    private LinearNodePublisher sink;
     private long seq = 0;
     // Pre-allocated, mutable event — re-used every iteration to achieve 0 B/op
     private final MarketDataEvent reuseEvent = new MarketDataEvent("BTC", 100.0, 101.0, 0);
@@ -67,6 +69,19 @@ public class DeepPathBenchmark extends DimensionBenchmarkBase {
         // --- Fluxtion ---
         fluxtionProcessor = buildFluxtionProcessor(
                 new DeepPathGraphGenerator(), CONFIG, size);
+
+        // Reflection to find the sink node (Fluxtion generates private fields)
+        for (java.lang.reflect.Field field : fluxtionProcessor.getClass().getDeclaredFields()) {
+            if (LinearNodePublisher.class.isAssignableFrom(field.getType()) &&
+                    (field.getName().equalsIgnoreCase("sink") || field.getName().toLowerCase().contains("publisher"))) {
+                field.setAccessible(true);
+                sink = (LinearNodePublisher) field.get(fluxtionProcessor);
+                break;
+            }
+        }
+        if (sink == null) {
+            throw new IllegalStateException("Sink not found in " + fluxtionProcessor.getClass().getName());
+        }
 
         // --- RxJava: linear chain of size+1 map stages ---
         rxRoot = PublishProcessor.create();
@@ -91,7 +106,7 @@ public class DeepPathBenchmark extends DimensionBenchmarkBase {
         fluxtionProcessor.onEvent(reuseEvent);
         long elapsed = System.nanoTime() - t;
         histFx.recordValue(Math.min(elapsed, BenchmarkResultsWriter.HIGHEST_TRACKABLE));
-        bh.consume(elapsed);
+        bh.consume(sink.getValue());
     }
 
     @Benchmark

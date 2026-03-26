@@ -16,11 +16,11 @@ public class DeepPathGraphGenerator extends GraphGeneratorBase {
     protected String generateXml(BenchmarkConfig config, int size) {
         Map<String, Object> p = config.getParams();
         String rootClass = param(p, "rootNodeClass",
-                "com.telamin.fluxtion.test.performance.nodes.MarketDataRootNode");
+                "com.telamin.fluxtion.test.performance.nodes.RootLinearNode");
         String nodeClass  = param(p, "nodeClass",
-                "com.telamin.fluxtion.test.performance.nodes.BaseNode");
+                "com.telamin.fluxtion.test.performance.nodes.LinearNode");
         String sinkClass  = param(p, "sinkNodeClass",
-                "com.telamin.fluxtion.test.performance.nodes.PublisherNode");
+                "com.telamin.fluxtion.test.performance.nodes.LinearNodePublisher");
 
         StringBuilder xml = new StringBuilder(xmlHeader());
 

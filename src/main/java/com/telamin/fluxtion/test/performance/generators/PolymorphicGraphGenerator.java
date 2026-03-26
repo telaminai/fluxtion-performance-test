@@ -6,7 +6,7 @@ import java.util.Map;
  * Generates a linear chain where nodes cycle through three concrete subtypes:
  *   BaseNode -> AccumulatorNode -> TransformNode -> BaseNode -> ...
  *
- * All three implement ProcessingNode but have distinct @OnTrigger implementations.
+ * All three implement PolymorphicNode but have distinct @OnTrigger implementations.
  * This forces the JVM's call-site profiling into a megamorphic state in dynamic
  * frameworks, while Fluxtion's compiled SEG keeps every call-site monomorphic.
  *

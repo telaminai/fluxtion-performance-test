@@ -24,6 +24,7 @@ src/main/java/com/telamin/fluxtion/test/performance/
 ├── generators/      # Spring XML graph generators + YAML config loader, one per dimension
 ├── generated/       # AOT-generated Fluxtion processors (do NOT hand-edit)
 │   ├── deep/
+│   ├── noop/
 │   ├── dirtyfilter/
 │   ├── hotpath/
 │   ├── intermediate/
@@ -67,6 +68,8 @@ Validation benchmark uses three separate event types: `ValidationMarketEvent`, `
 ```
 ProcessingNode (interface: getValue(), getNodeId())
 ├── BaseNode          — adds upstream value + 1; always propagates (returns true)
+├── NoOpNode          — empty method body; used for dispatch floor measurements
+├── LinearNode        — concrete class implementation (no interface) for DeepPath
 ├── FilteringNode     — only propagates when upstream value > threshold (returns false to arrest)
 ├── AccumulatorNode   — maintains running sum of upstream values
 ├── TransformNode     — multiplies upstream value by a configurable factor (subclass of BaseNode)
@@ -95,6 +98,7 @@ Validation nodes extend `ValidationNodeBase` and implement eligibility checking 
 | `multi_event_path` | `MultiEventPathBenchmark` | Three disjoint execution paths in one processor, one per event type |
 | `polymorphic` | `PolymorphicBenchmark` | Monomorphic JIT call sites vs. megamorphic lambda accumulation |
 | `deep_path` | `DeepPathBenchmark` | Raw linear chain latency scaling with depth |
+| `noop_dispatch` | `NoOpDispatchBenchmark` | Pure framework dispatch floor (empty node bodies) |
 | `short_chain` | `ServiceDispatchBenchmark` | `@ExportService` typed service dispatch vs. `onEvent(Object)` vs. RxJava |
 
 ### Validation Benchmark
@@ -119,8 +123,8 @@ Fluxtion's AOT-compiled SEG performs a topological sort at build time and visits
 
 **Result (101 nodes, 10×10 mesh):**
 - Fluxtion: **167 ns/op**, ≈ 0 B/op
-- RxJava: **271,103 ns/op**, 286,595 B/op per event cycle
-- **Speedup: ~1,623×**
+- RxJava: **283,903 ns/op**, 286,595 B/op per event cycle
+- **Speedup: ~1,700×**
 
 The algorithmic explanation: in the 10×10 mesh, each of the 100 interior nodes has multiple convergent upstream paths. RxJava executes approximately ~1,250 total node activations per event; Fluxtion executes exactly 101. This is not a constant-factor improvement — it is an algorithmic difference proportional to the number of convergent paths.
 
@@ -134,7 +138,7 @@ This is the most important benchmark for production relevance. A single `Validat
 
 **Key properties demonstrated:**
 
-1. **Advantage grows with chain depth.** The deepest chain (market data, ~32 nodes) shows the largest speedup (4.0× at size=10); the shallowest (control, ~11 nodes) shows the smallest (2.2×). Every additional layer adds a `zip()` coordinator allocation to RxJava's budget; Fluxtion's cost is proportional only to nodes visited.
+1. **Advantage grows with chain depth.** The deepest chain (market data, ~32 nodes) shows the largest speedup (5.0× at size=10); the shallowest (control, ~11 nodes) shows the smallest (2.5×). Every additional layer adds a `zip()` coordinator allocation to RxJava's budget; Fluxtion's cost is proportional only to nodes visited.
 
 2. **True zero-allocation across all event types.** Processing a market event does not allocate even though trade and control chains are simultaneously registered. The compiled schedules are structurally isolated — no shared runtime data structures connect them.
 
@@ -144,9 +148,9 @@ This is the most important benchmark for production relevance. A single `Validat
 
 | Event type | Fluxtion (ns) | RxJava (ns) | Speedup | Fluxtion B/op | RxJava B/op |
 |---|---|---|---|---|---|
-| Control (~11 nodes) | 125 | 208 | **1.7×** | **≈ 0** | 352 |
-| Trade (~17 nodes) | 167 | 459 | **2.7×** | **≈ 0** | 624 |
-| Market (~32 nodes) | 209 | 1,042 | **5.0×** | **≈ 0** | 1,344 |
+| Control (~11 nodes) | 83 | 208 | **2.5×** | **≈ 0** | 352 |
+| Trade (~17 nodes) | 167 | 500 | **3.0×** | **≈ 0** | 624 |
+| Market (~32 nodes) | 208 | 1,042 | **5.0×** | **≈ 0** | 1,344 |
 
 **Expected result:** Fluxtion wins at all sizes; advantage grows with chain depth; Fluxtion ≈ 0 B/op; RxJava allocation grows O(layers).
 
@@ -158,7 +162,7 @@ This is the most important benchmark for production relevance. A single `Validat
 
 RxJava must push the event through its reactive stream before each `filter()` operator can evaluate and discard it. As the graph grows, RxJava must traverse proportionally more operators before discarding; Fluxtion's cost remains O(1) (one guard evaluation at root).
 
-**Expected result:** Fluxtion latency stays nearly flat as `size` increases. RxJava latency grows linearly with chain length even for fully suppressed events. Gap scales at ~11.9× at size=100.
+**Expected result:** Fluxtion latency stays nearly flat as `size` increases. RxJava latency grows linearly with chain length even for fully suppressed events. Gap scales at ~6.0× at size=100.
 
 **GC divergence:** At size=100, RxJava triggers frequent GC collections vs. Fluxtion's ≈ 0 within the same measurement window. Under sustained production load this divergence produces stop-the-world pauses that compound the latency advantage.
 
@@ -170,7 +174,7 @@ Multiple `@OnEventHandler` annotations inserted at regular intervals create seve
 
 The RxJava equivalent requires N separate `PublishProcessor` instances merged with `Flowable.merge()`, each independently traversing its own chain from its entry point to the sink. Shared downstream nodes are visited once per `PublishProcessor` that fires.
 
-**Expected result:** Fluxtion incurs zero overhead from multiple entry points; advantage grows as the number of entry points increases (2.7× at size=100).
+**Expected result:** Fluxtion incurs zero overhead from multiple entry points; advantage grows as the number of entry points increases (3.0× at size=100).
 
 ---
 
@@ -215,7 +219,18 @@ Additionally, `Flowable<Double>` forces every intermediate value through a boxed
 
 Pure linear chains (`v -> v + 1.0` per node). RxJava's `PublishProcessor` + identical map lambdas are extremely JIT-friendly — the JIT recognises the repeated monomorphic lambda and may reduce the chain to a near-loop. Fluxtion's compiled dispatch has a fixed entry overhead (type-guard evaluation, generated method boundaries) that is not amortised over short chains.
 
-**Expected result:** Fluxtion 1.0x at size 100. GraalVM eliminates entry overhead on deep chains. The honest trade-off: Fluxtion allocates ≈ 0 B/op vs. RxJava's 1,264 B/op at depth=100. Under sustained load, RxJava triggers frequent GC collections vs. Fluxtion's ≈ 0 in the same window — the latency advantage reverses at the system level.
+**Dispatch Floor Analysis:** By removing all interfaces and using concrete class references (`LinearNode`), we measured Fluxtion's framework dispatch overhead to be approximately **3.3 ns per node** at size 100.
+
+### `noop_dispatch` — Pure Framework Dispatch Floor
+
+Measures the absolute floor of the Fluxtion framework by dispatching through a chain of nodes with empty bodies. This quantifies the cost of the compiled execution schedule (dirty flag checks and method calls) without any processing logic.
+
+- **Baseline fixed overhead:** ~42 ns (event entry boundary)
+- **Marginal dispatch cost:** ~1.66 ns per node (at size 100)
+
+This demonstrates that Fluxtion's AOT-compiled dispatch is near-optimal, with the remaining delta in DeepPath being the actual work of accessing upstream values and performing arithmetic, which RxJava's JIT can collapse in simple linear cases.
+
+**Expected result:** RxJava wins at size 100. GraalVM eliminates entry overhead on deep chains. The honest trade-off: Fluxtion allocates ≈ 0 B/op vs. RxJava's 1,264 B/op at depth=100. Under sustained load, RxJava triggers frequent GC collections vs. Fluxtion's ≈ 0 in the same window — the latency advantage reverses at the system level.
 
 ---
 
@@ -299,11 +314,11 @@ RxJava operators may retain references to upstream emissions across asynchronous
 |---|---|---|---|
 | diamond_mesh | **≈ 0** | 286,595 | Per 101-node event cycle |
 | validation (market, size=10) | **≈ 0** | 1,344 | Three chains in one processor |
-| dirty_filter (size=100) | **≈ 0** | 1,697 | 90% events suppressed |
+| dirty_filter (size=100) | **≈ 0** | 1,584 | 90% events suppressed |
 | intermediate_handlers (size=100) | **≈ 0** | 2,537 | Multiple entry points |
 | hot_path (32 branches) | **≈ 0** | 1,112 | Only branch 0 active |
 | polymorphic (size=100) | **≈ 0** | 2,531 | Three node subtypes + Double boxing |
-| deep_path (depth=100) | **≈ 0** | 1,264 | Linear chain + Double boxing |
+| deep_path (depth=100) | **≈ 0** | 312 | Linear chain + Double boxing |
 | multi_event_path | **≈ 0** | 728–1,329 | Per event type, size=50 |
 
 ---
@@ -314,11 +329,11 @@ The `-prof gc` `gc.count` metric reveals an important production signal beyond a
 
 | Dimension | Size | Fluxtion GC count | RxJava GC count | Ratio |
 |---|---|---|---|---|
-| deep_path | 100 | 5 | 159 | **32×** |
-| polymorphic | 100 | 4 | 87 | **22×** |
-| hot_path | 32 | 15 | 100 | **7×** |
-| dirty_filter | 100 | 20 | 83 | **4×** |
-| intermediate_handlers | 100 | 8 | 97 | **12×** |
+| deep_path | 100 | ≈ 0 | 133 | **Zero-GC** |
+| polymorphic | 100 | ≈ 0 | 60 | **Zero-GC** |
+| hot_path | 32 | ≈ 0 | 20 | **Zero-GC** |
+| dirty_filter | 100 | ≈ 0 | 224 | **Zero-GC** |
+| intermediate_handlers | 100 | ≈ 0 | 97 | **Zero-GC** |
 
 In a production system running for hours under sustained load, RxJava's GC frequency causes periodic stop-the-world pauses that introduce latency spikes orders of magnitude larger than the average-case timing difference shown in the benchmark tables. This directly validates the tail-latency claims in Section 5.6 of the paper: Fluxtion's near-zero GC rate is structural (zero allocation = zero GC pressure), not incidental.
 
@@ -342,9 +357,9 @@ Measured with **20 warmup iterations**, **5 measurement iterations**, and a **10
 | Topology | Fluxtion p50 | Fluxtion p99.99 | p99.99/p50 | RxJava p50 | RxJava p99.99 |
 |---|---|---|---|---|---|
 | deep_path (depth=100) | ~375 ns | ~6,083 ns | 16.2 | ~167 ns | ~4,083 ns |
-| dirty_filter (size=100) | ~42 ns | ~1,041 ns | 24.8 | ~500 ns | ~4,835 ns |
-| diamond_mesh (101 nodes) | ~167 ns | ~3,875 ns | 23.2 | ~269,567 ns | ~8,015,871 ns |
-| validation market (size=10) | ~208 ns | ~1,292 ns | 6.2 | ~1,041 ns | ~11,631 ns |
+| dirty_filter (size=100) | ~42 ns | ~2,125 ns | 50.6 | ~250 ns | ~12,047 ns |
+| diamond_mesh (101 nodes) | ~167 ns | ~8,631 ns | 51.7 | ~283,903 ns | ~4,104,191 ns |
+| validation market (size=10) | ~208 ns | ~9,167 ns | 44.1 | ~1,042 ns | ~37,151 ns |
 
 Fluxtion's tail latency remains in the microsecond range even under heap pressure, whereas RxJava's tails diverge into milliseconds due to allocation-driven GC.
 
@@ -389,13 +404,13 @@ mvn exec:java -Dexec.mainClass="org.openjdk.jmh.Main" \
 |---|---|
 | JMH version | 1.37 |
 | JDK | 25 (Oracle GraalVM 64-bit Server VM) |
-| Forks | 0 (`-f 0`, in-process) |
+| Forks | 1 (`-f 1`, isolated) |
 | Warmup | 3 iterations × 1s |
 | Measurement | 5 iterations × 1s |
 | Mode | `AverageTime` (ns/op, lower is better) |
 | GC profiling | `-prof gc` (`gc.alloc.rate.norm`) |
 
-> **Note on `-f 0`:** Using zero forks means all benchmarks run in the same JVM process, which allows JIT warmup to accumulate across benchmarks. This benefits Fluxtion's generated code (more complex, gains more from JIT context) and may understate Fluxtion's overhead on trivial chains. The `deep_path` results where RxJava wins are reproducible under both `-f 0` and `-f 1` conditions. The canonical README numbers were produced with `-f 0`.
+> **Note on `-f 1`:** Using isolated forks ensures that GC metrics and JIT optimizations are measured in a clean environment, preventing RxJava's massive allocation from polluting Fluxtion's measurement window. This is the standard methodology for capturing the "zero-allocation" property of Fluxtion.
 
 ---
 
@@ -403,14 +418,14 @@ mvn exec:java -Dexec.mainClass="org.openjdk.jmh.Main" \
 
 | Dimension | Fluxtion result | Why |
 |---|---|---|
-| Diamond mesh (101 nodes) | **~1,623× faster** | Algorithmic: O(\|V\|) vs O(paths) — glitch elimination |
-| Validation multi-event (size=10) | **1.7–5.0× faster** | Pre-computed per-type paths; ≈0 allocation vs O(layers) in RxJava |
-| Dirty filter (size=100) | **11.9× faster** | O(1) propagation arrest vs linear operator traversal |
-| Intermediate handlers (size=100) | **2.7× faster** | Compile-time shared-node deduplication |
+| Diamond mesh (101 nodes) | **~1,700× faster** | Algorithmic: O(\|V\|) vs O(paths) — glitch elimination |
+| Validation multi-event (size=10) | **2.5–5.0× faster** | Pre-computed per-type paths; ≈0 allocation vs O(layers) in RxJava |
+| Dirty filter (size=100) | **6.0× faster** | O(1) propagation arrest vs linear operator traversal |
+| Intermediate handlers (size=100) | **3.0× faster** | Compile-time shared-node deduplication |
 | Hot path (32 branches) | **1.0× faster** | Compiled boolean guards vs subscriber-list traversal |
 | Polymorphic (size=50+) | **RxJava faster** | Monomorphic call sites vs megamorphic lambda accumulation + Double boxing |
 | Multi-event market/trade (size≥20) | **Mixed** | Type-specific dispatch vs shared operator chain |
-| Deep path (all sizes) | **Fluxtion 1.0x at size 100** | GraalVM eliminates entry overhead on deep chains |
+| Deep path (all sizes) | **RxJava faster** | Linear chains favor identity-lambda JIT optimization |
 | Service dispatch (size ≤ 5) | **RxJava faster** | Very short chains do not amortise Fluxtion's entry cost |
 
 **The structural pattern:** Fluxtion's advantages (glitch elimination, propagation arrest, zero allocation, per-event-type path isolation, monomorphic call sites) materialise at topological complexity, graph scale, and multi-event workloads — exactly the conditions present in production trading, telemetry, and edge systems. RxJava wins only on trivial single-type linear chains where its identical-lambda JIT optimisation is at its most effective. In any system that resembles production complexity, Fluxtion's compile-time coordination pays off both in average latency and in tail-latency stability.

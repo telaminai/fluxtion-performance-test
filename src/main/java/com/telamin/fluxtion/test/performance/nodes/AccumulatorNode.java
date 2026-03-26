@@ -7,15 +7,15 @@ import com.telamin.fluxtion.runtime.annotations.OnTrigger;
  * Always propagates. Demonstrates stateful computation in deep chains.
  * Used in: deep_path, hot_path benchmarks.
  */
-public class AccumulatorNode implements ProcessingNode {
+public class AccumulatorNode implements PolymorphicNode {
     private String nodeId = "accumulator";
-    private ProcessingNode upstream1;
+    private PolymorphicNode upstream1;
     private double total;
     private double value;
 
     @OnTrigger
     public boolean onUpstreamUpdate() {
-        double upstreamValue = upstream1 == null ? 0.0 : upstream1.getValue();
+        double upstreamValue = upstream1.getValue();
         total += upstreamValue;
         value = total;
         return true;
@@ -24,11 +24,9 @@ public class AccumulatorNode implements ProcessingNode {
     public void reset() { total = 0; value = 0; }
 
     @Override
-    public double getValue() { return value; }
-
+    public final double getValue() { return value; }
     @Override
     public String getNodeId() { return nodeId; }
-
     public void setNodeId(String nodeId) { this.nodeId = nodeId; }
-    public void setUpstream1(ProcessingNode upstream1) { this.upstream1 = upstream1; }
+    public void setUpstream1(PolymorphicNode upstream1) { this.upstream1 = upstream1; }
 }

@@ -8,8 +8,9 @@ import com.telamin.fluxtion.test.performance.events.TradeSignalEvent;
  * Entry point for polymorphic and intermediate_handlers graphs.
  * Exposes signedQuantity so downstream nodes can act on direction.
  */
-public class TradeSignalRootNode implements ProcessingNode {
+public class TradeSignalRootNode implements GeneralNode {
     private String nodeId = "tradeSignalRoot";
+    private double value;
     private double signedQuantity;
     private double limitPrice;
 
@@ -17,14 +18,12 @@ public class TradeSignalRootNode implements ProcessingNode {
     public boolean onTradeSignal(TradeSignalEvent event) {
         signedQuantity = event.signedQuantity();
         limitPrice = event.getLimitPrice();
+        value = signedQuantity;
         return true;
     }
 
     @Override
-    public double getValue() { return signedQuantity; }
-
-    @Override
+    public final double getValue() { return value; }
     public String getNodeId() { return nodeId; }
-
     public void setNodeId(String nodeId) { this.nodeId = nodeId; }
 }

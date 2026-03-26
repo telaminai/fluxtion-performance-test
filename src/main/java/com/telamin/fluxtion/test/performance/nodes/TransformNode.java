@@ -9,26 +9,23 @@ import com.telamin.fluxtion.runtime.annotations.OnTrigger;
  * the JVM must resolve the virtual method at runtime.
  * Used in: polymorphic benchmark.
  */
-public class TransformNode implements ProcessingNode {
+public class TransformNode implements GeneralNode {
     private String nodeId = "transform";
-    private ProcessingNode upstream1;
+    private GeneralNode upstream1;
     private double factor = 1.0;
     private double value;
 
     @OnTrigger
     public boolean onUpstreamUpdate() {
-        double upstreamValue = upstream1 == null ? 0.0 : upstream1.getValue();
+        double upstreamValue = upstream1.getValue();
         value = upstreamValue * factor;
         return true;
     }
 
     @Override
-    public double getValue() { return value; }
-
-    @Override
+    public final double getValue() { return value; }
     public String getNodeId() { return nodeId; }
-
     public void setNodeId(String nodeId) { this.nodeId = nodeId; }
-    public void setUpstream1(ProcessingNode upstream1) { this.upstream1 = upstream1; }
+    public void setUpstream1(GeneralNode upstream1) { this.upstream1 = upstream1; }
     public void setFactor(double factor) { this.factor = factor; }
 }

@@ -8,15 +8,15 @@ import com.telamin.fluxtion.runtime.annotations.OnTrigger;
  * downstream propagation, demonstrating Fluxtion's selective sub-graph pruning.
  * Used in: dirty_filter benchmark.
  */
-public class FilteringNode implements ProcessingNode {
+public class FilteringNode implements PolymorphicNode {
     private String nodeId = "filter";
-    private ProcessingNode upstream1;
+    private PolymorphicNode upstream1;
     private double threshold = 0.0;
     private double value;
 
     @OnTrigger
     public boolean onUpstreamUpdate() {
-        double upstreamValue = upstream1 == null ? 0.0 : upstream1.getValue();
+        double upstreamValue = upstream1.getValue();
         if (upstreamValue > threshold) {
             value = upstreamValue;
             return true;   // propagate — value crossed threshold
@@ -25,12 +25,10 @@ public class FilteringNode implements ProcessingNode {
     }
 
     @Override
-    public double getValue() { return value; }
-
+    public final double getValue() { return value; }
     @Override
     public String getNodeId() { return nodeId; }
-
     public void setNodeId(String nodeId) { this.nodeId = nodeId; }
-    public void setUpstream1(ProcessingNode upstream1) { this.upstream1 = upstream1; }
+    public void setUpstream1(PolymorphicNode upstream1) { this.upstream1 = upstream1; }
     public void setThreshold(double threshold) { this.threshold = threshold; }
 }

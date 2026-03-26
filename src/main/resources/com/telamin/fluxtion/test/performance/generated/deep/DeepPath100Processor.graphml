@@ -20,911 +20,911 @@
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_1">
+        <node id="linearNode_100">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_1&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_100&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="root">
+        <node id="rootLinearNode_101">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="&lt;&lt;EventHandle&gt;&gt;&#10;id:root&#10;class:com.telamin.fluxtion.test.performance.nodes.MarketDataRootNode"/>
+                    <jGraph:label text="&lt;&lt;EventHandle&gt;&gt;&#10;id:rootLinearNode_101&#10;class:com.telamin.fluxtion.test.performance.nodes.RootLinearNode"/>
                     <jGraph:Style properties="EVENTHANDLER"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_2">
+        <node id="linearNode_99">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_2&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_99&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_3">
+        <node id="linearNode_98">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_3&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_98&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_4">
+        <node id="linearNode_97">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_4&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_97&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_5">
+        <node id="linearNode_96">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_5&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_96&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_6">
+        <node id="linearNode_95">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_6&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_95&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_7">
+        <node id="linearNode_94">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_7&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_94&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_8">
+        <node id="linearNode_93">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_8&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_93&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_9">
+        <node id="linearNode_92">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_9&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_92&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_10">
+        <node id="linearNode_91">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_10&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_91&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_11">
+        <node id="linearNode_90">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_11&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_90&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_12">
+        <node id="linearNode_89">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_12&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_89&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_13">
+        <node id="linearNode_88">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_13&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_88&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_14">
+        <node id="linearNode_87">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_14&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_87&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_15">
+        <node id="linearNode_86">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_15&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_86&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_16">
+        <node id="linearNode_85">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_16&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_85&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_17">
+        <node id="linearNode_84">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_17&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_84&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_18">
+        <node id="linearNode_83">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_18&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_83&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_19">
+        <node id="linearNode_82">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_19&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_82&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_20">
+        <node id="linearNode_81">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_20&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_81&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_21">
+        <node id="linearNode_80">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_21&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_80&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_22">
+        <node id="linearNode_79">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_22&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_79&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_23">
+        <node id="linearNode_78">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_23&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_78&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_24">
+        <node id="linearNode_77">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_24&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_77&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_25">
+        <node id="linearNode_76">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_25&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_76&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_26">
+        <node id="linearNode_75">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_26&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_75&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_27">
+        <node id="linearNode_74">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_27&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_74&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_28">
+        <node id="linearNode_73">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_28&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_73&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_29">
+        <node id="linearNode_72">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_29&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_72&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_30">
+        <node id="linearNode_71">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_30&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_71&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_31">
+        <node id="linearNode_70">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_31&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_70&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_32">
+        <node id="linearNode_69">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_32&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_69&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_33">
+        <node id="linearNode_68">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_33&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_68&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_34">
+        <node id="linearNode_67">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_34&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_67&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_35">
+        <node id="linearNode_66">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_35&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_66&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_36">
+        <node id="linearNode_65">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_36&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_65&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_37">
+        <node id="linearNode_64">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_37&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_64&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_38">
+        <node id="linearNode_63">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_38&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_63&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_39">
+        <node id="linearNode_62">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_39&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_62&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_40">
+        <node id="linearNode_61">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_40&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_61&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_41">
+        <node id="linearNode_60">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_41&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_60&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_42">
+        <node id="linearNode_59">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_42&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_59&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_43">
+        <node id="linearNode_58">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_43&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_58&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_44">
+        <node id="linearNode_57">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_44&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_57&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_45">
+        <node id="linearNode_56">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_45&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_56&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_46">
+        <node id="linearNode_55">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_46&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_55&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_47">
+        <node id="linearNode_54">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_47&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_54&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_48">
+        <node id="linearNode_53">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_48&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_53&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_49">
+        <node id="linearNode_52">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_49&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_52&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_50">
+        <node id="linearNode_51">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_50&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_51&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_51">
+        <node id="linearNode_50">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_51&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_50&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_52">
+        <node id="linearNode_49">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_52&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_49&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_53">
+        <node id="linearNode_48">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_53&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_48&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_54">
+        <node id="linearNode_47">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_54&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_47&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_55">
+        <node id="linearNode_46">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_55&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_46&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_56">
+        <node id="linearNode_45">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_56&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_45&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_57">
+        <node id="linearNode_44">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_57&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_44&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_58">
+        <node id="linearNode_43">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_58&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_43&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_59">
+        <node id="linearNode_42">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_59&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_42&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_60">
+        <node id="linearNode_41">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_60&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_41&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_61">
+        <node id="linearNode_40">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_61&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_40&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_62">
+        <node id="linearNode_39">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_62&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_39&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_63">
+        <node id="linearNode_38">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_63&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_38&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_64">
+        <node id="linearNode_37">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_64&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_37&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_65">
+        <node id="linearNode_36">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_65&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_36&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_66">
+        <node id="linearNode_35">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_66&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_35&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_67">
+        <node id="linearNode_34">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_67&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_34&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_68">
+        <node id="linearNode_33">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_68&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_33&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_69">
+        <node id="linearNode_32">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_69&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_32&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_70">
+        <node id="linearNode_31">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_70&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_31&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_71">
+        <node id="linearNode_30">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_71&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_30&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_72">
+        <node id="linearNode_29">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_72&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_29&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_73">
+        <node id="linearNode_28">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_73&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_28&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_74">
+        <node id="linearNode_27">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_74&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_27&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_75">
+        <node id="linearNode_26">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_75&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_26&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_76">
+        <node id="linearNode_25">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_76&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_25&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_77">
+        <node id="linearNode_24">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_77&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_24&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_78">
+        <node id="linearNode_23">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_78&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_23&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_79">
+        <node id="linearNode_22">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_79&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_22&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_80">
+        <node id="linearNode_21">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_80&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_21&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_81">
+        <node id="linearNode_20">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_81&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_20&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_82">
+        <node id="linearNode_19">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_82&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_19&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_83">
+        <node id="linearNode_18">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_83&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_18&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_84">
+        <node id="linearNode_17">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_84&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_17&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_85">
+        <node id="linearNode_16">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_85&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_16&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_86">
+        <node id="linearNode_15">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_86&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_15&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_87">
+        <node id="linearNode_14">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_87&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_14&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_88">
+        <node id="linearNode_13">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_88&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_13&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_89">
+        <node id="linearNode_12">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_89&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_12&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_90">
+        <node id="linearNode_11">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_90&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_11&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_91">
+        <node id="linearNode_10">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_91&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_10&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_92">
+        <node id="linearNode_9">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_92&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_9&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_93">
+        <node id="linearNode_8">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_93&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_8&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_94">
+        <node id="linearNode_7">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_94&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_7&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_95">
+        <node id="linearNode_6">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_95&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_6&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_96">
+        <node id="linearNode_5">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_96&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_5&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_97">
+        <node id="linearNode_4">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_97&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_4&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_98">
+        <node id="linearNode_3">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_98&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_3&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_99">
+        <node id="linearNode_2">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_99&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_2&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_100">
+        <node id="linearNode_1">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_100&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:linearNode_1&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -933,7 +933,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:sink&#10;class:com.telamin.fluxtion.test.performance.nodes.PublisherNode"/>
+                    <jGraph:label text="id:sink&#10;class:com.telamin.fluxtion.test.performance.nodes.LinearNodePublisher"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -1006,507 +1006,507 @@
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="2" source="root" target="node_1">
+        <edge id="2" source="rootLinearNode_101" target="linearNode_100">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="3" source="node_1" target="node_2">
+        <edge id="3" source="linearNode_100" target="linearNode_99">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="4" source="node_2" target="node_3">
+        <edge id="4" source="linearNode_99" target="linearNode_98">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="5" source="node_3" target="node_4">
+        <edge id="5" source="linearNode_98" target="linearNode_97">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="6" source="node_4" target="node_5">
+        <edge id="6" source="linearNode_97" target="linearNode_96">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="7" source="node_5" target="node_6">
+        <edge id="7" source="linearNode_96" target="linearNode_95">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="8" source="node_6" target="node_7">
+        <edge id="8" source="linearNode_95" target="linearNode_94">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="9" source="node_7" target="node_8">
+        <edge id="9" source="linearNode_94" target="linearNode_93">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="10" source="node_8" target="node_9">
+        <edge id="10" source="linearNode_93" target="linearNode_92">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="11" source="node_9" target="node_10">
+        <edge id="11" source="linearNode_92" target="linearNode_91">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="12" source="node_10" target="node_11">
+        <edge id="12" source="linearNode_91" target="linearNode_90">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="13" source="node_11" target="node_12">
+        <edge id="13" source="linearNode_90" target="linearNode_89">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="14" source="node_12" target="node_13">
+        <edge id="14" source="linearNode_89" target="linearNode_88">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="15" source="node_13" target="node_14">
+        <edge id="15" source="linearNode_88" target="linearNode_87">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="16" source="node_14" target="node_15">
+        <edge id="16" source="linearNode_87" target="linearNode_86">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="17" source="node_15" target="node_16">
+        <edge id="17" source="linearNode_86" target="linearNode_85">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="18" source="node_16" target="node_17">
+        <edge id="18" source="linearNode_85" target="linearNode_84">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="19" source="node_17" target="node_18">
+        <edge id="19" source="linearNode_84" target="linearNode_83">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="20" source="node_18" target="node_19">
+        <edge id="20" source="linearNode_83" target="linearNode_82">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="21" source="node_19" target="node_20">
+        <edge id="21" source="linearNode_82" target="linearNode_81">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="22" source="node_20" target="node_21">
+        <edge id="22" source="linearNode_81" target="linearNode_80">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="23" source="node_21" target="node_22">
+        <edge id="23" source="linearNode_80" target="linearNode_79">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="24" source="node_22" target="node_23">
+        <edge id="24" source="linearNode_79" target="linearNode_78">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="25" source="node_23" target="node_24">
+        <edge id="25" source="linearNode_78" target="linearNode_77">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="26" source="node_24" target="node_25">
+        <edge id="26" source="linearNode_77" target="linearNode_76">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="27" source="node_25" target="node_26">
+        <edge id="27" source="linearNode_76" target="linearNode_75">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="28" source="node_26" target="node_27">
+        <edge id="28" source="linearNode_75" target="linearNode_74">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="29" source="node_27" target="node_28">
+        <edge id="29" source="linearNode_74" target="linearNode_73">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="30" source="node_28" target="node_29">
+        <edge id="30" source="linearNode_73" target="linearNode_72">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="31" source="node_29" target="node_30">
+        <edge id="31" source="linearNode_72" target="linearNode_71">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="32" source="node_30" target="node_31">
+        <edge id="32" source="linearNode_71" target="linearNode_70">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="33" source="node_31" target="node_32">
+        <edge id="33" source="linearNode_70" target="linearNode_69">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="34" source="node_32" target="node_33">
+        <edge id="34" source="linearNode_69" target="linearNode_68">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="35" source="node_33" target="node_34">
+        <edge id="35" source="linearNode_68" target="linearNode_67">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="36" source="node_34" target="node_35">
+        <edge id="36" source="linearNode_67" target="linearNode_66">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="37" source="node_35" target="node_36">
+        <edge id="37" source="linearNode_66" target="linearNode_65">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="38" source="node_36" target="node_37">
+        <edge id="38" source="linearNode_65" target="linearNode_64">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="39" source="node_37" target="node_38">
+        <edge id="39" source="linearNode_64" target="linearNode_63">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="40" source="node_38" target="node_39">
+        <edge id="40" source="linearNode_63" target="linearNode_62">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="41" source="node_39" target="node_40">
+        <edge id="41" source="linearNode_62" target="linearNode_61">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="42" source="node_40" target="node_41">
+        <edge id="42" source="linearNode_61" target="linearNode_60">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="43" source="node_41" target="node_42">
+        <edge id="43" source="linearNode_60" target="linearNode_59">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="44" source="node_42" target="node_43">
+        <edge id="44" source="linearNode_59" target="linearNode_58">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="45" source="node_43" target="node_44">
+        <edge id="45" source="linearNode_58" target="linearNode_57">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="46" source="node_44" target="node_45">
+        <edge id="46" source="linearNode_57" target="linearNode_56">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="47" source="node_45" target="node_46">
+        <edge id="47" source="linearNode_56" target="linearNode_55">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="48" source="node_46" target="node_47">
+        <edge id="48" source="linearNode_55" target="linearNode_54">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="49" source="node_47" target="node_48">
+        <edge id="49" source="linearNode_54" target="linearNode_53">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="50" source="node_48" target="node_49">
+        <edge id="50" source="linearNode_53" target="linearNode_52">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="51" source="node_49" target="node_50">
+        <edge id="51" source="linearNode_52" target="linearNode_51">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="52" source="node_50" target="node_51">
+        <edge id="52" source="linearNode_51" target="linearNode_50">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="53" source="node_51" target="node_52">
+        <edge id="53" source="linearNode_50" target="linearNode_49">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="54" source="node_52" target="node_53">
+        <edge id="54" source="linearNode_49" target="linearNode_48">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="55" source="node_53" target="node_54">
+        <edge id="55" source="linearNode_48" target="linearNode_47">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="56" source="node_54" target="node_55">
+        <edge id="56" source="linearNode_47" target="linearNode_46">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="57" source="node_55" target="node_56">
+        <edge id="57" source="linearNode_46" target="linearNode_45">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="58" source="node_56" target="node_57">
+        <edge id="58" source="linearNode_45" target="linearNode_44">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="59" source="node_57" target="node_58">
+        <edge id="59" source="linearNode_44" target="linearNode_43">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="60" source="node_58" target="node_59">
+        <edge id="60" source="linearNode_43" target="linearNode_42">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="61" source="node_59" target="node_60">
+        <edge id="61" source="linearNode_42" target="linearNode_41">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="62" source="node_60" target="node_61">
+        <edge id="62" source="linearNode_41" target="linearNode_40">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="63" source="node_61" target="node_62">
+        <edge id="63" source="linearNode_40" target="linearNode_39">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="64" source="node_62" target="node_63">
+        <edge id="64" source="linearNode_39" target="linearNode_38">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="65" source="node_63" target="node_64">
+        <edge id="65" source="linearNode_38" target="linearNode_37">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="66" source="node_64" target="node_65">
+        <edge id="66" source="linearNode_37" target="linearNode_36">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="67" source="node_65" target="node_66">
+        <edge id="67" source="linearNode_36" target="linearNode_35">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="68" source="node_66" target="node_67">
+        <edge id="68" source="linearNode_35" target="linearNode_34">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="69" source="node_67" target="node_68">
+        <edge id="69" source="linearNode_34" target="linearNode_33">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="70" source="node_68" target="node_69">
+        <edge id="70" source="linearNode_33" target="linearNode_32">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="71" source="node_69" target="node_70">
+        <edge id="71" source="linearNode_32" target="linearNode_31">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="72" source="node_70" target="node_71">
+        <edge id="72" source="linearNode_31" target="linearNode_30">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="73" source="node_71" target="node_72">
+        <edge id="73" source="linearNode_30" target="linearNode_29">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="74" source="node_72" target="node_73">
+        <edge id="74" source="linearNode_29" target="linearNode_28">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="75" source="node_73" target="node_74">
+        <edge id="75" source="linearNode_28" target="linearNode_27">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="76" source="node_74" target="node_75">
+        <edge id="76" source="linearNode_27" target="linearNode_26">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="77" source="node_75" target="node_76">
+        <edge id="77" source="linearNode_26" target="linearNode_25">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="78" source="node_76" target="node_77">
+        <edge id="78" source="linearNode_25" target="linearNode_24">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="79" source="node_77" target="node_78">
+        <edge id="79" source="linearNode_24" target="linearNode_23">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="80" source="node_78" target="node_79">
+        <edge id="80" source="linearNode_23" target="linearNode_22">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="81" source="node_79" target="node_80">
+        <edge id="81" source="linearNode_22" target="linearNode_21">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="82" source="node_80" target="node_81">
+        <edge id="82" source="linearNode_21" target="linearNode_20">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="83" source="node_81" target="node_82">
+        <edge id="83" source="linearNode_20" target="linearNode_19">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="84" source="node_82" target="node_83">
+        <edge id="84" source="linearNode_19" target="linearNode_18">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="85" source="node_83" target="node_84">
+        <edge id="85" source="linearNode_18" target="linearNode_17">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="86" source="node_84" target="node_85">
+        <edge id="86" source="linearNode_17" target="linearNode_16">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="87" source="node_85" target="node_86">
+        <edge id="87" source="linearNode_16" target="linearNode_15">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="88" source="node_86" target="node_87">
+        <edge id="88" source="linearNode_15" target="linearNode_14">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="89" source="node_87" target="node_88">
+        <edge id="89" source="linearNode_14" target="linearNode_13">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="90" source="node_88" target="node_89">
+        <edge id="90" source="linearNode_13" target="linearNode_12">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="91" source="node_89" target="node_90">
+        <edge id="91" source="linearNode_12" target="linearNode_11">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="92" source="node_90" target="node_91">
+        <edge id="92" source="linearNode_11" target="linearNode_10">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="93" source="node_91" target="node_92">
+        <edge id="93" source="linearNode_10" target="linearNode_9">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="94" source="node_92" target="node_93">
+        <edge id="94" source="linearNode_9" target="linearNode_8">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="95" source="node_93" target="node_94">
+        <edge id="95" source="linearNode_8" target="linearNode_7">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="96" source="node_94" target="node_95">
+        <edge id="96" source="linearNode_7" target="linearNode_6">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="97" source="node_95" target="node_96">
+        <edge id="97" source="linearNode_6" target="linearNode_5">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="98" source="node_96" target="node_97">
+        <edge id="98" source="linearNode_5" target="linearNode_4">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="99" source="node_97" target="node_98">
+        <edge id="99" source="linearNode_4" target="linearNode_3">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="100" source="node_98" target="node_99">
+        <edge id="100" source="linearNode_3" target="linearNode_2">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="101" source="node_99" target="node_100">
+        <edge id="101" source="linearNode_2" target="linearNode_1">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="102" source="node_100" target="sink">
+        <edge id="102" source="linearNode_1" target="sink">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
@@ -1536,7 +1536,7 @@
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="108" source="MarketDataEvent" target="root">
+        <edge id="108" source="MarketDataEvent" target="rootLinearNode_101">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>

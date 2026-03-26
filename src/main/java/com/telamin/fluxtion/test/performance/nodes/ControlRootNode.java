@@ -9,8 +9,9 @@ import com.telamin.fluxtion.test.performance.events.ControlEvent;
  * Returns false (suppresses propagation) when command is DISABLE,
  * demonstrating Fluxtion's ability to arrest an entire sub-graph cheaply.
  */
-public class ControlRootNode implements ProcessingNode {
+public class ControlRootNode implements GeneralNode {
     private String nodeId = "controlRoot";
+    private double value;
     private boolean active = true;
     private double threshold = 0.0;
 
@@ -21,15 +22,13 @@ public class ControlRootNode implements ProcessingNode {
             case DISABLE -> active = false;
             case RESET   -> { active = true; threshold = event.getThreshold(); }
         }
+        value = active ? 1.0 : 0.0;
         return active;   // false arrests all downstream nodes
     }
 
     @Override
-    public double getValue() { return active ? 1.0 : 0.0; }
-
-    @Override
+    public final double getValue() { return value; }
     public String getNodeId() { return nodeId; }
-
     public boolean isActive() { return active; }
     public void setNodeId(String nodeId) { this.nodeId = nodeId; }
 }

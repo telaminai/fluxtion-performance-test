@@ -13,7 +13,7 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <fluxtion.version>0.9.32</fluxtion.version>
-        <fluxtion.compiler.version>1.0.30</fluxtion.compiler.version>
+        <fluxtion.compiler.version>1.0.38</fluxtion.compiler.version>
     </properties>
 
     <dependencies>
@@ -27,11 +27,11 @@
             <artifactId>fluxtion-runtime</artifactId>
             <version>${fluxtion.version}</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.telamin.fluxtion</groupId>-->
-<!--            <artifactId>fluxtion-generator-core</artifactId>-->
-<!--            <version>${fluxtion.compiler.version}</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>com.telamin.fluxtion</groupId>
+            <artifactId>fluxtion-generator-core</artifactId>
+            <version>${fluxtion.compiler.version}</version>
+        </dependency>
         <dependency>
             <groupId>io.reactivex.rxjava3</groupId>
             <artifactId>rxjava</artifactId>
@@ -128,12 +128,12 @@
         </plugins>
     </build>
 
-<!--    <repositories>-->
-<!--        <repository>-->
-<!--            <id>repsy-fluxtion-private</id>-->
-<!--            <name>My Private Maven Repository on Repsy</name>-->
-<!--            <url>https://repo.repsy.io/mvn/fluxtion/fluxtion-private</url>-->
-<!--        </repository>-->
-<!--    </repositories>-->
+    <repositories>
+        <repository>
+            <id>repsy-fluxtion-private</id>
+            <name>My Private Maven Repository on Repsy</name>
+            <url>https://repo.repsy.io/mvn/fluxtion/fluxtion-private</url>
+        </repository>
+    </repositories>
 
 </project>

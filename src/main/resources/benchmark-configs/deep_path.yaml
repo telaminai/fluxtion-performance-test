@@ -11,6 +11,6 @@ sizes: [5, 10, 20, 50, 100]
 generatorClass: com.telamin.fluxtion.test.performance.generators.DeepPathGraphGenerator
 generatedPackage: com.telamin.fluxtion.test.performance.generated.deep
 params:
-  nodeClass: com.telamin.fluxtion.test.performance.nodes.BaseNode
-  rootNodeClass: com.telamin.fluxtion.test.performance.nodes.MarketDataRootNode
-  sinkNodeClass: com.telamin.fluxtion.test.performance.nodes.PublisherNode
+  nodeClass: com.telamin.fluxtion.test.performance.nodes.LinearNode
+  rootNodeClass: com.telamin.fluxtion.test.performance.nodes.RootLinearNode
+  sinkNodeClass: com.telamin.fluxtion.test.performance.nodes.LinearNodePublisher
