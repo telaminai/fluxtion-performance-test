@@ -1,0 +1,44 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------< com.telamin.fluxtion:fluxtion-performance-test >-----------
+[INFO] Building fluxtion-performance-test 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- exec:3.6.3:java (default-cli) @ fluxtion-performance-test ---
+
+=== Multi-Dimension Latency: p50 (ns/op) ===
+Dimension                        Size Fluxtion p50   RxJava p50    Speedup Fluxtion wins?
+--------------------------------------------------------------------------------------------
+deep_path                         100          166          167       1.01 YES  (1.0x)
+diamond_mesh                      101          167       275199    1647.90 YES  (1647.9x)
+dirty_filter                      100           42          250       5.95 YES  (6.0x)
+intermediate_handlers             100          125          250       2.00 YES  (2.0x)
+multi_event_ctrl                   10           41            0       0.00 no
+multi_event_md                     10           42            0       0.00 no
+multi_event_ts                     10           42            0       0.00 no
+polymorphic                       100          375          167       0.45 no
+validation/control                 10          125          208       1.66 YES  (1.7x)
+validation/market                  10          208         1041       5.00 YES  (5.0x)
+validation/trade                   10          125          458       3.66 YES  (3.7x)
+
+=== Tail Latency Comparison (ns) — GC pressure shows up here ===
+Dimension                        Size     Fx p99     Rx p99   Fx p99.9   Rx p99.9  Fx p99.99  Rx p99.99
+------------------------------------------------------------------------------------------------------------
+deep_path                         100        209        250        500        417       6335       5127
+diamond_mesh                      101        250     691199        334    1646591       4795    2654207
+dirty_filter                      100        209        334        291       1000        917       7419
+intermediate_handlers             100        167        417        250        792       3667       6083
+multi_event_ctrl                   10         42         42         84         42        625        125
+multi_event_md                     10         42         42         84         84        666        541
+multi_event_ts                     10         42         42         84         84        625        167
+polymorphic                       100        500        250        583        458       7503       5127
+validation/control                 10        167        500        250        917       1584       6375
+validation/market                  10        292       1459        375       4875       5127      24639
+validation/trade                   10        208        792        292       1375       4459      10127
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.471 s
+[INFO] Finished at: 2026-03-26T16:40:36Z
+[INFO] ------------------------------------------------------------------------
