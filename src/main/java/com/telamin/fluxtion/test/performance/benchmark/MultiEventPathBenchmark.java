@@ -9,6 +9,7 @@ import com.telamin.fluxtion.test.performance.generators.GraphGeneratorBase;
 import com.telamin.fluxtion.test.performance.generators.MultiEventPathGraphGenerator;
 import io.reactivex.rxjava3.core.Flowable;
 import io.reactivex.rxjava3.processors.PublishProcessor;
+import org.HdrHistogram.Histogram;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 
@@ -69,6 +70,10 @@ public class MultiEventPathBenchmark extends DimensionBenchmarkBase {
     // Pre-computed HDR keys — avoids String allocation on every hot-path iteration
     private String fluxtionMdKey, fluxtionTsKey, fluxtionCtrlKey;
     private String rxMdKey, rxTsKey, rxCtrlKey;
+
+    private Histogram histFxMd, histFxTs, histFxCtrl;
+    private Histogram histRxMd, histRxTs, histRxCtrl;
+
     // -------------------------------------------------------------------------
     // Fluxtion — single pre-compiled processor handles all event types
     // -------------------------------------------------------------------------
@@ -133,6 +138,13 @@ public class MultiEventPathBenchmark extends DimensionBenchmarkBase {
             ctrlChain = ctrlChain.filter(v -> v > 0.0).map(v -> v + 1.0);
         }
         ctrlChain.subscribe(v -> rxCtrlResult.set(Double.doubleToLongBits(v)));
+
+        histFxMd = BenchmarkResultsWriter.getHistogram(fluxtionMdKey);
+        histFxTs = BenchmarkResultsWriter.getHistogram(fluxtionTsKey);
+        histFxCtrl = BenchmarkResultsWriter.getHistogram(fluxtionCtrlKey);
+        histRxMd = BenchmarkResultsWriter.getHistogram(rxMdKey);
+        histRxTs = BenchmarkResultsWriter.getHistogram(rxTsKey);
+        histRxCtrl = BenchmarkResultsWriter.getHistogram(rxCtrlKey);
     }
 
     // =========================================================================
@@ -148,7 +160,7 @@ public class MultiEventPathBenchmark extends DimensionBenchmarkBase {
         long t = System.nanoTime();
         fluxtionProcessor.onEvent(mdEvent);
         long elapsed = System.nanoTime() - t;
-        BenchmarkResultsWriter.record(fluxtionMdKey, elapsed);
+        histFxMd.recordValue(Math.min(elapsed, BenchmarkResultsWriter.HIGHEST_TRACKABLE));
         bh.consume(elapsed);
     }
 
@@ -160,7 +172,7 @@ public class MultiEventPathBenchmark extends DimensionBenchmarkBase {
         long t = System.nanoTime();
         fluxtionProcessor.onEvent(tsEvent);
         long elapsed = System.nanoTime() - t;
-        BenchmarkResultsWriter.record(fluxtionTsKey, elapsed);
+        histFxTs.recordValue(Math.min(elapsed, BenchmarkResultsWriter.HIGHEST_TRACKABLE));
         bh.consume(elapsed);
     }
 
@@ -172,7 +184,7 @@ public class MultiEventPathBenchmark extends DimensionBenchmarkBase {
         long t = System.nanoTime();
         fluxtionProcessor.onEvent(ctrlEvent);
         long elapsed = System.nanoTime() - t;
-        BenchmarkResultsWriter.record(fluxtionCtrlKey, elapsed);
+        histFxCtrl.recordValue(Math.min(elapsed, BenchmarkResultsWriter.HIGHEST_TRACKABLE));
         bh.consume(elapsed);
     }
 
@@ -186,7 +198,7 @@ public class MultiEventPathBenchmark extends DimensionBenchmarkBase {
         long t = System.nanoTime();
         rxMdRoot.onNext(new MarketDataEvent("BTC", 100.0 + seq, 101.0 + seq, seq++));
         long elapsed = System.nanoTime() - t;
-        BenchmarkResultsWriter.record(rxMdKey, elapsed);
+        histRxMd.recordValue(Math.min(elapsed, BenchmarkResultsWriter.HIGHEST_TRACKABLE));
         bh.consume(rxMdResult.get());
     }
 
@@ -197,7 +209,7 @@ public class MultiEventPathBenchmark extends DimensionBenchmarkBase {
         rxTsRoot.onNext(new TradeSignalEvent(
                 "AAPL", TradeSignalEvent.Side.BUY, 100.0 + seq, 150.0 + seq++));
         long elapsed = System.nanoTime() - t;
-        BenchmarkResultsWriter.record(rxTsKey, elapsed);
+        histRxTs.recordValue(Math.min(elapsed, BenchmarkResultsWriter.HIGHEST_TRACKABLE));
         bh.consume(rxTsResult.get());
     }
 
@@ -208,7 +220,7 @@ public class MultiEventPathBenchmark extends DimensionBenchmarkBase {
         rxCtrlRoot.onNext(seq++ % 10 == 0
                 ? ControlEvent.enable("path") : ControlEvent.disable("path"));
         long elapsed = System.nanoTime() - t;
-        BenchmarkResultsWriter.record(rxCtrlKey, elapsed);
+        histRxCtrl.recordValue(Math.min(elapsed, BenchmarkResultsWriter.HIGHEST_TRACKABLE));
         bh.consume(rxCtrlResult.get());
     }
 

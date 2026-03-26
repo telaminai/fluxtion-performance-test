@@ -8,6 +8,7 @@ import com.telamin.fluxtion.test.performance.generators.ShortChainGraphGenerator
 import com.telamin.fluxtion.test.performance.service.IShortChainProcessor;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.subjects.PublishSubject;
+import org.HdrHistogram.Histogram;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 
@@ -74,6 +75,9 @@ public class ServiceDispatchBenchmark extends DimensionBenchmarkBase {
     private String fluxtionOnEventKey;
     private String fluxtionServiceKey;
     private String rxJavaKey;
+
+    private Histogram histFxOnEvent, histFxService, histRx;
+
     // --- Fluxtion shared processor (implements both DataFlow and IShortChainProcessor) ---
     private DataFlow             fluxtionProcessor;
     private IShortChainProcessor serviceProcessor;
@@ -104,6 +108,10 @@ public class ServiceDispatchBenchmark extends DimensionBenchmarkBase {
         }
         rxResult = new AtomicLong();
         chain.subscribe(v -> rxResult.set(Double.doubleToLongBits(v)));
+
+        histFxOnEvent = BenchmarkResultsWriter.getHistogram(fluxtionOnEventKey);
+        histFxService = BenchmarkResultsWriter.getHistogram(fluxtionServiceKey);
+        histRx = BenchmarkResultsWriter.getHistogram(rxJavaKey);
     }
 
     /**
@@ -117,7 +125,7 @@ public class ServiceDispatchBenchmark extends DimensionBenchmarkBase {
         long t = System.nanoTime();
         fluxtionProcessor.onEvent(reuseEvent);
         long elapsed = System.nanoTime() - t;
-        BenchmarkResultsWriter.record(fluxtionOnEventKey, elapsed);
+        histFxOnEvent.recordValue(Math.min(elapsed, BenchmarkResultsWriter.HIGHEST_TRACKABLE));
         bh.consume(elapsed);
     }
 
@@ -132,7 +140,7 @@ public class ServiceDispatchBenchmark extends DimensionBenchmarkBase {
         long t = System.nanoTime();
         serviceProcessor.processChain(reuseEvent);
         long elapsed = System.nanoTime() - t;
-        BenchmarkResultsWriter.record(fluxtionServiceKey, elapsed);
+        histFxService.recordValue(Math.min(elapsed, BenchmarkResultsWriter.HIGHEST_TRACKABLE));
         bh.consume(elapsed);
     }
 
@@ -146,7 +154,7 @@ public class ServiceDispatchBenchmark extends DimensionBenchmarkBase {
         long t = System.nanoTime();
         rxRoot.onNext(100.0 + seq++);
         long elapsed = System.nanoTime() - t;
-        BenchmarkResultsWriter.record(rxJavaKey, elapsed);
+        histRx.recordValue(Math.min(elapsed, BenchmarkResultsWriter.HIGHEST_TRACKABLE));
         bh.consume(rxResult.get());
     }
 

@@ -3,6 +3,7 @@ package com.telamin.fluxtion.test.performance.benchmark;
 import com.telamin.fluxtion.test.performance.generated.DiamondMeshProcessor;
 import io.reactivex.rxjava3.core.Flowable;
 import io.reactivex.rxjava3.processors.PublishProcessor;
+import org.HdrHistogram.Histogram;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 
@@ -62,6 +63,8 @@ public class DiamondMeshBenchmark extends DimensionBenchmarkBase {
     private DiamondMeshProcessor fluxtionProcessor;
     private int eventValue = 0;
 
+    private Histogram histFx, histRx;
+
     // RxJava — 10-node layers, 10 layers of Flowable.zip fan-in
     private PublishProcessor<Integer> rxRoot;
     private AtomicInteger rxResult;
@@ -105,6 +108,9 @@ public class DiamondMeshBenchmark extends DimensionBenchmarkBase {
                 if (idx == 0) rxResult.set(v);
             });
         }
+
+        histFx = BenchmarkResultsWriter.getHistogram(FLUXTION_KEY);
+        histRx = BenchmarkResultsWriter.getHistogram(RX_KEY);
     }
 
     @Benchmark
@@ -112,7 +118,7 @@ public class DiamondMeshBenchmark extends DimensionBenchmarkBase {
         long t = System.nanoTime();
         fluxtionProcessor.onEvent(++eventValue);
         long elapsed = System.nanoTime() - t;
-        BenchmarkResultsWriter.record(FLUXTION_KEY, elapsed);
+        histFx.recordValue(Math.min(elapsed, BenchmarkResultsWriter.HIGHEST_TRACKABLE));
         bh.consume(fluxtionProcessor.node_10_0.getValue());
     }
 
@@ -121,7 +127,7 @@ public class DiamondMeshBenchmark extends DimensionBenchmarkBase {
         long t = System.nanoTime();
         rxRoot.onNext(++eventValue);
         long elapsed = System.nanoTime() - t;
-        BenchmarkResultsWriter.record(RX_KEY, elapsed);
+        histRx.recordValue(Math.min(elapsed, BenchmarkResultsWriter.HIGHEST_TRACKABLE));
         bh.consume(rxResult.get());
     }
 

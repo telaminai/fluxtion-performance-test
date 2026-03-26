@@ -41,7 +41,11 @@ public class DataCollector {
 
     /** Fired nodes in execution order for the current (or last completed) cycle. */
     public List<String> getFiredNodes() {
-        return Collections.unmodifiableList(firedNodes);
+        return firedNodes;
+    }
+
+    public int getFiredCount() {
+        return firedNodes.size();
     }
 
     /**

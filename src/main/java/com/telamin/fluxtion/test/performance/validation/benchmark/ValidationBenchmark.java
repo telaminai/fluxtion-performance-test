@@ -1,6 +1,7 @@
 package com.telamin.fluxtion.test.performance.validation.benchmark;
 
 import com.telamin.fluxtion.runtime.DataFlow;
+import com.telamin.fluxtion.test.performance.benchmark.BenchmarkResultsWriter;
 import com.telamin.fluxtion.test.performance.validation.events.ValidationControlEvent;
 import com.telamin.fluxtion.test.performance.validation.events.ValidationMarketEvent;
 import com.telamin.fluxtion.test.performance.validation.events.ValidationTradeEvent;
@@ -9,6 +10,7 @@ import com.telamin.fluxtion.test.performance.validation.nodes.EventContext;
 import com.telamin.fluxtion.test.performance.validation.nodes.ValidationNodeBase;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.subjects.PublishSubject;
+import org.HdrHistogram.Histogram;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 
@@ -86,6 +88,9 @@ public class ValidationBenchmark {
     private String rxJavaTradeKey;
     private String rxJavaControlKey;
 
+    private Histogram histFxMarket, histFxTrade, histFxControl;
+    private Histogram histRxMarket, histRxTrade, histRxControl;
+
     @Setup
     public void setup() throws Exception {
         fluxtionMarketKey  = "validation/fluxtion/market/"  + size;
@@ -97,6 +102,13 @@ public class ValidationBenchmark {
         buildAllIds();
         setupFluxtion();
         setupRxJava();
+
+        histFxMarket = BenchmarkResultsWriter.getHistogram(fluxtionMarketKey);
+        histFxTrade = BenchmarkResultsWriter.getHistogram(fluxtionTradeKey);
+        histFxControl = BenchmarkResultsWriter.getHistogram(fluxtionControlKey);
+        histRxMarket = BenchmarkResultsWriter.getHistogram(rxJavaMarketKey);
+        histRxTrade = BenchmarkResultsWriter.getHistogram(rxJavaTradeKey);
+        histRxControl = BenchmarkResultsWriter.getHistogram(rxJavaControlKey);
     }
 
     // =========================================================================
@@ -109,8 +121,8 @@ public class ValidationBenchmark {
         long t = System.nanoTime();
         fluxtionProcessor.onEvent(reuseMarket);
         long elapsed = System.nanoTime() - t;
-        com.telamin.fluxtion.test.performance.benchmark.BenchmarkResultsWriter.record(fluxtionMarketKey, elapsed);
-        bh.consume(fluxtionDc.getFiredNodes().size());
+        histFxMarket.recordValue(Math.min(elapsed, 10_000_000_000L));
+        bh.consume(fluxtionDc.getFiredCount());
     }
 
     @Benchmark
@@ -119,8 +131,8 @@ public class ValidationBenchmark {
         long t = System.nanoTime();
         fluxtionProcessor.onEvent(reuseTrade);
         long elapsed = System.nanoTime() - t;
-        com.telamin.fluxtion.test.performance.benchmark.BenchmarkResultsWriter.record(fluxtionTradeKey, elapsed);
-        bh.consume(fluxtionDc.getFiredNodes().size());
+        histFxTrade.recordValue(Math.min(elapsed, 10_000_000_000L));
+        bh.consume(fluxtionDc.getFiredCount());
     }
 
     @Benchmark
@@ -129,8 +141,8 @@ public class ValidationBenchmark {
         long t = System.nanoTime();
         fluxtionProcessor.onEvent(reuseControl);
         long elapsed = System.nanoTime() - t;
-        com.telamin.fluxtion.test.performance.benchmark.BenchmarkResultsWriter.record(fluxtionControlKey, elapsed);
-        bh.consume(fluxtionDc.getFiredNodes().size());
+        histFxControl.recordValue(Math.min(elapsed, 10_000_000_000L));
+        bh.consume(fluxtionDc.getFiredCount());
     }
 
     // =========================================================================
@@ -143,7 +155,7 @@ public class ValidationBenchmark {
         long t = System.nanoTime();
         rxMdRoot.onNext(50000.0);
         long elapsed = System.nanoTime() - t;
-        com.telamin.fluxtion.test.performance.benchmark.BenchmarkResultsWriter.record(rxJavaMarketKey, elapsed);
+        histRxMarket.recordValue(Math.min(elapsed, 10_000_000_000L));
         bh.consume(rxSink);
     }
 
@@ -153,7 +165,7 @@ public class ValidationBenchmark {
         long t = System.nanoTime();
         rxTsRoot.onNext(100.0);
         long elapsed = System.nanoTime() - t;
-        com.telamin.fluxtion.test.performance.benchmark.BenchmarkResultsWriter.record(rxJavaTradeKey, elapsed);
+        histRxTrade.recordValue(Math.min(elapsed, 10_000_000_000L));
         bh.consume(rxSink);
     }
 
@@ -163,7 +175,7 @@ public class ValidationBenchmark {
         long t = System.nanoTime();
         rxCtrlRoot.onNext(0.5);
         long elapsed = System.nanoTime() - t;
-        com.telamin.fluxtion.test.performance.benchmark.BenchmarkResultsWriter.record(rxJavaControlKey, elapsed);
+        histRxControl.recordValue(Math.min(elapsed, 10_000_000_000L));
         bh.consume(rxSink);
     }
 

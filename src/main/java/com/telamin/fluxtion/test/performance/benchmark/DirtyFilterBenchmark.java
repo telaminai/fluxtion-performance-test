@@ -7,6 +7,7 @@ import com.telamin.fluxtion.test.performance.generators.DirtyFilterGraphGenerato
 import com.telamin.fluxtion.test.performance.generators.GraphGeneratorBase;
 import io.reactivex.rxjava3.core.Flowable;
 import io.reactivex.rxjava3.processors.PublishProcessor;
+import org.HdrHistogram.Histogram;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 
@@ -48,6 +49,8 @@ public class DirtyFilterBenchmark extends DimensionBenchmarkBase {
     private PublishProcessor<ControlEvent> rxRoot;
     private AtomicLong rxResult;
 
+    private Histogram histFx, histRx;
+
     // Pre-built events: 1 ENABLE followed by 9 DISABLE — 10% pass rate
     private final ControlEvent ENABLE_EVENT  = ControlEvent.enable("path");
     private final ControlEvent DISABLE_EVENT = ControlEvent.disable("path");
@@ -73,6 +76,9 @@ public class DirtyFilterBenchmark extends DimensionBenchmarkBase {
         }
         rxResult = new AtomicLong();
         chain.subscribe(v -> rxResult.set(Double.doubleToLongBits(v)));
+
+        histFx = BenchmarkResultsWriter.getHistogram(fluxtionKey);
+        histRx = BenchmarkResultsWriter.getHistogram(rxJavaKey);
     }
 
     @Benchmark
@@ -83,7 +89,7 @@ public class DirtyFilterBenchmark extends DimensionBenchmarkBase {
         fluxtionProcessor.onEvent(event);
         long elapsed = System.nanoTime() - t;
         eventCount++;
-        BenchmarkResultsWriter.record(fluxtionKey, elapsed);
+        histFx.recordValue(Math.min(elapsed, 10_000_000_000L));
         bh.consume(elapsed);
     }
 
@@ -94,7 +100,7 @@ public class DirtyFilterBenchmark extends DimensionBenchmarkBase {
         rxRoot.onNext(event);
         long elapsed = System.nanoTime() - t;
         eventCount++;
-        BenchmarkResultsWriter.record(rxJavaKey, elapsed);
+        histRx.recordValue(Math.min(elapsed, 10_000_000_000L));
         bh.consume(rxResult.get());
     }
 

@@ -1,0 +1,112 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------< com.telamin.fluxtion:fluxtion-performance-test >-----------
+[INFO] Building fluxtion-performance-test 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- exec:3.6.3:java (default-cli) @ fluxtion-performance-test ---
+
+=== Multi-Dimension Latency: p50 (ns/op) ===
+Dimension                        Size Fluxtion p50   RxJava p50    Speedup Fluxtion wins?
+--------------------------------------------------------------------------------------------
+deep_path                           5           41            0       0.00 no
+deep_path                          10           42            0       0.00 no
+deep_path                          20           42           42       1.00 YES  (1.0x)
+deep_path                          50          167           83       0.50 no
+deep_path                         100          166          167       1.01 YES  (1.0x)
+diamond_mesh                      101          167       271103    1623.37 YES  (1623.4x)
+dirty_filter                       10           41           42       1.02 YES  (1.0x)
+dirty_filter                       20           41           42       1.02 YES  (1.0x)
+dirty_filter                       50           42          417       9.93 YES  (9.9x)
+dirty_filter                      100           42          500      11.90 YES  (11.9x)
+hot_path                            2           42           41       0.98 no
+hot_path                            4           42           41       0.98 no
+hot_path                            8           42           42       1.00 YES  (1.0x)
+hot_path                           16           42           42       1.00 YES  (1.0x)
+hot_path                           32           83           83       1.00 YES  (1.0x)
+intermediate_handlers              10           42           42       1.00 YES  (1.0x)
+intermediate_handlers              20           42           83       1.98 YES  (2.0x)
+intermediate_handlers              50           42          167       3.98 YES  (4.0x)
+intermediate_handlers             100          125          333       2.66 YES  (2.7x)
+multi_event_ctrl                    5           41            0       0.00 no
+multi_event_ctrl                   10           41            0       0.00 no
+multi_event_ctrl                   20           41            0       0.00 no
+multi_event_ctrl                   50           42            0       0.00 no
+multi_event_md                      5           42            0       0.00 no
+multi_event_md                     10           42            0       0.00 no
+multi_event_md                     20           42           42       1.00 YES  (1.0x)
+multi_event_md                     50          167           83       0.50 no
+multi_event_ts                      5           42            0       0.00 no
+multi_event_ts                     10           42            0       0.00 no
+multi_event_ts                     20           42           41       0.98 no
+multi_event_ts                     50           84           42       0.50 no
+polymorphic                         5           42            0       0.00 no
+polymorphic                        10           42           41       0.98 no
+polymorphic                        20           42           42       1.00 YES  (1.0x)
+polymorphic                        50          167           84       0.50 no
+polymorphic                       100          334          167       0.50 no
+validation/control                  3           83          125       1.51 YES  (1.5x)
+validation/control                  5           83          125       1.51 YES  (1.5x)
+validation/control                 10          125          208       1.66 YES  (1.7x)
+validation/market                   3           84          209       2.49 YES  (2.5x)
+validation/market                   5          125          459       3.67 YES  (3.7x)
+validation/market                  10          209         1042       4.99 YES  (5.0x)
+validation/trade                    3           83          125       1.51 YES  (1.5x)
+validation/trade                    5           83          125       1.51 YES  (1.5x)
+validation/trade                   10          167          459       2.75 YES  (2.7x)
+
+=== Tail Latency Comparison (ns) — GC pressure shows up here ===
+Dimension                        Size     Fx p99     Rx p99   Fx p99.9   Rx p99.9  Fx p99.99  Rx p99.99
+------------------------------------------------------------------------------------------------------------
+deep_path                           5         83         42        125         83       1209        167
+deep_path                          10         83         42         84         84        708        625
+deep_path                          20         84         83        166        167        875       1250
+deep_path                          50        250        125        375        250       5087       4211
+deep_path                         100        209        250        333        625       4335       5875
+diamond_mesh                      101        250     945663        375    1822719       4919    3940351
+dirty_filter                       10         42         84         84        333        625       4167
+dirty_filter                       20         42         84         84        292        666       2917
+dirty_filter                       50        125        584        167       2000        792      12839
+dirty_filter                      100        209        791        500       3917       8295      19471
+hot_path                            2         84         42        125        125        834        916
+hot_path                            4         84         83        125        208        959        916
+hot_path                            8         84         84        125        209       1209       1083
+hot_path                           16        125         84        167        167       1834        959
+hot_path                           32        125        125        250        250       4251       3251
+intermediate_handlers              10         42        125         84        208        667       1958
+intermediate_handlers              20         83        125        125        250        791       1667
+intermediate_handlers              50         84        250        167        750       1000       5667
+intermediate_handlers             100        208        459        292       1458       4583       9087
+multi_event_ctrl                    5         42         42         84         42        625        167
+multi_event_ctrl                   10         42         42         84         42        667        167
+multi_event_ctrl                   20         42         42         84         84        625        167
+multi_event_ctrl                   50         42         83         84        125        708        375
+multi_event_md                      5         42         42         84         83        625        208
+multi_event_md                     10         83         42         84         84        708        666
+multi_event_md                     20         84         83        166        125        958        792
+multi_event_md                     50        250        125        333        291       5251       3251
+multi_event_ts                      5         42         42         84         42        667        167
+multi_event_ts                     10         42         42         84         84        666        333
+multi_event_ts                     20         84        125        125        291        833        750
+multi_event_ts                     50        167        166        209        333       5003       2335
+polymorphic                         5         42         42         84         83        625        167
+polymorphic                        10         83         42         84        125        667        750
+polymorphic                        20        125         84        167        167        959       1333
+polymorphic                        50        250        167        292        417       5419       4251
+polymorphic                       100        500        250        583        791       7459       6835
+validation/control                  3        125        334        208        625       2125       7211
+validation/control                  5        125        292        208        542       1000       3459
+validation/control                 10        167        417        250        750       1583       5043
+validation/market                   3        125        541        250        917       1750       9959
+validation/market                   5        208        792        375       1375       4211      10503
+validation/market                  10        292       1458        417       4251       5419      18543
+validation/trade                    3        125        375        208        625       1000       5167
+validation/trade                    5        125        333        208        583        958       3501
+validation/trade                   10        250        792        375       1292       5087      11215
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.482 s
+[INFO] Finished at: 2026-03-26T17:36:39Z
+[INFO] ------------------------------------------------------------------------

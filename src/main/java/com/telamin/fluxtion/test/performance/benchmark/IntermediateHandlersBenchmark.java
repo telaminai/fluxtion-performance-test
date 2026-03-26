@@ -7,6 +7,7 @@ import com.telamin.fluxtion.test.performance.generators.GraphGeneratorBase;
 import com.telamin.fluxtion.test.performance.generators.IntermediateHandlersGraphGenerator;
 import io.reactivex.rxjava3.core.Flowable;
 import io.reactivex.rxjava3.processors.PublishProcessor;
+import org.HdrHistogram.Histogram;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 
@@ -57,6 +58,8 @@ public class IntermediateHandlersBenchmark extends DimensionBenchmarkBase {
     private List<PublishProcessor<TradeSignalEvent>> rxHandlers;
     private AtomicLong rxResult;
 
+    private Histogram histFx, histRx;
+
     @Setup
     public void setup() throws Exception {
         fluxtionKey = DIM + "/fluxtion/" + size;
@@ -87,6 +90,9 @@ public class IntermediateHandlersBenchmark extends DimensionBenchmarkBase {
         rxResult = new AtomicLong();
         Flowable.merge(branches)
                 .subscribe(v -> rxResult.set(Double.doubleToLongBits(v)));
+
+        histFx = BenchmarkResultsWriter.getHistogram(fluxtionKey);
+        histRx = BenchmarkResultsWriter.getHistogram(rxJavaKey);
     }
 
     @Benchmark
@@ -97,7 +103,7 @@ public class IntermediateHandlersBenchmark extends DimensionBenchmarkBase {
         long t = System.nanoTime();
         fluxtionProcessor.onEvent(reuseEvent);
         long elapsed = System.nanoTime() - t;
-        BenchmarkResultsWriter.record(fluxtionKey, elapsed);
+        histFx.recordValue(Math.min(elapsed, BenchmarkResultsWriter.HIGHEST_TRACKABLE));
         bh.consume(elapsed);
     }
     @Benchmark
@@ -111,7 +117,7 @@ public class IntermediateHandlersBenchmark extends DimensionBenchmarkBase {
             proc.onNext(event);
         }
         long elapsed = System.nanoTime() - t;
-        BenchmarkResultsWriter.record(rxJavaKey, elapsed);
+        histRx.recordValue(Math.min(elapsed, BenchmarkResultsWriter.HIGHEST_TRACKABLE));
         bh.consume(rxResult.get());
     }
 

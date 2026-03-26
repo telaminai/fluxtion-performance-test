@@ -6,6 +6,7 @@ import com.telamin.fluxtion.test.performance.generators.DeepPathGraphGenerator;
 import com.telamin.fluxtion.test.performance.generators.GraphGeneratorBase;
 import io.reactivex.rxjava3.core.Flowable;
 import io.reactivex.rxjava3.processors.PublishProcessor;
+import org.HdrHistogram.Histogram;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 import java.util.concurrent.TimeUnit;
@@ -53,6 +54,8 @@ public class DeepPathBenchmark extends DimensionBenchmarkBase {
     private String fluxtionKey;
     private String rxJavaKey;
 
+    private Histogram histFx, histRx;
+
     // RxJava
     private PublishProcessor<MarketDataEvent> rxRoot;
     private AtomicLong rxResult;
@@ -73,6 +76,9 @@ public class DeepPathBenchmark extends DimensionBenchmarkBase {
         }
         rxResult = new AtomicLong();
         chain.subscribe(v -> rxResult.set(Double.doubleToLongBits(v)));
+
+        histFx = BenchmarkResultsWriter.getHistogram(fluxtionKey);
+        histRx = BenchmarkResultsWriter.getHistogram(rxJavaKey);
     }
 
     @Benchmark
@@ -84,7 +90,7 @@ public class DeepPathBenchmark extends DimensionBenchmarkBase {
         long t = System.nanoTime();
         fluxtionProcessor.onEvent(reuseEvent);
         long elapsed = System.nanoTime() - t;
-        BenchmarkResultsWriter.record(fluxtionKey, elapsed);
+        histFx.recordValue(Math.min(elapsed, BenchmarkResultsWriter.HIGHEST_TRACKABLE));
         bh.consume(elapsed);
     }
 
@@ -94,7 +100,7 @@ public class DeepPathBenchmark extends DimensionBenchmarkBase {
         long t = System.nanoTime();
         rxRoot.onNext(new MarketDataEvent("BTC", 100.0 + seq, 101.0 + seq, seq++));
         long elapsed = System.nanoTime() - t;
-        BenchmarkResultsWriter.record(rxJavaKey, elapsed);
+        histRx.recordValue(Math.min(elapsed, BenchmarkResultsWriter.HIGHEST_TRACKABLE));
         bh.consume(rxResult.get());
     }
 

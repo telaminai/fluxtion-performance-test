@@ -7,6 +7,7 @@ import com.telamin.fluxtion.test.performance.generators.GraphGeneratorBase;
 import com.telamin.fluxtion.test.performance.generators.PolymorphicGraphGenerator;
 import io.reactivex.rxjava3.core.Flowable;
 import io.reactivex.rxjava3.processors.PublishProcessor;
+import org.HdrHistogram.Histogram;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 
@@ -50,6 +51,8 @@ public class PolymorphicBenchmark extends DimensionBenchmarkBase {
     private PublishProcessor<TradeSignalEvent> rxRoot;
     private AtomicLong rxResult;
 
+    private Histogram histFx, histRx;
+
     // Cycle mirrors the three node subtypes: sum, accumulate, multiply
     private static final double FACTOR = 1.001;
 
@@ -77,6 +80,9 @@ public class PolymorphicBenchmark extends DimensionBenchmarkBase {
         }
         rxResult = new AtomicLong();
         chain.subscribe(v -> rxResult.set(Double.doubleToLongBits(v)));
+
+        histFx = BenchmarkResultsWriter.getHistogram(fluxtionKey);
+        histRx = BenchmarkResultsWriter.getHistogram(rxJavaKey);
     }
 
     @Benchmark
@@ -87,7 +93,7 @@ public class PolymorphicBenchmark extends DimensionBenchmarkBase {
         long t = System.nanoTime();
         fluxtionProcessor.onEvent(reuseEvent);
         long elapsed = System.nanoTime() - t;
-        BenchmarkResultsWriter.record(fluxtionKey, elapsed);
+        histFx.recordValue(Math.min(elapsed, BenchmarkResultsWriter.HIGHEST_TRACKABLE));
         bh.consume(elapsed);
     }
     @Benchmark
@@ -97,7 +103,7 @@ public class PolymorphicBenchmark extends DimensionBenchmarkBase {
         rxRoot.onNext(new TradeSignalEvent(
                 "AAPL", TradeSignalEvent.Side.BUY, 100.0 + seq, 150.0 + seq++));
         long elapsed = System.nanoTime() - t;
-        BenchmarkResultsWriter.record(rxJavaKey, elapsed);
+        histRx.recordValue(Math.min(elapsed, BenchmarkResultsWriter.HIGHEST_TRACKABLE));
         bh.consume(rxResult.get());
     }
 

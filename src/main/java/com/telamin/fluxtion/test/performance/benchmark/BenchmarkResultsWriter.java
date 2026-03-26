@@ -26,16 +26,23 @@ import java.util.concurrent.ConcurrentHashMap;
 public class BenchmarkResultsWriter {
 
     // 1ns to 10s range, 3 significant figures
-    private static final long HIGHEST_TRACKABLE = 10_000_000_000L;
+    public static final long HIGHEST_TRACKABLE = 10_000_000_000L;
     private static final int  SIGNIFICANT_DIGITS = 3;
 
     private static final Map<String, Histogram> HISTOGRAMS = new ConcurrentHashMap<>();
 
     /** Record a single latency sample (nanoseconds) for the given label. */
     public static void record(String label, long latencyNs) {
-        HISTOGRAMS.computeIfAbsent(label,
-                        k -> new Histogram(HIGHEST_TRACKABLE, SIGNIFICANT_DIGITS))
-                .recordValue(Math.min(latencyNs, HIGHEST_TRACKABLE));
+        getHistogram(label).recordValue(Math.min(latencyNs, HIGHEST_TRACKABLE));
+    }
+
+    /**
+     * Get or create a histogram for the given label.
+     * Pre-fetching this in @Setup avoids Map lookups and lambda allocations in hot paths.
+     */
+    public static Histogram getHistogram(String label) {
+        return HISTOGRAMS.computeIfAbsent(label,
+                k -> new Histogram(HIGHEST_TRACKABLE, SIGNIFICANT_DIGITS));
     }
 
     /**
