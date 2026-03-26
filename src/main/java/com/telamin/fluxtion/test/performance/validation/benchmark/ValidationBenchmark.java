@@ -79,8 +79,21 @@ public class ValidationBenchmark {
     // Blackhole sink for RxJava results
     private volatile long rxSink;
 
+    private String fluxtionMarketKey;
+    private String fluxtionTradeKey;
+    private String fluxtionControlKey;
+    private String rxJavaMarketKey;
+    private String rxJavaTradeKey;
+    private String rxJavaControlKey;
+
     @Setup
     public void setup() throws Exception {
+        fluxtionMarketKey  = "validation/fluxtion/market/"  + size;
+        fluxtionTradeKey   = "validation/fluxtion/trade/"   + size;
+        fluxtionControlKey = "validation/fluxtion/control/" + size;
+        rxJavaMarketKey    = "validation/rxjava/market/"    + size;
+        rxJavaTradeKey     = "validation/rxjava/trade/"     + size;
+        rxJavaControlKey   = "validation/rxjava/control/"   + size;
         buildAllIds();
         setupFluxtion();
         setupRxJava();
@@ -93,21 +106,30 @@ public class ValidationBenchmark {
     @Benchmark
     public void fluxtionMarket(Blackhole bh) {
         fluxtionDc.reset();
+        long t = System.nanoTime();
         fluxtionProcessor.onEvent(reuseMarket);
+        long elapsed = System.nanoTime() - t;
+        com.telamin.fluxtion.test.performance.benchmark.BenchmarkResultsWriter.record(fluxtionMarketKey, elapsed);
         bh.consume(fluxtionDc.getFiredNodes().size());
     }
 
     @Benchmark
     public void fluxtionTrade(Blackhole bh) {
         fluxtionDc.reset();
+        long t = System.nanoTime();
         fluxtionProcessor.onEvent(reuseTrade);
+        long elapsed = System.nanoTime() - t;
+        com.telamin.fluxtion.test.performance.benchmark.BenchmarkResultsWriter.record(fluxtionTradeKey, elapsed);
         bh.consume(fluxtionDc.getFiredNodes().size());
     }
 
     @Benchmark
     public void fluxtionControl(Blackhole bh) {
         fluxtionDc.reset();
+        long t = System.nanoTime();
         fluxtionProcessor.onEvent(reuseControl);
+        long elapsed = System.nanoTime() - t;
+        com.telamin.fluxtion.test.performance.benchmark.BenchmarkResultsWriter.record(fluxtionControlKey, elapsed);
         bh.consume(fluxtionDc.getFiredNodes().size());
     }
 
@@ -118,22 +140,37 @@ public class ValidationBenchmark {
     @Benchmark
     public void rxJavaMarket(Blackhole bh) {
         rxDc.reset();
+        long t = System.nanoTime();
         rxMdRoot.onNext(50000.0);
+        long elapsed = System.nanoTime() - t;
+        com.telamin.fluxtion.test.performance.benchmark.BenchmarkResultsWriter.record(rxJavaMarketKey, elapsed);
         bh.consume(rxSink);
     }
 
     @Benchmark
     public void rxJavaTrade(Blackhole bh) {
         rxDc.reset();
+        long t = System.nanoTime();
         rxTsRoot.onNext(100.0);
+        long elapsed = System.nanoTime() - t;
+        com.telamin.fluxtion.test.performance.benchmark.BenchmarkResultsWriter.record(rxJavaTradeKey, elapsed);
         bh.consume(rxSink);
     }
 
     @Benchmark
     public void rxJavaControl(Blackhole bh) {
         rxDc.reset();
+        long t = System.nanoTime();
         rxCtrlRoot.onNext(0.5);
+        long elapsed = System.nanoTime() - t;
+        com.telamin.fluxtion.test.performance.benchmark.BenchmarkResultsWriter.record(rxJavaControlKey, elapsed);
         bh.consume(rxSink);
+    }
+
+    @TearDown
+    public void tearDown() {
+        com.telamin.fluxtion.test.performance.benchmark.BenchmarkResultsWriter.writeAll("target/results");
+        com.telamin.fluxtion.test.performance.benchmark.BenchmarkResultsWriter.printSummary();
     }
 
     // =========================================================================

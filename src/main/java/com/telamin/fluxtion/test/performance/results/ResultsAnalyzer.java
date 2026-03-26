@@ -89,12 +89,20 @@ public class ResultsAnalyzer {
     /** Filename format: dimension_framework_size  (underscores separate parts) */
     private static ResultKey parseKey(String name) {
         // e.g. "deep_path_fluxtion_100" or "intermediate_handlers_rxjava_50"
-        // framework is always "fluxtion" or "rxjava"
+        // or "validation_fluxtion_market_10"
         for (String fw : new String[]{"fluxtion", "rxjava"}) {
             int idx = name.indexOf("_" + fw + "_");
             if (idx >= 0) {
                 String dim  = name.substring(0, idx);
                 String rest = name.substring(idx + fw.length() + 2);
+                
+                // If there's another underscore, it's a subtype (e.g. market, trade, control)
+                int subIdx = rest.indexOf("_");
+                if (subIdx >= 0) {
+                    dim = dim + "/" + rest.substring(0, subIdx);
+                    rest = rest.substring(subIdx + 1);
+                }
+                
                 try {
                     return new ResultKey(dim, fw, Integer.parseInt(rest));
                 } catch (NumberFormatException ignored) {}
