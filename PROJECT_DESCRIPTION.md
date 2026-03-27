@@ -122,9 +122,9 @@ The 10×10 diamond mesh exposes the **glitch problem** structurally. In any conv
 Fluxtion's AOT-compiled SEG performs a topological sort at build time and visits each node exactly once per event cycle, regardless of how many upstream paths converge on it. RxJava has no glitch-elimination mechanism — each `PublishSubject.onNext()` propagates independently through every path.
 
 **Result (101 nodes, 10×10 mesh):**
-- Fluxtion: **167 ns/op**, ≈ 0 B/op
-- RxJava: **283,903 ns/op**, 286,595 B/op per event cycle
-- **Speedup: ~1,700×**
+- Fluxtion: **83 ns/op**, ≈ 0 B/op
+- RxJava: **236,927 ns/op**, 286,595 B/op per event cycle
+- **Speedup: >2,800×**
 
 The algorithmic explanation: in the 10×10 mesh, each of the 100 interior nodes has multiple convergent upstream paths. RxJava executes approximately ~1,250 total node activations per event; Fluxtion executes exactly 101. This is not a constant-factor improvement — it is an algorithmic difference proportional to the number of convergent paths.
 
@@ -138,7 +138,7 @@ This is the most important benchmark for production relevance. A single `Validat
 
 **Key properties demonstrated:**
 
-1. **Advantage grows with chain depth.** The deepest chain (market data, ~32 nodes) shows the largest speedup (5.0× at size=10); the shallowest (control, ~11 nodes) shows the smallest (2.5×). Every additional layer adds a `zip()` coordinator allocation to RxJava's budget; Fluxtion's cost is proportional only to nodes visited.
+1. **Advantage grows with chain depth.** The deepest chain (market data, ~32 nodes) shows the largest speedup (3.6× at size=10); the shallowest (control, ~11 nodes) shows the smallest (1.2×). Every additional layer adds a `zip()` coordinator allocation to RxJava's budget; Fluxtion's cost is proportional only to nodes visited.
 
 2. **True zero-allocation across all event types.** Processing a market event does not allocate even though trade and control chains are simultaneously registered. The compiled schedules are structurally isolated — no shared runtime data structures connect them.
 
@@ -148,9 +148,9 @@ This is the most important benchmark for production relevance. A single `Validat
 
 | Event type | Fluxtion (ns) | RxJava (ns) | Speedup | Fluxtion B/op | RxJava B/op |
 |---|---|---|---|---|---|
-| Control (~11 nodes) | 83 | 208 | **2.5×** | **≈ 0** | 352 |
-| Trade (~17 nodes) | 167 | 500 | **3.0×** | **≈ 0** | 624 |
-| Market (~32 nodes) | 208 | 1,042 | **5.0×** | **≈ 0** | 1,344 |
+| Control (~11 nodes) | 167 | 208 | **1.2×** | **≈ 0** | 352 |
+| Trade (~17 nodes) | 208 | 458 | **2.2×** | **≈ 0** | 624 |
+| Market (~32 nodes) | 292 | 1,041 | **3.6×** | **≈ 0** | 1,344 |
 
 **Expected result:** Fluxtion wins at all sizes; advantage grows with chain depth; Fluxtion ≈ 0 B/op; RxJava allocation grows O(layers).
 
@@ -192,7 +192,7 @@ A single compiled processor contains three completely independent execution path
 
 The RxJava equivalent requires three separate `PublishProcessor` / `Flowable` chains, each incurring its own allocation budget per event.
 
-**Expected result:** RxJava Control wins at small sizes (shallow chain, JIT-friendly); Fluxtion wins on Market and Trade at size ≥ 20 where chain depth matters.
+**Expected result:** RxJava wins at all sizes on this single-chain multi-event benchmark; Fluxtion's fixed entry overhead is not amortised even at size 50.
 
 ---
 
@@ -356,10 +356,10 @@ Measured with **20 warmup iterations**, **5 measurement iterations**, and a **10
 
 | Topology | Fluxtion p50 | Fluxtion p99.99 | p99.99/p50 | RxJava p50 | RxJava p99.99 |
 |---|---|---|---|---|---|
-| deep_path (depth=100) | ~375 ns | ~6,083 ns | 16.2 | ~167 ns | ~4,083 ns |
-| dirty_filter (size=100) | ~42 ns | ~2,125 ns | 50.6 | ~250 ns | ~12,047 ns |
-| diamond_mesh (101 nodes) | ~167 ns | ~8,631 ns | 51.7 | ~283,903 ns | ~4,104,191 ns |
-| validation market (size=10) | ~208 ns | ~9,167 ns | 44.1 | ~1,042 ns | ~37,151 ns |
+| deep_path (depth=100) | ~333 ns | ~1,708 ns | 5.1 | ~167 ns | ~3,167 ns |
+| dirty_filter (size=100) | ~42 ns | ~791 ns | 18.8 | ~542 ns | ~5,459 ns |
+| diamond_mesh (101 nodes) | ~83 ns | ~916 ns | 11.0 | ~236,927 ns | ~2,961,407 ns |
+| validation market (size=10) | ~292 ns | ~2,709 ns | 9.3 | ~1,041 ns | ~9,631 ns |
 
 Fluxtion's tail latency remains in the microsecond range even under heap pressure, whereas RxJava's tails diverge into milliseconds due to allocation-driven GC.
 
@@ -418,14 +418,15 @@ mvn exec:java -Dexec.mainClass="org.openjdk.jmh.Main" \
 
 | Dimension | Fluxtion result | Why |
 |---|---|---|
-| Diamond mesh (101 nodes) | **~1,700× faster** | Algorithmic: O(\|V\|) vs O(paths) — glitch elimination |
-| Validation multi-event (size=10) | **2.5–5.0× faster** | Pre-computed per-type paths; ≈0 allocation vs O(layers) in RxJava |
-| Dirty filter (size=100) | **6.0× faster** | O(1) propagation arrest vs linear operator traversal |
-| Intermediate handlers (size=100) | **3.0× faster** | Compile-time shared-node deduplication |
-| Hot path (32 branches) | **1.0× faster** | Compiled boolean guards vs subscriber-list traversal |
+| Diamond mesh (101 nodes) | **>2,800× faster** | Algorithmic: O(\|V\|) vs O(paths) — glitch elimination |
+| Validation multi-event (size=10) | **1.2–3.6× faster** | Pre-computed per-type paths; ≈0 allocation vs O(layers) in RxJava |
+| Dirty filter (size=100) | **12× faster** | O(1) propagation arrest vs linear operator traversal |
+| Intermediate handlers (size=100) | **RxJava faster** | Linear segments favor identity-lambda JIT optimization |
+| Hot path (32 branches) | **2.0× faster** | Compiled boolean guards vs subscriber-list traversal |
 | Polymorphic (size=50+) | **RxJava faster** | Monomorphic call sites vs megamorphic lambda accumulation + Double boxing |
-| Multi-event market/trade (size≥20) | **Mixed** | Type-specific dispatch vs shared operator chain |
+| Multi-event market/trade (size≥20) | **RxJava faster** | Type-specific dispatch vs shared operator chain |
 | Deep path (all sizes) | **RxJava faster** | Linear chains favor identity-lambda JIT optimization |
+| No-Op Dispatch floor | **~2.1 ns/node** | Marginal cost per node at size 100 on GraalVM 25 |
 | Service dispatch (size ≤ 5) | **RxJava faster** | Very short chains do not amortise Fluxtion's entry cost |
 
 **The structural pattern:** Fluxtion's advantages (glitch elimination, propagation arrest, zero allocation, per-event-type path isolation, monomorphic call sites) materialise at topological complexity, graph scale, and multi-event workloads — exactly the conditions present in production trading, telemetry, and edge systems. RxJava wins only on trivial single-type linear chains where its identical-lambda JIT optimisation is at its most effective. In any system that resembles production complexity, Fluxtion's compile-time coordination pays off both in average latency and in tail-latency stability.
