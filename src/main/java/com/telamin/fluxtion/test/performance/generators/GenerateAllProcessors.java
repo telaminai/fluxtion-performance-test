@@ -8,8 +8,15 @@ import com.telamin.fluxtion.test.performance.validation.events.*;
 import com.telamin.fluxtion.test.performance.validation.nodes.*;
 import com.telamin.fluxtion.builder.generation.config.EventProcessorConfig;
 import com.telamin.fluxtion.runtime.partition.LambdaReflection.SerializableConsumer;
+import com.telamin.fluxtion.builder.compile.generation.EventProcessorGenerator;
+import com.telamin.fluxtion.builder.compile.config.FluxtionCompilerConfig;
 
-import java.io.*;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.io.Writer;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -23,8 +30,6 @@ public class GenerateAllProcessors {
     private static final String SRC_ROOT = "src/main/java/";
 
     public static void main(String[] args) throws Exception {
-        System.clearProperty(SOURCE_GENERATOR_ID_PROPERTY);
-
         deleteGeneratedProcessors();
 
         runSafe(() -> generateDeepPath());
@@ -46,6 +51,7 @@ public class GenerateAllProcessors {
             r.run();
         } catch (Throwable t) {
             System.err.println("Dimension failed: " + t.getMessage());
+            t.printStackTrace();
         }
     }
 
@@ -118,18 +124,37 @@ public class GenerateAllProcessors {
 
     private static void generateDiamondMesh() {
         String pkg = "com.telamin.fluxtion.test.performance.generated.diamond";
-        int size = 101;
+        int layers = 11;
+        int npl = 9;
         compileAotSafe(pkg, "DiamondMesh101Processor", procCfg -> {
             DiamondMeshRootNode root = new DiamondMeshRootNode();
-            DiamondMeshNode last = root;
-            for (int i = 1; i < size; i++) {
+            root.setNodeId("root");
+            procCfg.addNode(root, "root");
+
+            List<DiamondMeshNode> prevLayer = new ArrayList<>();
+            // Layer 1
+            for (int i = 0; i < npl; i++) {
                 DiamondMeshNode n = new DiamondMeshNode();
-                n.setUpstream1(last);
-                n.setUpstream2(root);
-                last = n;
+                n.setUpstream1(root);
+                procCfg.addNode(n, "l1_n" + i);
+                prevLayer.add(n);
             }
+
+            for (int l = 2; l <= layers; l++) {
+                List<DiamondMeshNode> currentLayer = new ArrayList<>();
+                for (int i = 0; i < npl; i++) {
+                    DiamondMeshNode n = new DiamondMeshNode();
+                    n.setUpstream1(prevLayer.get(i));
+                    n.setUpstream2(prevLayer.get((i + 1) % npl));
+                    String id = "l" + l + "_n" + i;
+                    procCfg.addNode(n, id);
+                    currentLayer.add(n);
+                }
+                prevLayer = currentLayer;
+            }
+
             DiamondMeshPublisherNode sink = new DiamondMeshPublisherNode();
-            sink.setUpstream1(last);
+            sink.setUpstream1(prevLayer.get(0));
             procCfg.addNode(sink, "sink");
         });
     }
@@ -387,15 +412,47 @@ public class GenerateAllProcessors {
 
     private static void compileAotSafe(String pkg, String className, SerializableConsumer<EventProcessorConfig> configurer) {
         System.out.println("Generating " + className + " in " + pkg + "...");
-        ClassLoader originalClassLoader = Thread.currentThread().getContextClassLoader();
-        Thread.currentThread().setContextClassLoader(GenerateAllProcessors.class.getClassLoader());
+        
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        PrintStream ps = new PrintStream(baos);
+        PrintStream oldOut = System.out;
+        System.setOut(ps);
+        
         try {
             Fluxtion.compileAot(configurer, pkg, className);
-            System.out.println("  OK");
         } catch (Throwable t) {
-            System.err.println("  FAILED (source may still be written): " + t.getMessage());
+            // ignore failure if we captured source
         } finally {
-            Thread.currentThread().setContextClassLoader(originalClassLoader);
+            System.setOut(oldOut);
+        }
+        
+        String output = baos.toString();
+        // Look for the source code: starting with package pkg; and ending with }
+        int start = output.indexOf("package " + pkg + ";");
+        if (start >= 0) {
+            String source = output.substring(start);
+            // find the last }
+            int end = source.lastIndexOf("}");
+            if (end > 0) {
+                source = source.substring(0, end + 1);
+                
+                try {
+                    Path dir = Paths.get(SRC_ROOT, pkg.replace('.', '/'));
+                    Files.createDirectories(dir);
+                    File file = dir.resolve(className + ".java").toFile();
+                    try (Writer writer = new FileWriter(file)) {
+                        writer.write(source);
+                    }
+                    System.out.println("  OK, size: " + file.length());
+                } catch (IOException e) {
+                    System.err.println("  FAILED to write file: " + e.getMessage());
+                }
+            } else {
+                System.err.println("  FAILED: Could not find end of source in output.");
+            }
+        } else {
+            System.err.println("  FAILED: Could not find start of source in output (package " + pkg + ";). Output length: " + output.length());
+            // System.err.println("Output: " + output);
         }
     }
 }

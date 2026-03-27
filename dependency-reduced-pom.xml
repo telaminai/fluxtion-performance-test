@@ -95,10 +95,10 @@
     </dependency>
   </dependencies>
   <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <fluxtion.compiler.version>1.0.38</fluxtion.compiler.version>
+    <fluxtion.version>0.9.32</fluxtion.version>
     <maven.compiler.target>21</maven.compiler.target>
     <maven.compiler.source>21</maven.compiler.source>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <fluxtion.version>0.9.32</fluxtion.version>
   </properties>
 </project>

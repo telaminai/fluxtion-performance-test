@@ -31,6 +31,8 @@ public class DiamondMeshBenchmark extends DimensionBenchmarkBase {
     private DataFlow fluxtionProcessor;
     private PublishProcessor<MarketDataEvent> rxJavaInput;
     private Flowable<Double> rxJavaResult;
+    private long seq = 0;
+    private final java.util.concurrent.atomic.AtomicLong fireCount = new java.util.concurrent.atomic.AtomicLong();
 
     private final MarketDataEvent reuseEvent = new MarketDataEvent("BTC", 100.0, 101.0, 0);
     private Histogram histFx;
@@ -45,25 +47,38 @@ public class DiamondMeshBenchmark extends DimensionBenchmarkBase {
 
         rxJavaInput = PublishProcessor.create();
         rxJavaResult = buildRxJavaGraph(size);
-        rxJavaResult.subscribe(v -> {}); // dummy sub to keep it alive
-
+        rxJavaResult.subscribe(v -> fireCount.incrementAndGet()); // dummy sub to keep it alive
         histFx = BenchmarkResultsWriter.getHistogram(fluxtionKey);
         histRx = BenchmarkResultsWriter.getHistogram(rxJavaKey);
     }
 
     private Flowable<Double> buildRxJavaGraph(int size) {
-        // Simple linear chain for DiamondMesh comparison (not exact, but consistent with original benchmark)
-        // Original benchmark for RxJava in DiamondMesh used a shared+zipped chain.
-        Flowable<Double> source = rxJavaInput.map(MarketDataEvent::getMid).share();
-        Flowable<Double> current = source;
-        for (int i = 0; i < size; i++) {
-            current = Flowable.zip(current, source, (a, b) -> a + b + 1.0);
+        int layers = 11;
+        int npl = 9;
+        Flowable<Double> source = rxJavaInput.map(MarketDataEvent::getMid);
+        
+        Flowable<Double>[] prevLayer = new Flowable[npl];
+        for (int i = 0; i < npl; i++) {
+            prevLayer[i] = source.map(v -> v + 1.0);
         }
-        return current;
+
+        for (int l = 2; l <= layers; l++) {
+            Flowable<Double>[] currentLayer = new Flowable[npl];
+            for (int i = 0; i < npl; i++) {
+                currentLayer[i] = Flowable.combineLatest(
+                        prevLayer[i], 
+                        prevLayer[(i + 1) % npl], 
+                        (a, b) -> a + b + 1.0);
+            }
+            prevLayer = currentLayer;
+        }
+
+        return prevLayer[0];
     }
 
     @Benchmark
     public void fluxtion(Blackhole bh) {
+        reuseEvent.setBid(100.0 + seq++);
         long t = System.nanoTime();
         fluxtionProcessor.onEvent(reuseEvent);
         long elapsed = System.nanoTime() - t;
@@ -73,6 +88,7 @@ public class DiamondMeshBenchmark extends DimensionBenchmarkBase {
 
     @Benchmark
     public void rxJava(Blackhole bh) {
+        reuseEvent.setBid(100.0 + seq++);
         long t = System.nanoTime();
         rxJavaInput.onNext(reuseEvent);
         long elapsed = System.nanoTime() - t;
@@ -82,6 +98,7 @@ public class DiamondMeshBenchmark extends DimensionBenchmarkBase {
 
     @TearDown
     public void tearDown() {
+        System.out.println("[DEBUG_LOG] rxJava fireCount: " + fireCount.get());
         BenchmarkResultsWriter.writeAll("target/results");
     }
 }

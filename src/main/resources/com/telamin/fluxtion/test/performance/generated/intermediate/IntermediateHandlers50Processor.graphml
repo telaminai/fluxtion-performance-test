@@ -533,20 +533,20 @@
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="MarketDataEvent">
-            <data key="vertex_label">
-                <jGraph:ShapeNode>
-                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="&lt;&lt;Event&gt;&gt;&#10;MarketDataEvent&#10;class:com.telamin.fluxtion.test.performance.events.MarketDataEvent&#10;"/>
-                    <jGraph:Style properties="EVENT"/>
-                </jGraph:ShapeNode>
-            </data>
-        </node>
         <node id="TradeSignalEvent">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
                     <jGraph:label text="&lt;&lt;Event&gt;&gt;&#10;TradeSignalEvent&#10;class:com.telamin.fluxtion.test.performance.events.TradeSignalEvent&#10;"/>
+                    <jGraph:Style properties="EVENT"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="MarketDataEvent">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="&lt;&lt;Event&gt;&gt;&#10;MarketDataEvent&#10;class:com.telamin.fluxtion.test.performance.events.MarketDataEvent&#10;"/>
                     <jGraph:Style properties="EVENT"/>
                 </jGraph:ShapeNode>
             </data>
@@ -845,12 +845,12 @@
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="58" source="MarketDataEvent" target="intermediateHandlersRootNode_51">
+        <edge id="58" source="TradeSignalEvent" target="intermediateHandlersRootNode_51">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="59" source="TradeSignalEvent" target="intermediateHandlersRootNode_51">
+        <edge id="59" source="MarketDataEvent" target="intermediateHandlersRootNode_51">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>

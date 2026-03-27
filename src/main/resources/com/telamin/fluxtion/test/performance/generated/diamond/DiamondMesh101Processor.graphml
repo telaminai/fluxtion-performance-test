@@ -20,911 +20,902 @@
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_100">
+        <node id="l1_n0">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_100&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l1_n0&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshRootNode_101">
+        <node id="root">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="&lt;&lt;EventHandle&gt;&gt;&#10;id:diamondMeshRootNode_101&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshRootNode"/>
+                    <jGraph:label text="&lt;&lt;EventHandle&gt;&gt;&#10;id:root&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshRootNode"/>
                     <jGraph:Style properties="EVENTHANDLER"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_99">
+        <node id="l1_n1">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_99&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l1_n1&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_98">
+        <node id="l1_n2">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_98&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l1_n2&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_97">
+        <node id="l1_n3">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_97&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l1_n3&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_96">
+        <node id="l1_n4">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_96&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l1_n4&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_95">
+        <node id="l1_n5">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_95&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l1_n5&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_94">
+        <node id="l1_n6">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_94&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l1_n6&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_93">
+        <node id="l1_n7">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_93&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l1_n7&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_92">
+        <node id="l1_n8">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_92&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l1_n8&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_91">
+        <node id="l2_n0">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_91&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l2_n0&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_90">
+        <node id="l2_n1">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_90&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l2_n1&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_89">
+        <node id="l2_n2">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_89&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l2_n2&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_88">
+        <node id="l2_n3">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_88&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l2_n3&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_87">
+        <node id="l2_n4">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_87&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l2_n4&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_86">
+        <node id="l2_n5">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_86&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l2_n5&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_85">
+        <node id="l2_n6">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_85&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l2_n6&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_84">
+        <node id="l2_n7">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_84&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l2_n7&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_83">
+        <node id="l2_n8">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_83&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l2_n8&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_82">
+        <node id="l3_n0">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_82&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l3_n0&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_81">
+        <node id="l3_n1">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_81&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l3_n1&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_80">
+        <node id="l3_n2">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_80&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l3_n2&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_79">
+        <node id="l3_n3">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_79&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l3_n3&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_78">
+        <node id="l3_n4">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_78&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l3_n4&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_77">
+        <node id="l3_n5">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_77&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l3_n5&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_76">
+        <node id="l3_n6">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_76&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l3_n6&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_75">
+        <node id="l3_n7">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_75&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l3_n7&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_74">
+        <node id="l3_n8">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_74&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l3_n8&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_73">
+        <node id="l4_n0">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_73&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l4_n0&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_72">
+        <node id="l4_n1">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_72&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l4_n1&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_71">
+        <node id="l4_n2">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_71&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l4_n2&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_70">
+        <node id="l4_n3">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_70&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l4_n3&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_69">
+        <node id="l4_n4">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_69&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l4_n4&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_68">
+        <node id="l4_n5">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_68&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l4_n5&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_67">
+        <node id="l4_n6">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_67&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l4_n6&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_66">
+        <node id="l4_n7">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_66&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l4_n7&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_65">
+        <node id="l4_n8">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_65&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l4_n8&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_64">
+        <node id="l5_n0">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_64&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l5_n0&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_63">
+        <node id="l5_n1">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_63&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l5_n1&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_62">
+        <node id="l5_n2">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_62&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l5_n2&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_61">
+        <node id="l5_n3">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_61&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l5_n3&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_60">
+        <node id="l5_n4">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_60&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l5_n4&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_59">
+        <node id="l5_n5">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_59&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l5_n5&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_58">
+        <node id="l5_n6">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_58&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l5_n6&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_57">
+        <node id="l5_n7">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_57&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l5_n7&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_56">
+        <node id="l5_n8">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_56&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l5_n8&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_55">
+        <node id="l6_n0">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_55&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l6_n0&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_54">
+        <node id="l6_n1">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_54&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l6_n1&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_53">
+        <node id="l6_n2">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_53&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l6_n2&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_52">
+        <node id="l6_n3">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_52&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l6_n3&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_51">
+        <node id="l6_n4">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_51&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l6_n4&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_50">
+        <node id="l6_n5">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_50&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l6_n5&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_49">
+        <node id="l6_n6">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_49&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l6_n6&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_48">
+        <node id="l6_n7">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_48&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l6_n7&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_47">
+        <node id="l6_n8">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_47&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l6_n8&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_46">
+        <node id="l7_n0">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_46&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l7_n0&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_45">
+        <node id="l7_n1">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_45&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l7_n1&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_44">
+        <node id="l7_n2">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_44&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l7_n2&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_43">
+        <node id="l7_n3">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_43&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l7_n3&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_42">
+        <node id="l7_n4">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_42&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l7_n4&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_41">
+        <node id="l7_n5">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_41&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l7_n5&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_40">
+        <node id="l7_n6">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_40&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l7_n6&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_39">
+        <node id="l7_n7">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_39&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l7_n7&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_38">
+        <node id="l7_n8">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_38&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l7_n8&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_37">
+        <node id="l8_n0">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_37&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l8_n0&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_36">
+        <node id="l8_n1">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_36&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l8_n1&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_35">
+        <node id="l8_n2">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_35&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l8_n2&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_34">
+        <node id="l8_n3">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_34&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l8_n3&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_33">
+        <node id="l8_n4">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_33&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l8_n4&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_32">
+        <node id="l8_n5">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_32&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l8_n5&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_31">
+        <node id="l8_n6">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_31&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l8_n6&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_30">
+        <node id="l8_n7">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_30&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l8_n7&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_29">
+        <node id="l8_n8">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_29&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l8_n8&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_28">
+        <node id="l9_n0">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_28&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l9_n0&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_27">
+        <node id="l9_n1">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_27&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l9_n1&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_26">
+        <node id="l9_n2">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_26&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l9_n2&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_25">
+        <node id="l9_n3">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_25&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l9_n3&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_24">
+        <node id="l9_n4">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_24&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l9_n4&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_23">
+        <node id="l9_n5">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_23&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l9_n5&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_22">
+        <node id="l9_n6">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_22&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l9_n6&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_21">
+        <node id="l9_n7">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_21&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l9_n7&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_20">
+        <node id="l9_n8">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_20&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l9_n8&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_19">
+        <node id="l10_n0">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_19&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l10_n0&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_18">
+        <node id="l10_n1">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_18&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l10_n1&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_17">
+        <node id="l10_n2">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_17&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l10_n2&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_16">
+        <node id="l10_n3">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_16&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l10_n3&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_15">
+        <node id="l10_n4">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_15&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l10_n4&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_14">
+        <node id="l10_n5">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_14&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l10_n5&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_13">
+        <node id="l10_n6">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_13&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l10_n6&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_12">
+        <node id="l10_n7">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_12&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l10_n7&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_11">
+        <node id="l10_n8">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_11&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l10_n8&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_10">
+        <node id="l11_n0">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_10&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l11_n0&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_9">
+        <node id="l11_n1">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_9&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l11_n1&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_8">
+        <node id="l11_n2">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_8&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l11_n2&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_7">
+        <node id="l11_n3">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_7&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l11_n3&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_6">
+        <node id="l11_n4">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_6&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l11_n4&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_5">
+        <node id="l11_n5">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_5&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l11_n5&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_4">
+        <node id="l11_n6">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_4&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l11_n6&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_3">
+        <node id="l11_n7">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_3&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l11_n7&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="diamondMeshNode_2">
+        <node id="l11_n8">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_2&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
-                    <jGraph:Style properties="NODE"/>
-                </jGraph:ShapeNode>
-            </data>
-        </node>
-        <node id="diamondMeshNode_1">
-            <data key="vertex_label">
-                <jGraph:ShapeNode>
-                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:diamondMeshNode_1&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
+                    <jGraph:label text="id:l11_n8&#10;class:com.telamin.fluxtion.test.performance.nodes.DiamondMeshNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -1006,1037 +997,987 @@
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="2" source="diamondMeshRootNode_101" target="diamondMeshNode_100">
+        <edge id="2" source="root" target="l1_n0">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="3" source="diamondMeshNode_100" target="diamondMeshNode_99">
+        <edge id="3" source="root" target="l1_n1">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="4" source="diamondMeshNode_99" target="diamondMeshNode_98">
+        <edge id="4" source="root" target="l1_n2">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="5" source="diamondMeshNode_98" target="diamondMeshNode_97">
+        <edge id="5" source="root" target="l1_n3">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="6" source="diamondMeshNode_97" target="diamondMeshNode_96">
+        <edge id="6" source="root" target="l1_n4">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="7" source="diamondMeshNode_96" target="diamondMeshNode_95">
+        <edge id="7" source="root" target="l1_n5">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="8" source="diamondMeshNode_95" target="diamondMeshNode_94">
+        <edge id="8" source="root" target="l1_n6">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="9" source="diamondMeshNode_94" target="diamondMeshNode_93">
+        <edge id="9" source="root" target="l1_n7">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="10" source="diamondMeshNode_93" target="diamondMeshNode_92">
+        <edge id="10" source="root" target="l1_n8">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="11" source="diamondMeshNode_92" target="diamondMeshNode_91">
+        <edge id="11" source="l1_n0" target="l2_n0">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="12" source="diamondMeshNode_91" target="diamondMeshNode_90">
+        <edge id="12" source="l1_n1" target="l2_n0">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="13" source="diamondMeshNode_90" target="diamondMeshNode_89">
+        <edge id="13" source="l1_n1" target="l2_n1">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="14" source="diamondMeshNode_89" target="diamondMeshNode_88">
+        <edge id="14" source="l1_n2" target="l2_n1">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="15" source="diamondMeshNode_88" target="diamondMeshNode_87">
+        <edge id="15" source="l1_n2" target="l2_n2">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="16" source="diamondMeshNode_87" target="diamondMeshNode_86">
+        <edge id="16" source="l1_n3" target="l2_n2">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="17" source="diamondMeshNode_86" target="diamondMeshNode_85">
+        <edge id="17" source="l1_n3" target="l2_n3">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="18" source="diamondMeshNode_85" target="diamondMeshNode_84">
+        <edge id="18" source="l1_n4" target="l2_n3">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="19" source="diamondMeshNode_84" target="diamondMeshNode_83">
+        <edge id="19" source="l1_n4" target="l2_n4">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="20" source="diamondMeshNode_83" target="diamondMeshNode_82">
+        <edge id="20" source="l1_n5" target="l2_n4">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="21" source="diamondMeshNode_82" target="diamondMeshNode_81">
+        <edge id="21" source="l1_n5" target="l2_n5">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="22" source="diamondMeshNode_81" target="diamondMeshNode_80">
+        <edge id="22" source="l1_n6" target="l2_n5">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="23" source="diamondMeshNode_80" target="diamondMeshNode_79">
+        <edge id="23" source="l1_n6" target="l2_n6">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="24" source="diamondMeshNode_79" target="diamondMeshNode_78">
+        <edge id="24" source="l1_n7" target="l2_n6">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="25" source="diamondMeshNode_78" target="diamondMeshNode_77">
+        <edge id="25" source="l1_n7" target="l2_n7">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="26" source="diamondMeshNode_77" target="diamondMeshNode_76">
+        <edge id="26" source="l1_n8" target="l2_n7">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="27" source="diamondMeshNode_76" target="diamondMeshNode_75">
+        <edge id="27" source="l1_n8" target="l2_n8">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="28" source="diamondMeshNode_75" target="diamondMeshNode_74">
+        <edge id="28" source="l1_n0" target="l2_n8">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="29" source="diamondMeshNode_74" target="diamondMeshNode_73">
+        <edge id="29" source="l2_n0" target="l3_n0">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="30" source="diamondMeshNode_73" target="diamondMeshNode_72">
+        <edge id="30" source="l2_n1" target="l3_n0">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="31" source="diamondMeshNode_72" target="diamondMeshNode_71">
+        <edge id="31" source="l2_n1" target="l3_n1">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="32" source="diamondMeshNode_71" target="diamondMeshNode_70">
+        <edge id="32" source="l2_n2" target="l3_n1">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="33" source="diamondMeshNode_70" target="diamondMeshNode_69">
+        <edge id="33" source="l2_n2" target="l3_n2">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="34" source="diamondMeshNode_69" target="diamondMeshNode_68">
+        <edge id="34" source="l2_n3" target="l3_n2">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="35" source="diamondMeshNode_68" target="diamondMeshNode_67">
+        <edge id="35" source="l2_n3" target="l3_n3">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="36" source="diamondMeshNode_67" target="diamondMeshNode_66">
+        <edge id="36" source="l2_n4" target="l3_n3">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="37" source="diamondMeshNode_66" target="diamondMeshNode_65">
+        <edge id="37" source="l2_n4" target="l3_n4">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="38" source="diamondMeshNode_65" target="diamondMeshNode_64">
+        <edge id="38" source="l2_n5" target="l3_n4">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="39" source="diamondMeshNode_64" target="diamondMeshNode_63">
+        <edge id="39" source="l2_n5" target="l3_n5">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="40" source="diamondMeshNode_63" target="diamondMeshNode_62">
+        <edge id="40" source="l2_n6" target="l3_n5">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="41" source="diamondMeshNode_62" target="diamondMeshNode_61">
+        <edge id="41" source="l2_n6" target="l3_n6">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="42" source="diamondMeshNode_61" target="diamondMeshNode_60">
+        <edge id="42" source="l2_n7" target="l3_n6">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="43" source="diamondMeshNode_60" target="diamondMeshNode_59">
+        <edge id="43" source="l2_n7" target="l3_n7">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="44" source="diamondMeshNode_59" target="diamondMeshNode_58">
+        <edge id="44" source="l2_n8" target="l3_n7">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="45" source="diamondMeshNode_58" target="diamondMeshNode_57">
+        <edge id="45" source="l2_n8" target="l3_n8">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="46" source="diamondMeshNode_57" target="diamondMeshNode_56">
+        <edge id="46" source="l2_n0" target="l3_n8">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="47" source="diamondMeshNode_56" target="diamondMeshNode_55">
+        <edge id="47" source="l3_n0" target="l4_n0">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="48" source="diamondMeshNode_55" target="diamondMeshNode_54">
+        <edge id="48" source="l3_n1" target="l4_n0">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="49" source="diamondMeshNode_54" target="diamondMeshNode_53">
+        <edge id="49" source="l3_n1" target="l4_n1">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="50" source="diamondMeshNode_53" target="diamondMeshNode_52">
+        <edge id="50" source="l3_n2" target="l4_n1">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="51" source="diamondMeshNode_52" target="diamondMeshNode_51">
+        <edge id="51" source="l3_n2" target="l4_n2">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="52" source="diamondMeshNode_51" target="diamondMeshNode_50">
+        <edge id="52" source="l3_n3" target="l4_n2">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="53" source="diamondMeshNode_50" target="diamondMeshNode_49">
+        <edge id="53" source="l3_n3" target="l4_n3">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="54" source="diamondMeshNode_49" target="diamondMeshNode_48">
+        <edge id="54" source="l3_n4" target="l4_n3">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="55" source="diamondMeshNode_48" target="diamondMeshNode_47">
+        <edge id="55" source="l3_n4" target="l4_n4">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="56" source="diamondMeshNode_47" target="diamondMeshNode_46">
+        <edge id="56" source="l3_n5" target="l4_n4">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="57" source="diamondMeshNode_46" target="diamondMeshNode_45">
+        <edge id="57" source="l3_n5" target="l4_n5">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="58" source="diamondMeshNode_45" target="diamondMeshNode_44">
+        <edge id="58" source="l3_n6" target="l4_n5">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="59" source="diamondMeshNode_44" target="diamondMeshNode_43">
+        <edge id="59" source="l3_n6" target="l4_n6">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="60" source="diamondMeshNode_43" target="diamondMeshNode_42">
+        <edge id="60" source="l3_n7" target="l4_n6">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="61" source="diamondMeshNode_42" target="diamondMeshNode_41">
+        <edge id="61" source="l3_n7" target="l4_n7">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="62" source="diamondMeshNode_41" target="diamondMeshNode_40">
+        <edge id="62" source="l3_n8" target="l4_n7">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="63" source="diamondMeshNode_40" target="diamondMeshNode_39">
+        <edge id="63" source="l3_n8" target="l4_n8">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="64" source="diamondMeshNode_39" target="diamondMeshNode_38">
+        <edge id="64" source="l3_n0" target="l4_n8">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="65" source="diamondMeshNode_38" target="diamondMeshNode_37">
+        <edge id="65" source="l4_n0" target="l5_n0">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="66" source="diamondMeshNode_37" target="diamondMeshNode_36">
+        <edge id="66" source="l4_n1" target="l5_n0">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="67" source="diamondMeshNode_36" target="diamondMeshNode_35">
+        <edge id="67" source="l4_n1" target="l5_n1">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="68" source="diamondMeshNode_35" target="diamondMeshNode_34">
+        <edge id="68" source="l4_n2" target="l5_n1">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="69" source="diamondMeshNode_34" target="diamondMeshNode_33">
+        <edge id="69" source="l4_n2" target="l5_n2">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="70" source="diamondMeshNode_33" target="diamondMeshNode_32">
+        <edge id="70" source="l4_n3" target="l5_n2">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="71" source="diamondMeshNode_32" target="diamondMeshNode_31">
+        <edge id="71" source="l4_n3" target="l5_n3">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="72" source="diamondMeshNode_31" target="diamondMeshNode_30">
+        <edge id="72" source="l4_n4" target="l5_n3">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="73" source="diamondMeshNode_30" target="diamondMeshNode_29">
+        <edge id="73" source="l4_n4" target="l5_n4">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="74" source="diamondMeshNode_29" target="diamondMeshNode_28">
+        <edge id="74" source="l4_n5" target="l5_n4">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="75" source="diamondMeshNode_28" target="diamondMeshNode_27">
+        <edge id="75" source="l4_n5" target="l5_n5">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="76" source="diamondMeshNode_27" target="diamondMeshNode_26">
+        <edge id="76" source="l4_n6" target="l5_n5">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="77" source="diamondMeshNode_26" target="diamondMeshNode_25">
+        <edge id="77" source="l4_n6" target="l5_n6">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="78" source="diamondMeshNode_25" target="diamondMeshNode_24">
+        <edge id="78" source="l4_n7" target="l5_n6">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="79" source="diamondMeshNode_24" target="diamondMeshNode_23">
+        <edge id="79" source="l4_n7" target="l5_n7">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="80" source="diamondMeshNode_23" target="diamondMeshNode_22">
+        <edge id="80" source="l4_n8" target="l5_n7">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="81" source="diamondMeshNode_22" target="diamondMeshNode_21">
+        <edge id="81" source="l4_n8" target="l5_n8">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="82" source="diamondMeshNode_21" target="diamondMeshNode_20">
+        <edge id="82" source="l4_n0" target="l5_n8">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="83" source="diamondMeshNode_20" target="diamondMeshNode_19">
+        <edge id="83" source="l5_n0" target="l6_n0">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="84" source="diamondMeshNode_19" target="diamondMeshNode_18">
+        <edge id="84" source="l5_n1" target="l6_n0">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="85" source="diamondMeshNode_18" target="diamondMeshNode_17">
+        <edge id="85" source="l5_n1" target="l6_n1">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="86" source="diamondMeshNode_17" target="diamondMeshNode_16">
+        <edge id="86" source="l5_n2" target="l6_n1">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="87" source="diamondMeshNode_16" target="diamondMeshNode_15">
+        <edge id="87" source="l5_n2" target="l6_n2">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="88" source="diamondMeshNode_15" target="diamondMeshNode_14">
+        <edge id="88" source="l5_n3" target="l6_n2">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="89" source="diamondMeshNode_14" target="diamondMeshNode_13">
+        <edge id="89" source="l5_n3" target="l6_n3">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="90" source="diamondMeshNode_13" target="diamondMeshNode_12">
+        <edge id="90" source="l5_n4" target="l6_n3">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="91" source="diamondMeshNode_12" target="diamondMeshNode_11">
+        <edge id="91" source="l5_n4" target="l6_n4">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="92" source="diamondMeshNode_11" target="diamondMeshNode_10">
+        <edge id="92" source="l5_n5" target="l6_n4">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="93" source="diamondMeshNode_10" target="diamondMeshNode_9">
+        <edge id="93" source="l5_n5" target="l6_n5">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="94" source="diamondMeshNode_9" target="diamondMeshNode_8">
+        <edge id="94" source="l5_n6" target="l6_n5">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="95" source="diamondMeshNode_8" target="diamondMeshNode_7">
+        <edge id="95" source="l5_n6" target="l6_n6">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="96" source="diamondMeshNode_7" target="diamondMeshNode_6">
+        <edge id="96" source="l5_n7" target="l6_n6">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="97" source="diamondMeshNode_6" target="diamondMeshNode_5">
+        <edge id="97" source="l5_n7" target="l6_n7">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="98" source="diamondMeshNode_5" target="diamondMeshNode_4">
+        <edge id="98" source="l5_n8" target="l6_n7">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="99" source="diamondMeshNode_4" target="diamondMeshNode_3">
+        <edge id="99" source="l5_n8" target="l6_n8">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="100" source="diamondMeshNode_3" target="diamondMeshNode_2">
+        <edge id="100" source="l5_n0" target="l6_n8">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="101" source="diamondMeshNode_2" target="diamondMeshNode_1">
+        <edge id="101" source="l6_n0" target="l7_n0">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="102" source="diamondMeshNode_1" target="sink">
+        <edge id="102" source="l6_n1" target="l7_n0">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="103" source="context" target="serviceRegistry">
+        <edge id="103" source="l6_n1" target="l7_n1">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="104" source="nodeNameLookup" target="context">
+        <edge id="104" source="l6_n2" target="l7_n1">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="105" source="callbackDispatcher" target="context">
+        <edge id="105" source="l6_n2" target="l7_n2">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="106" source="subscriptionManager" target="context">
+        <edge id="106" source="l6_n3" target="l7_n2">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="107" source="diamondMeshRootNode_101" target="diamondMeshNode_99">
+        <edge id="107" source="l6_n3" target="l7_n3">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="108" source="diamondMeshRootNode_101" target="diamondMeshNode_98">
+        <edge id="108" source="l6_n4" target="l7_n3">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="109" source="diamondMeshRootNode_101" target="diamondMeshNode_97">
+        <edge id="109" source="l6_n4" target="l7_n4">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="110" source="diamondMeshRootNode_101" target="diamondMeshNode_96">
+        <edge id="110" source="l6_n5" target="l7_n4">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="111" source="diamondMeshRootNode_101" target="diamondMeshNode_95">
+        <edge id="111" source="l6_n5" target="l7_n5">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="112" source="diamondMeshRootNode_101" target="diamondMeshNode_94">
+        <edge id="112" source="l6_n6" target="l7_n5">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="113" source="diamondMeshRootNode_101" target="diamondMeshNode_93">
+        <edge id="113" source="l6_n6" target="l7_n6">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="114" source="diamondMeshRootNode_101" target="diamondMeshNode_92">
+        <edge id="114" source="l6_n7" target="l7_n6">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="115" source="diamondMeshRootNode_101" target="diamondMeshNode_91">
+        <edge id="115" source="l6_n7" target="l7_n7">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="116" source="diamondMeshRootNode_101" target="diamondMeshNode_90">
+        <edge id="116" source="l6_n8" target="l7_n7">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="117" source="diamondMeshRootNode_101" target="diamondMeshNode_89">
+        <edge id="117" source="l6_n8" target="l7_n8">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="118" source="diamondMeshRootNode_101" target="diamondMeshNode_88">
+        <edge id="118" source="l6_n0" target="l7_n8">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="119" source="diamondMeshRootNode_101" target="diamondMeshNode_87">
+        <edge id="119" source="l7_n0" target="l8_n0">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="120" source="diamondMeshRootNode_101" target="diamondMeshNode_86">
+        <edge id="120" source="l7_n1" target="l8_n0">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="121" source="diamondMeshRootNode_101" target="diamondMeshNode_85">
+        <edge id="121" source="l7_n1" target="l8_n1">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="122" source="diamondMeshRootNode_101" target="diamondMeshNode_84">
+        <edge id="122" source="l7_n2" target="l8_n1">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="123" source="diamondMeshRootNode_101" target="diamondMeshNode_83">
+        <edge id="123" source="l7_n2" target="l8_n2">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="124" source="diamondMeshRootNode_101" target="diamondMeshNode_82">
+        <edge id="124" source="l7_n3" target="l8_n2">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="125" source="diamondMeshRootNode_101" target="diamondMeshNode_81">
+        <edge id="125" source="l7_n3" target="l8_n3">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="126" source="diamondMeshRootNode_101" target="diamondMeshNode_80">
+        <edge id="126" source="l7_n4" target="l8_n3">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="127" source="diamondMeshRootNode_101" target="diamondMeshNode_79">
+        <edge id="127" source="l7_n4" target="l8_n4">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="128" source="diamondMeshRootNode_101" target="diamondMeshNode_78">
+        <edge id="128" source="l7_n5" target="l8_n4">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="129" source="diamondMeshRootNode_101" target="diamondMeshNode_77">
+        <edge id="129" source="l7_n5" target="l8_n5">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="130" source="diamondMeshRootNode_101" target="diamondMeshNode_76">
+        <edge id="130" source="l7_n6" target="l8_n5">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="131" source="diamondMeshRootNode_101" target="diamondMeshNode_75">
+        <edge id="131" source="l7_n6" target="l8_n6">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="132" source="diamondMeshRootNode_101" target="diamondMeshNode_74">
+        <edge id="132" source="l7_n7" target="l8_n6">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="133" source="diamondMeshRootNode_101" target="diamondMeshNode_73">
+        <edge id="133" source="l7_n7" target="l8_n7">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="134" source="diamondMeshRootNode_101" target="diamondMeshNode_72">
+        <edge id="134" source="l7_n8" target="l8_n7">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="135" source="diamondMeshRootNode_101" target="diamondMeshNode_71">
+        <edge id="135" source="l7_n8" target="l8_n8">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="136" source="diamondMeshRootNode_101" target="diamondMeshNode_70">
+        <edge id="136" source="l7_n0" target="l8_n8">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="137" source="diamondMeshRootNode_101" target="diamondMeshNode_69">
+        <edge id="137" source="l8_n0" target="l9_n0">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="138" source="diamondMeshRootNode_101" target="diamondMeshNode_68">
+        <edge id="138" source="l8_n1" target="l9_n0">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="139" source="diamondMeshRootNode_101" target="diamondMeshNode_67">
+        <edge id="139" source="l8_n1" target="l9_n1">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="140" source="diamondMeshRootNode_101" target="diamondMeshNode_66">
+        <edge id="140" source="l8_n2" target="l9_n1">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="141" source="diamondMeshRootNode_101" target="diamondMeshNode_65">
+        <edge id="141" source="l8_n2" target="l9_n2">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="142" source="diamondMeshRootNode_101" target="diamondMeshNode_64">
+        <edge id="142" source="l8_n3" target="l9_n2">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="143" source="diamondMeshRootNode_101" target="diamondMeshNode_63">
+        <edge id="143" source="l8_n3" target="l9_n3">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="144" source="diamondMeshRootNode_101" target="diamondMeshNode_62">
+        <edge id="144" source="l8_n4" target="l9_n3">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="145" source="diamondMeshRootNode_101" target="diamondMeshNode_61">
+        <edge id="145" source="l8_n4" target="l9_n4">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="146" source="diamondMeshRootNode_101" target="diamondMeshNode_60">
+        <edge id="146" source="l8_n5" target="l9_n4">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="147" source="diamondMeshRootNode_101" target="diamondMeshNode_59">
+        <edge id="147" source="l8_n5" target="l9_n5">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="148" source="diamondMeshRootNode_101" target="diamondMeshNode_58">
+        <edge id="148" source="l8_n6" target="l9_n5">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="149" source="diamondMeshRootNode_101" target="diamondMeshNode_57">
+        <edge id="149" source="l8_n6" target="l9_n6">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="150" source="diamondMeshRootNode_101" target="diamondMeshNode_56">
+        <edge id="150" source="l8_n7" target="l9_n6">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="151" source="diamondMeshRootNode_101" target="diamondMeshNode_55">
+        <edge id="151" source="l8_n7" target="l9_n7">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="152" source="diamondMeshRootNode_101" target="diamondMeshNode_54">
+        <edge id="152" source="l8_n8" target="l9_n7">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="153" source="diamondMeshRootNode_101" target="diamondMeshNode_53">
+        <edge id="153" source="l8_n8" target="l9_n8">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="154" source="diamondMeshRootNode_101" target="diamondMeshNode_52">
+        <edge id="154" source="l8_n0" target="l9_n8">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="155" source="diamondMeshRootNode_101" target="diamondMeshNode_51">
+        <edge id="155" source="l9_n0" target="l10_n0">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="156" source="diamondMeshRootNode_101" target="diamondMeshNode_50">
+        <edge id="156" source="l9_n1" target="l10_n0">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="157" source="diamondMeshRootNode_101" target="diamondMeshNode_49">
+        <edge id="157" source="l9_n1" target="l10_n1">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="158" source="diamondMeshRootNode_101" target="diamondMeshNode_48">
+        <edge id="158" source="l9_n2" target="l10_n1">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="159" source="diamondMeshRootNode_101" target="diamondMeshNode_47">
+        <edge id="159" source="l9_n2" target="l10_n2">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="160" source="diamondMeshRootNode_101" target="diamondMeshNode_46">
+        <edge id="160" source="l9_n3" target="l10_n2">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="161" source="diamondMeshRootNode_101" target="diamondMeshNode_45">
+        <edge id="161" source="l9_n3" target="l10_n3">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="162" source="diamondMeshRootNode_101" target="diamondMeshNode_44">
+        <edge id="162" source="l9_n4" target="l10_n3">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="163" source="diamondMeshRootNode_101" target="diamondMeshNode_43">
+        <edge id="163" source="l9_n4" target="l10_n4">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="164" source="diamondMeshRootNode_101" target="diamondMeshNode_42">
+        <edge id="164" source="l9_n5" target="l10_n4">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="165" source="diamondMeshRootNode_101" target="diamondMeshNode_41">
+        <edge id="165" source="l9_n5" target="l10_n5">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="166" source="diamondMeshRootNode_101" target="diamondMeshNode_40">
+        <edge id="166" source="l9_n6" target="l10_n5">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="167" source="diamondMeshRootNode_101" target="diamondMeshNode_39">
+        <edge id="167" source="l9_n6" target="l10_n6">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="168" source="diamondMeshRootNode_101" target="diamondMeshNode_38">
+        <edge id="168" source="l9_n7" target="l10_n6">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="169" source="diamondMeshRootNode_101" target="diamondMeshNode_37">
+        <edge id="169" source="l9_n7" target="l10_n7">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="170" source="diamondMeshRootNode_101" target="diamondMeshNode_36">
+        <edge id="170" source="l9_n8" target="l10_n7">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="171" source="diamondMeshRootNode_101" target="diamondMeshNode_35">
+        <edge id="171" source="l9_n8" target="l10_n8">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="172" source="diamondMeshRootNode_101" target="diamondMeshNode_34">
+        <edge id="172" source="l9_n0" target="l10_n8">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="173" source="diamondMeshRootNode_101" target="diamondMeshNode_33">
+        <edge id="173" source="l10_n0" target="l11_n0">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="174" source="diamondMeshRootNode_101" target="diamondMeshNode_32">
+        <edge id="174" source="l10_n1" target="l11_n0">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="175" source="diamondMeshRootNode_101" target="diamondMeshNode_31">
+        <edge id="175" source="l10_n1" target="l11_n1">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="176" source="diamondMeshRootNode_101" target="diamondMeshNode_30">
+        <edge id="176" source="l10_n2" target="l11_n1">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="177" source="diamondMeshRootNode_101" target="diamondMeshNode_29">
+        <edge id="177" source="l10_n2" target="l11_n2">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="178" source="diamondMeshRootNode_101" target="diamondMeshNode_28">
+        <edge id="178" source="l10_n3" target="l11_n2">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="179" source="diamondMeshRootNode_101" target="diamondMeshNode_27">
+        <edge id="179" source="l10_n3" target="l11_n3">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="180" source="diamondMeshRootNode_101" target="diamondMeshNode_26">
+        <edge id="180" source="l10_n4" target="l11_n3">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="181" source="diamondMeshRootNode_101" target="diamondMeshNode_25">
+        <edge id="181" source="l10_n4" target="l11_n4">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="182" source="diamondMeshRootNode_101" target="diamondMeshNode_24">
+        <edge id="182" source="l10_n5" target="l11_n4">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="183" source="diamondMeshRootNode_101" target="diamondMeshNode_23">
+        <edge id="183" source="l10_n5" target="l11_n5">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="184" source="diamondMeshRootNode_101" target="diamondMeshNode_22">
+        <edge id="184" source="l10_n6" target="l11_n5">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="185" source="diamondMeshRootNode_101" target="diamondMeshNode_21">
+        <edge id="185" source="l10_n6" target="l11_n6">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="186" source="diamondMeshRootNode_101" target="diamondMeshNode_20">
+        <edge id="186" source="l10_n7" target="l11_n6">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="187" source="diamondMeshRootNode_101" target="diamondMeshNode_19">
+        <edge id="187" source="l10_n7" target="l11_n7">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="188" source="diamondMeshRootNode_101" target="diamondMeshNode_18">
+        <edge id="188" source="l10_n8" target="l11_n7">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="189" source="diamondMeshRootNode_101" target="diamondMeshNode_17">
+        <edge id="189" source="l10_n8" target="l11_n8">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="190" source="diamondMeshRootNode_101" target="diamondMeshNode_16">
+        <edge id="190" source="l10_n0" target="l11_n8">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="191" source="diamondMeshRootNode_101" target="diamondMeshNode_15">
+        <edge id="191" source="l11_n0" target="sink">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="192" source="diamondMeshRootNode_101" target="diamondMeshNode_14">
+        <edge id="192" source="context" target="serviceRegistry">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="193" source="diamondMeshRootNode_101" target="diamondMeshNode_13">
+        <edge id="193" source="nodeNameLookup" target="context">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="194" source="diamondMeshRootNode_101" target="diamondMeshNode_12">
+        <edge id="194" source="callbackDispatcher" target="context">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="195" source="diamondMeshRootNode_101" target="diamondMeshNode_11">
+        <edge id="195" source="subscriptionManager" target="context">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="196" source="diamondMeshRootNode_101" target="diamondMeshNode_10">
+        <edge id="196" source="ClockStrategyEvent" target="clock">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="197" source="diamondMeshRootNode_101" target="diamondMeshNode_9">
+        <edge id="197" source="MarketDataEvent" target="root">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="198" source="diamondMeshRootNode_101" target="diamondMeshNode_8">
-            <data key="edge_label">
-                <jGraph:ShapeEdge/>
-            </data>
-        </edge>
-        <edge id="199" source="diamondMeshRootNode_101" target="diamondMeshNode_7">
-            <data key="edge_label">
-                <jGraph:ShapeEdge/>
-            </data>
-        </edge>
-        <edge id="200" source="diamondMeshRootNode_101" target="diamondMeshNode_6">
-            <data key="edge_label">
-                <jGraph:ShapeEdge/>
-            </data>
-        </edge>
-        <edge id="201" source="diamondMeshRootNode_101" target="diamondMeshNode_5">
-            <data key="edge_label">
-                <jGraph:ShapeEdge/>
-            </data>
-        </edge>
-        <edge id="202" source="diamondMeshRootNode_101" target="diamondMeshNode_4">
-            <data key="edge_label">
-                <jGraph:ShapeEdge/>
-            </data>
-        </edge>
-        <edge id="203" source="diamondMeshRootNode_101" target="diamondMeshNode_3">
-            <data key="edge_label">
-                <jGraph:ShapeEdge/>
-            </data>
-        </edge>
-        <edge id="204" source="diamondMeshRootNode_101" target="diamondMeshNode_2">
-            <data key="edge_label">
-                <jGraph:ShapeEdge/>
-            </data>
-        </edge>
-        <edge id="205" source="diamondMeshRootNode_101" target="diamondMeshNode_1">
-            <data key="edge_label">
-                <jGraph:ShapeEdge/>
-            </data>
-        </edge>
-        <edge id="206" source="ClockStrategyEvent" target="clock">
-            <data key="edge_label">
-                <jGraph:ShapeEdge/>
-            </data>
-        </edge>
-        <edge id="207" source="MarketDataEvent" target="diamondMeshRootNode_101">
-            <data key="edge_label">
-                <jGraph:ShapeEdge/>
-            </data>
-        </edge>
-        <edge id="208" source="ServiceListener" target="serviceRegistry">
+        <edge id="198" source="ServiceListener" target="serviceRegistry">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
