@@ -14,7 +14,7 @@ import com.telamin.fluxtion.test.performance.validation.events.ValidationMarketE
  *   4. Returns {@code isIdPropagating()} — the root participates in the same
  *      ID-based control as every other node.
  */
-public class ValidationMarketRootNode extends ValidationNodeBase {
+public class ValidationMarketRootNode extends ValidationNode {
 
     @OnEventHandler
     public boolean onMarketEvent(ValidationMarketEvent event) {

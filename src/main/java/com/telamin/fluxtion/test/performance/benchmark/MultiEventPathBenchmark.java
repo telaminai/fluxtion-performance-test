@@ -4,9 +4,6 @@ import com.telamin.fluxtion.runtime.DataFlow;
 import com.telamin.fluxtion.test.performance.events.ControlEvent;
 import com.telamin.fluxtion.test.performance.events.MarketDataEvent;
 import com.telamin.fluxtion.test.performance.events.TradeSignalEvent;
-import com.telamin.fluxtion.test.performance.generators.BenchmarkConfig;
-import com.telamin.fluxtion.test.performance.generators.GraphGeneratorBase;
-import com.telamin.fluxtion.test.performance.generators.MultiEventPathGraphGenerator;
 import io.reactivex.rxjava3.core.Flowable;
 import io.reactivex.rxjava3.processors.PublishProcessor;
 import org.HdrHistogram.Histogram;
@@ -57,12 +54,10 @@ import java.util.concurrent.atomic.AtomicLong;
 @Fork(1)
 public class MultiEventPathBenchmark extends DimensionBenchmarkBase {
 
+    private static final String DIM      = "multi_event_path";
     private static final String DIM_MD   = "multi_event_md";
     private static final String DIM_TS   = "multi_event_ts";
     private static final String DIM_CTRL = "multi_event_ctrl";
-
-    private static final BenchmarkConfig CONFIG =
-            GraphGeneratorBase.loadConfig("benchmark-configs/multi_event_path.yaml");
 
     @Param({"5", "10", "20", "50"})
     public int size;
@@ -105,8 +100,7 @@ public class MultiEventPathBenchmark extends DimensionBenchmarkBase {
         rxTsKey         = DIM_TS   + "/rxjava/"   + size;
         rxCtrlKey       = DIM_CTRL + "/rxjava/"   + size;
         // ---- Fluxtion ----
-        fluxtionProcessor = buildFluxtionProcessor(
-                new MultiEventPathGraphGenerator(), CONFIG, size);
+        fluxtionProcessor = buildFluxtionProcessor(DIM, size);
 
         // Biased RxJava chain depths mirror the generator: MD=size, TS=size/2, Ctrl=size/4
         int mdDepth   = size;

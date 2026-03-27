@@ -1,255 +1,400 @@
 package com.telamin.fluxtion.test.performance.generators;
 
 import com.telamin.fluxtion.Fluxtion;
-import com.telamin.fluxtion.builder.extern.spring.FluxtionSpring;
-import org.openjdk.jmh.Main;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
+import com.telamin.fluxtion.test.performance.events.*;
+import com.telamin.fluxtion.test.performance.nodes.*;
+import com.telamin.fluxtion.test.performance.service.*;
+import com.telamin.fluxtion.test.performance.validation.events.*;
+import com.telamin.fluxtion.test.performance.validation.nodes.*;
+import com.telamin.fluxtion.builder.generation.config.EventProcessorConfig;
+import com.telamin.fluxtion.runtime.partition.LambdaReflection.SerializableConsumer;
+
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.telamin.fluxtion.builder.compile.generation.EventProcessorGenerator.SOURCE_GENERATOR_ID_PROPERTY;
 
-/**
- * Orchestrator: deletes all previously generated processors, regenerates every
- * processor from its YAML config and Spring XML graph, and optionally runs the
- * full JMH benchmark suite afterwards.
- */
 public class GenerateAllProcessors {
 
-    /** Source root for derived generated-package directories. */
-    private static final String SRC_ROOT =
-            "src/main/java/";
-
-    private static final Pattern LINE_NUM_PATTERN = Pattern.compile("^\\s*\\d+:\\s(.*)$");
-
-    /** All known dimension configs, in the order they will be processed. */
-    private static final Map<String, Class<? extends GraphGeneratorBase>> GENERATORS =
-            new LinkedHashMap<>();
-
-    static {
-        GENERATORS.put("benchmark-configs/deep_path.yaml",             DeepPathGraphGenerator.class);
-        GENERATORS.put("benchmark-configs/noop_dispatch.yaml",         DeepPathGraphGenerator.class);
-        GENERATORS.put("benchmark-configs/diamond_mesh.yaml",          DiamondMeshGraphGenerator.class);
-        GENERATORS.put("benchmark-configs/hot_path.yaml",              HotPathGraphGenerator.class);
-        GENERATORS.put("benchmark-configs/polymorphic.yaml",           PolymorphicGraphGenerator.class);
-        GENERATORS.put("benchmark-configs/dirty_filter.yaml",          DirtyFilterGraphGenerator.class);
-        GENERATORS.put("benchmark-configs/intermediate_handlers.yaml", IntermediateHandlersGraphGenerator.class);
-        GENERATORS.put("benchmark-configs/multi_event_path.yaml",      MultiEventPathGraphGenerator.class);
-        GENERATORS.put("benchmark-configs/validation_diamond.yaml",
-                com.telamin.fluxtion.test.performance.validation.generator.ValidationDiamondGenerator.class);
-        GENERATORS.put("benchmark-configs/short_chain.yaml",           ShortChainGraphGenerator.class);
-    }
+    private static final String SRC_ROOT = "src/main/java/";
 
     public static void main(String[] args) throws Exception {
-        boolean runBenchmarks = Arrays.asList(args).contains("--run-benchmarks");
-
-        // Force console output so we can capture it
         System.clearProperty(SOURCE_GENERATOR_ID_PROPERTY);
-        System.setProperty("fluxtion.generate.source", "true");
 
-        // ── 1. Delete all previously generated processors ──────────────────
         deleteGeneratedProcessors();
 
+        runSafe(() -> generateDeepPath());
+        runSafe(() -> generateNoOpDispatch());
+        runSafe(() -> generateDiamondMesh());
+        runSafe(() -> generateHotPath());
+        runSafe(() -> generatePolymorphic());
+        runSafe(() -> generateDirtyFilter());
+        runSafe(() -> generateIntermediateHandlers());
+        runSafe(() -> generateMultiEventPath());
+        runSafe(() -> generateValidationDiamond());
+        runSafe(() -> generateShortChain());
 
-        // ── 3. Regenerate all dimension processors from YAML configs ────────
-        int totalGraphs = 0;
-        int totalErrors = 0;
-
-        for (Map.Entry<String, Class<? extends GraphGeneratorBase>> entry : GENERATORS.entrySet()) {
-            String yamlResource = entry.getKey();
-            GraphGeneratorBase generator = entry.getValue().getDeclaredConstructor().newInstance();
-
-            BenchmarkConfig config = GraphGeneratorBase.loadConfig(yamlResource);
-            System.out.printf("%n=== Dimension: %s (%s) ===%n",
-                    config.getDimension(), config.getTitle());
-
-            boolean specializedRun = false;
-            for (int size : config.getSizes()) {
-                System.out.printf("  [%s] size=%d%n", config.getDimension(), size);
-                try {
-                    Path xmlPath = generator.generate(config, size);
-
-                    String processorName = toProcessorName(config.getDimension(), size);
-                    String pkg = config.getGeneratedPackage();
-
-                    if (config.getDimension().equals("deep_path") || config.getDimension().equals("noop_dispatch")) {
-                        if (!specializedRun) {
-                            // Specialized generation for these two to disable dirty flags and use concrete nodes
-                            System.out.printf("  [%s] Using specialized DeepPathNoDirtyGenerator...%n", config.getDimension());
-                            DeepPathNoDirtyGenerator.main(new String[0]);
-                            specializedRun = true;
-                        }
-                    } else {
-                        captureAndWrite(xmlPath.toString(), processorName, pkg);
-                    }
-
-                    totalGraphs++;
-                    System.out.printf("  [%s] size=%d -> %s.%s  OK%n",
-                            config.getDimension(), size, pkg, processorName);
-
-                } catch (Exception e) {
-                    totalErrors++;
-                    System.err.printf("  [%s] size=%d FAILED: %s%n",
-                            config.getDimension(), size, e.getMessage());
-                    e.printStackTrace(System.err);
-                }
-            }
-        }
-
-        System.out.printf("%n=== Done: %d processors generated, %d errors ===%n",
-                totalGraphs, totalErrors);
-
-        // ── 4. Optionally run benchmarks ────────────────────────────────────
-        if (runBenchmarks) {
-            System.out.println("\n=== Running JMH benchmarks ===");
-            Main.main(new String[0]);
-        }
-
-        if (totalErrors > 0) System.exit(1);
+        System.out.println("\n=== Generation process completed (check logs for errors) ===");
     }
 
-    private static void captureAndWrite(String xmlFilePath, String processorName, String pkg) throws Exception {
-        PrintStream originalOut = System.out;
-        PrintStream originalErr = System.err;
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        PrintStream captureStream = new PrintStream(baos);
-
-        System.setOut(captureStream);
-        System.setErr(captureStream);
+    private static void runSafe(Runnable r) {
         try {
-            compileAot(xmlFilePath, processorName, pkg);
-        } finally {
-            System.setOut(originalOut);
-            System.setErr(originalErr);
+            r.run();
+        } catch (Throwable t) {
+            System.err.println("Dimension failed: " + t.getMessage());
         }
-
-        String captured = baos.toString(StandardCharsets.UTF_8);
-        String cleanSource = stripLineNumbers(captured);
-
-        if (cleanSource.isEmpty()) {
-            System.out.println("Captured output: " + captured);
-            throw new IllegalStateException("No source captured for " + processorName);
-        }
-
-        Path targetPath = Paths.get(SRC_ROOT, pkg.replace('.', '/'), processorName + ".java");
-        Files.createDirectories(targetPath.getParent());
-        Files.writeString(targetPath, cleanSource);
     }
 
-    private static String stripLineNumbers(String captured) {
-        StringBuilder sb = new StringBuilder();
-        boolean inSource = false;
-        try (BufferedReader reader = new BufferedReader(new StringReader(captured))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                if (line.contains("=== GENERATED SOURCE START ===")) {
-                    inSource = true;
-                    continue;
-                }
-                if (line.contains("=== GENERATED SOURCE END ===")) {
-                    inSource = false;
-                    continue;
-                }
-                if (inSource) {
-                    Matcher m = LINE_NUM_PATTERN.matcher(line);
-                    if (m.find()) {
-                        sb.append(m.group(1)).append("\n");
-                    } else {
-                        sb.append(line).append("\n");
-                    }
+    private static void deleteGeneratedProcessors() throws IOException {
+        System.out.println("=== Deleting previously generated processors ===");
+        String[] packages = {
+            "com.telamin.fluxtion.test.performance.generated.deep",
+            "com.telamin.fluxtion.test.performance.generated.noop",
+            "com.telamin.fluxtion.test.performance.generated.diamond",
+            "com.telamin.fluxtion.test.performance.generated.hotpath",
+            "com.telamin.fluxtion.test.performance.generated.polymorphic",
+            "com.telamin.fluxtion.test.performance.generated.dirtyfilter",
+            "com.telamin.fluxtion.test.performance.generated.intermediate",
+            "com.telamin.fluxtion.test.performance.generated.multievent",
+            "com.telamin.fluxtion.test.performance.validation.generated",
+            "com.telamin.fluxtion.test.performance.generated.service"
+        };
+        for (String pkg : packages) {
+            Path dir = Paths.get(SRC_ROOT, pkg.replace('.', '/'));
+            if (Files.exists(dir)) {
+                try (var stream = Files.walk(dir)) {
+                    stream.filter(p -> p.toString().endsWith(".java"))
+                            .forEach(p -> {
+                                try { Files.delete(p); } catch (IOException ignored) {}
+                            });
                 }
             }
-        } catch (IOException e) {
-            // ignore
         }
-        return sb.toString();
     }
 
-    private static void compileAot(String xmlFilePath, String processorName, String pkg)
-            throws IOException {
+    private static void generateDeepPath() {
+        String pkg = "com.telamin.fluxtion.test.performance.generated.deep";
+        int[] sizes = {5, 10, 20, 50, 100};
+        for (int size : sizes) {
+            compileAotSafe(pkg, "DeepPath" + size + "Processor", procCfg -> {
+                RootLinearNode root = new RootLinearNode();
+                LinearNode last = root;
+                for (int i = 1; i <= size; i++) {
+                    LinearNode n = new LinearNode();
+                    n.setUpstream1(last);
+                    last = n;
+                }
+                LinearNodePublisher sink = new LinearNodePublisher();
+                sink.setUpstream1(last);
+                procCfg.addNode(sink, "sink");
+                procCfg.setSupportDirtyFiltering(false);
+            });
+        }
+    }
+
+    private static void generateNoOpDispatch() {
+        String pkg = "com.telamin.fluxtion.test.performance.generated.noop";
+        int[] sizes = {5, 10, 20, 50, 100};
+        for (int size : sizes) {
+            compileAotSafe(pkg, "NoopDispatch" + size + "Processor", procCfg -> {
+                RootNoOpNode root = new RootNoOpNode();
+                NoOpNode last = root;
+                for (int i = 1; i <= size; i++) {
+                    NoOpNode n = new NoOpNode();
+                    n.setUpstream1(last);
+                    last = n;
+                }
+                NoOpPublisherNode sink = new NoOpPublisherNode();
+                sink.setUpstream1(last);
+                procCfg.addNode(sink, "sink");
+                procCfg.setSupportDirtyFiltering(false);
+            });
+        }
+    }
+
+    private static void generateDiamondMesh() {
+        String pkg = "com.telamin.fluxtion.test.performance.generated.diamond";
+        int size = 101;
+        compileAotSafe(pkg, "DiamondMesh101Processor", procCfg -> {
+            DiamondMeshRootNode root = new DiamondMeshRootNode();
+            DiamondMeshNode last = root;
+            for (int i = 1; i < size; i++) {
+                DiamondMeshNode n = new DiamondMeshNode();
+                n.setUpstream1(last);
+                n.setUpstream2(root);
+                last = n;
+            }
+            DiamondMeshPublisherNode sink = new DiamondMeshPublisherNode();
+            sink.setUpstream1(last);
+            procCfg.addNode(sink, "sink");
+        });
+    }
+
+    private static void generateHotPath() {
+        String pkg = "com.telamin.fluxtion.test.performance.generated.hotpath";
+        int[] sizes = {2, 4, 8, 16, 32};
+        for (int size : sizes) {
+            compileAotSafe(pkg, "HotPath" + size + "Processor", procCfg -> {
+                HotPathRootNode root = new HotPathRootNode();
+                for (int i = 0; i < size; i++) {
+                    HotPathFilteringNode f = new HotPathFilteringNode();
+                    f.setUpstream1(root);
+                    HotPathAccumulatorNode a = new HotPathAccumulatorNode();
+                    a.setUpstream1(f);
+                    if (i == 0) {
+                        HotPathPublisherNode sink = new HotPathPublisherNode();
+                        sink.setUpstream1(a);
+                        procCfg.addNode(sink, "sink");
+                    } else {
+                        procCfg.addNode(a);
+                    }
+                }
+            });
+        }
+    }
+
+    private static void generatePolymorphic() {
+        String pkg = "com.telamin.fluxtion.test.performance.generated.polymorphic";
+        int[] sizes = {5, 10, 20, 50, 100};
+        for (int size : sizes) {
+            compileAotSafe(pkg, "Polymorphic" + size + "Processor", procCfg -> {
+                PolymorphicRootNode root = new PolymorphicRootNode();
+                PolymorphicNode last = root;
+                for (int i = 1; i <= size; i++) {
+                    PolymorphicNode n;
+                    int type = i % 3;
+                    if (type == 0) n = new PolymorphicBaseNode();
+                    else if (type == 1) n = new PolymorphicAccumulatorNode();
+                    else n = new PolymorphicTransformNode();
+                    
+                    n.setUpstream1(last);
+                    last = n;
+                }
+                PolymorphicPublisherNode sink = new PolymorphicPublisherNode();
+                sink.setUpstream1(last);
+                procCfg.addNode(sink, "sink");
+            });
+        }
+    }
+
+    private static void generateDirtyFilter() {
+        String pkg = "com.telamin.fluxtion.test.performance.generated.dirtyfilter";
+        int[] sizes = {10, 20, 50, 100};
+        for (int size : sizes) {
+            compileAotSafe(pkg, "DirtyFilter" + size + "Processor", procCfg -> {
+                DirtyFilterControlRootNode root = new DirtyFilterControlRootNode();
+                DirtyFilterNode last = root;
+                for (int i = 1; i <= size; i++) {
+                    DirtyFilterNode n;
+                    if (i % 3 == 0) n = new DirtyFilterFilteringNode();
+                    else n = new DirtyFilterBaseNode();
+                    
+                    n.setUpstream1(last);
+                    last = n;
+                }
+                DirtyFilterPublisherNode sink = new DirtyFilterPublisherNode();
+                sink.setUpstream1(last);
+                procCfg.addNode(sink, "sink");
+            });
+        }
+    }
+
+    private static void generateIntermediateHandlers() {
+        String pkg = "com.telamin.fluxtion.test.performance.generated.intermediate";
+        int[] sizes = {5, 10, 20, 50, 100};
+        for (int size : sizes) {
+            compileAotSafe(pkg, "IntermediateHandlers" + size + "Processor", procCfg -> {
+                IntermediateHandlersRootNode root = new IntermediateHandlersRootNode();
+                IntermediateHandlersNode last = root;
+                for (int i = 1; i <= size; i++) {
+                    IntermediateHandlersNode n = new IntermediateHandlersNode();
+                    n.setUpstream1(last);
+                    last = n;
+                }
+                IntermediateHandlersPublisherNode sink = new IntermediateHandlersPublisherNode();
+                sink.setUpstream1(last);
+                procCfg.addNode(sink, "sink");
+            });
+        }
+    }
+
+    private static void generateMultiEventPath() {
+        String pkg = "com.telamin.fluxtion.test.performance.generated.multievent";
+        int[] sizes = {5, 10, 20, 50, 100};
+        for (int size : sizes) {
+            compileAotSafe(pkg, "MultiEventPath" + size + "Processor", procCfg -> {
+                MultiEventPathRootNode root = new MultiEventPathRootNode();
+                MultiEventPathNode last = root;
+                for (int i = 1; i <= size; i++) {
+                    MultiEventPathNode n = new MultiEventPathNode();
+                    n.setUpstream1(last);
+                    last = n;
+                }
+                MultiEventPathPublisherNode sink = new MultiEventPathPublisherNode();
+                sink.setUpstream1(last);
+                procCfg.addNode(sink, "sink");
+            });
+        }
+    }
+
+    private static void generateValidationDiamond() {
+        String pkg = "com.telamin.fluxtion.test.performance.validation.generated";
+        int[] sizes = {3, 5, 10};
+        for (int size : sizes) {
+            compileAotSafe(pkg, "ValidationDiamond" + size + "Processor", procCfg -> {
+                DataCollector collector = new DataCollector();
+                EventContext context = new EventContext();
+
+                // MD Chain
+                ValidationMarketRootNode mdRoot = new ValidationMarketRootNode();
+                mdRoot.setNodeId("md_root");
+                mdRoot.setDataCollector(collector);
+                mdRoot.setEventContext(context);
+                procCfg.addNode(mdRoot, "md_root");
+                
+                List<ValidationNode> prevMdLayer = List.of(mdRoot);
+                for (int l = 1; l <= size; l++) {
+                    List<ValidationNode> currentLayer = new ArrayList<>();
+                    for (int n = 0; n < size; n++) {
+                        ValidationBaseNode nm = new ValidationBaseNode();
+                        String id = "md_l" + l + "_n" + n;
+                        nm.setNodeId(id);
+                        nm.setDataCollector(collector);
+                        nm.setEventContext(context);
+                        nm.setUpstream1(prevMdLayer.get(n % prevMdLayer.size()));
+                        if (prevMdLayer.size() > 1) {
+                            nm.setUpstream2(prevMdLayer.get((n + 1) % prevMdLayer.size()));
+                        }
+                        procCfg.addNode(nm, id);
+                        currentLayer.add(nm);
+                    }
+                    prevMdLayer = currentLayer;
+                }
+                ValidationSinkNode mdSink = new ValidationSinkNode();
+                mdSink.setNodeId("md_sink");
+                mdSink.setDataCollector(collector);
+                mdSink.setEventContext(context);
+                if (prevMdLayer.size() >= 1) mdSink.setUpstream1(prevMdLayer.get(0));
+                if (prevMdLayer.size() >= 2) mdSink.setUpstream2(prevMdLayer.get(1));
+                if (prevMdLayer.size() >= 3) mdSink.setUpstream3(prevMdLayer.get(2));
+                if (prevMdLayer.size() >= 4) mdSink.setUpstream4(prevMdLayer.get(3));
+                if (prevMdLayer.size() >= 5) mdSink.setUpstream5(prevMdLayer.get(4));
+                procCfg.addNode(mdSink, "md_sink");
+
+                // TS Chain
+                ValidationTradeRootNode tsRoot = new ValidationTradeRootNode();
+                tsRoot.setNodeId("ts_root");
+                tsRoot.setDataCollector(collector);
+                tsRoot.setEventContext(context);
+                procCfg.addNode(tsRoot, "ts_root");
+                
+                List<ValidationNode> prevTsLayer = List.of(tsRoot);
+                for (int l = 1; l <= size; l++) {
+                    List<ValidationNode> currentLayer = new ArrayList<>();
+                    for (int n = 0; n < size; n++) {
+                        ValidationAccumulatorNode nt = new ValidationAccumulatorNode();
+                        String id = "ts_l" + l + "_n" + n;
+                        nt.setNodeId(id);
+                        nt.setDataCollector(collector);
+                        nt.setEventContext(context);
+                        nt.setUpstream1(prevTsLayer.get(n % prevTsLayer.size()));
+                        if (prevTsLayer.size() > 1) {
+                            nt.setUpstream2(prevTsLayer.get((n + 1) % prevTsLayer.size()));
+                        }
+                        procCfg.addNode(nt, id);
+                        currentLayer.add(nt);
+                    }
+                    prevTsLayer = currentLayer;
+                }
+                ValidationSinkNode tsSink = new ValidationSinkNode();
+                tsSink.setNodeId("ts_sink");
+                tsSink.setDataCollector(collector);
+                tsSink.setEventContext(context);
+                if (prevTsLayer.size() >= 1) tsSink.setUpstream1(prevTsLayer.get(0));
+                if (prevTsLayer.size() >= 2) tsSink.setUpstream2(prevTsLayer.get(1));
+                if (prevTsLayer.size() >= 3) tsSink.setUpstream3(prevTsLayer.get(2));
+                if (prevTsLayer.size() >= 4) tsSink.setUpstream4(prevTsLayer.get(3));
+                if (prevTsLayer.size() >= 5) tsSink.setUpstream5(prevTsLayer.get(4));
+                procCfg.addNode(tsSink, "ts_sink");
+
+                // Control Chain
+                ValidationControlRootNode ctrlRoot = new ValidationControlRootNode();
+                ctrlRoot.setNodeId("ctrl_root");
+                ctrlRoot.setDataCollector(collector);
+                ctrlRoot.setEventContext(context);
+                procCfg.addNode(ctrlRoot, "ctrl_root");
+                
+                List<ValidationNode> prevCtrlLayer = List.of(ctrlRoot);
+                int ctrlSize = Math.max(1, size / 4);
+                for (int l = 1; l <= ctrlSize; l++) {
+                    List<ValidationNode> currentLayer = new ArrayList<>();
+                    for (int n = 0; n < ctrlSize; n++) {
+                        ValidationBaseNode nc = new ValidationBaseNode();
+                        String id = "ctrl_l" + l + "_n" + n;
+                        nc.setNodeId(id);
+                        nc.setDataCollector(collector);
+                        nc.setEventContext(context);
+                        nc.setUpstream1(prevCtrlLayer.get(n % prevCtrlLayer.size()));
+                        procCfg.addNode(nc, id);
+                        currentLayer.add(nc);
+                    }
+                    prevCtrlLayer = currentLayer;
+                }
+                ValidationBaseNode ctrlSink = new ValidationBaseNode();
+                ctrlSink.setNodeId("ctrl_sink");
+                ctrlSink.setDataCollector(collector);
+                ctrlSink.setEventContext(context);
+                if (prevCtrlLayer.size() >= 1) ctrlSink.setUpstream1(prevCtrlLayer.get(0));
+                if (prevCtrlLayer.size() >= 2) ctrlSink.setUpstream2(prevCtrlLayer.get(1));
+                if (prevCtrlLayer.size() >= 3) ctrlSink.setUpstream3(prevCtrlLayer.get(2));
+                procCfg.addNode(ctrlSink, "ctrl_sink");
+                
+                // shared sink for blackhole
+                ValidationSinkNode mainSink = new ValidationSinkNode();
+                mainSink.setNodeId("sink");
+                mainSink.setDataCollector(collector);
+                mainSink.setEventContext(context);
+                mainSink.setUpstream1(mdSink);
+                mainSink.setUpstream2(tsSink);
+                procCfg.addNode(mainSink, "sink");
+            });
+        }
+    }
+
+    private static void generateShortChain() {
+        String pkg = "com.telamin.fluxtion.test.performance.generated.service";
+        int[] sizes = {3, 5, 10};
+        for (int size : sizes) {
+            compileAotSafe(pkg, "ShortChain" + size + "Processor", procCfg -> {
+                ShortChainRootNode root = new ShortChainRootNode();
+                ShortChainNode last = root;
+                for (int i = 1; i <= size; i++) {
+                    ShortChainNode n = new ShortChainNode();
+                    n.setUpstream1(last);
+                    last = n;
+                }
+                ShortChainSinkNode sink = new ShortChainSinkNode();
+                sink.setUpstream1(last);
+                procCfg.addNode(sink, "sink");
+            });
+        }
+    }
+
+    private static void compileAotSafe(String pkg, String className, SerializableConsumer<EventProcessorConfig> configurer) {
+        System.out.println("Generating " + className + " in " + pkg + "...");
         ClassLoader originalClassLoader = Thread.currentThread().getContextClassLoader();
         Thread.currentThread().setContextClassLoader(GenerateAllProcessors.class.getClassLoader());
         try {
-            FileSystemXmlApplicationContext ctx =
-                    new FileSystemXmlApplicationContext(xmlFilePath);
-            try {
-                Fluxtion.compile(procCfg -> {
-                    ctx.getBeansOfType(Object.class).values().forEach(procCfg::addNode);
-                }, compilerCfg -> {
-                    compilerCfg.className(processorName).packageName(pkg);
-                });
-            } finally {
-                ctx.close();
-            }
+            Fluxtion.compileAot(configurer, pkg, className);
+            System.out.println("  OK");
+        } catch (Throwable t) {
+            System.err.println("  FAILED (source may still be written): " + t.getMessage());
         } finally {
             Thread.currentThread().setContextClassLoader(originalClassLoader);
         }
-    }
-
-    // -----------------------------------------------------------------------
-
-    /**
-     * Deletes all *.java files from every generated-package directory that is
-     * declared across the YAML configs, plus the root generated package that
-     * holds DiamondMeshProcessor.
-     */
-    private static void deleteGeneratedProcessors() throws Exception {
-        System.out.println("=== Deleting previously generated processors ===");
-
-        // Root generated package (DiamondMeshProcessor lives here)
-        deleteJavaFilesIn("com.telamin.fluxtion.test.performance.generated");
-        deleteJavaFilesIn("com.telamin.fluxtion.test.performance.generated.deep");
-        deleteJavaFilesIn("com.telamin.fluxtion.test.performance.generated.noop");
-
-        // Each dimension's generated package
-        for (String yamlResource : GENERATORS.keySet()) {
-            BenchmarkConfig config = GraphGeneratorBase.loadConfig(yamlResource);
-            deleteJavaFilesIn(config.getGeneratedPackage());
-        }
-    }
-
-    /**
-     * Deletes all *.java files directly inside the directory that corresponds
-     * to the given fully-qualified package name (non-recursive).
-     */
-    private static void deleteJavaFilesIn(String packageName) throws IOException {
-        Path dir = Paths.get(SRC_ROOT + packageName.replace('.', '/'));
-        if (!Files.exists(dir)) return;
-        Files.walk(dir)
-                .filter(p -> p.toString().endsWith(".java"))
-                .forEach(p -> {
-                    try {
-                        Files.deleteIfExists(p);
-                        System.out.printf("  deleted %s%n", p);
-                    } catch (IOException e) {
-                        System.err.printf("  failed to delete %s: %s%n", p, e.getMessage());
-                    }
-                });
-    }
-
-    /**
-     * Converts "deep_path" + 20 -> "DeepPath20Processor"
-     * Converts "hot_path"  + 4  -> "HotPath4Processor"
-     */
-    static String toProcessorName(String dimension, int size) {
-        String[] parts = dimension.split("_");
-        StringBuilder sb = new StringBuilder();
-        for (String part : parts) {
-            if (!part.isEmpty()) {
-                sb.append(Character.toUpperCase(part.charAt(0)));
-                sb.append(part.substring(1));
-            }
-        }
-        sb.append(size);
-        sb.append("Processor");
-        return sb.toString();
     }
 }

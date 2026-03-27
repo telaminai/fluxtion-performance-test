@@ -6,7 +6,7 @@ import com.telamin.fluxtion.test.performance.validation.events.ValidationMarketE
 import com.telamin.fluxtion.test.performance.validation.events.ValidationTradeEvent;
 import com.telamin.fluxtion.test.performance.validation.nodes.DataCollector;
 import com.telamin.fluxtion.test.performance.validation.nodes.EventContext;
-import com.telamin.fluxtion.test.performance.validation.nodes.ValidationNodeBase;
+import com.telamin.fluxtion.test.performance.validation.nodes.ValidationNode;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -93,19 +93,30 @@ class FluxtionValidationTest {
 
     @BeforeEach
     void setUp() throws Exception {
-        Class<?> cls = Class.forName(
-                "com.telamin.fluxtion.test.performance.validation.generated.ValidationDiamond3Processor");
+        setUp(3);
+    }
+
+    private void setUp(int size) throws Exception {
+        String className = "com.telamin.fluxtion.test.performance.validation.generated.ValidationDiamond"
+                + size + "Processor";
+        Class<?> cls = Class.forName(className);
         processor = (DataFlow) cls.getDeclaredConstructor().newInstance();
         processor.init();
 
-        // Retrieve shared infrastructure beans from the generated processor
-        Field dcField = cls.getDeclaredField("dataCollector");
-        dcField.setAccessible(true);
-        dataCollector = (DataCollector) dcField.get(processor);
+        dataCollector = null;
+        EventContext eventContext = null;
 
-        Field ecField = cls.getDeclaredField("eventContext");
-        ecField.setAccessible(true);
-        EventContext eventContext = (EventContext) ecField.get(processor);
+        for (Field f : cls.getDeclaredFields()) {
+            f.setAccessible(true);
+            if (DataCollector.class.isAssignableFrom(f.getType())) {
+                dataCollector = (DataCollector) f.get(processor);
+            } else if (EventContext.class.isAssignableFrom(f.getType())) {
+                eventContext = (EventContext) f.get(processor);
+            }
+        }
+
+        if (dataCollector == null) throw new IllegalStateException("DataCollector field not found in " + className);
+        if (eventContext == null) throw new IllegalStateException("EventContext field not found in " + className);
 
         // Fluxtion does not auto-wire non-event-propagating beans into processing nodes.
         // Wire dataCollector and eventContext into every ValidationNodeBase in the processor
@@ -113,8 +124,8 @@ class FluxtionValidationTest {
         for (Field f : cls.getDeclaredFields()) {
             f.setAccessible(true);
             Object val = f.get(processor);
-            if (val instanceof ValidationNodeBase) {
-                ValidationNodeBase node = (ValidationNodeBase) val;
+            if (val instanceof ValidationNode) {
+                ValidationNode node = (ValidationNode) val;
                 node.setDataCollector(dataCollector);
                 node.setEventContext(eventContext);
             }

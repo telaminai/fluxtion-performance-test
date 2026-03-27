@@ -2,9 +2,6 @@ package com.telamin.fluxtion.test.performance.benchmark;
 
 import com.telamin.fluxtion.runtime.DataFlow;
 import com.telamin.fluxtion.test.performance.events.ControlEvent;
-import com.telamin.fluxtion.test.performance.generators.BenchmarkConfig;
-import com.telamin.fluxtion.test.performance.generators.DirtyFilterGraphGenerator;
-import com.telamin.fluxtion.test.performance.generators.GraphGeneratorBase;
 import io.reactivex.rxjava3.core.Flowable;
 import io.reactivex.rxjava3.processors.PublishProcessor;
 import org.HdrHistogram.Histogram;
@@ -35,8 +32,6 @@ import java.util.concurrent.atomic.AtomicLong;
 public class DirtyFilterBenchmark extends DimensionBenchmarkBase {
 
     private static final String DIM = "dirty_filter";
-    private static final BenchmarkConfig CONFIG =
-            GraphGeneratorBase.loadConfig("benchmark-configs/dirty_filter.yaml");
 
     @Param({"10", "20", "50", "100"})
     public int size;
@@ -60,8 +55,7 @@ public class DirtyFilterBenchmark extends DimensionBenchmarkBase {
         fluxtionKey = DIM + "/fluxtion/" + size;
         rxJavaKey   = DIM + "/rxjava/"   + size;
         // --- Fluxtion ---
-        fluxtionProcessor = buildFluxtionProcessor(
-                new DirtyFilterGraphGenerator(), CONFIG, size);
+        fluxtionProcessor = buildFluxtionProcessor(DIM, size);
 
         // --- RxJava: chain with filter() every 3rd stage, threshold=0.5 ---
         rxRoot = PublishProcessor.create();

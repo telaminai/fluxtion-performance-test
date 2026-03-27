@@ -29,11 +29,11 @@
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="marketDataRootNode_101">
+        <node id="rootNoOpNode_101">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="&lt;&lt;EventHandle&gt;&gt;&#10;id:marketDataRootNode_101&#10;class:com.telamin.fluxtion.test.performance.nodes.MarketDataRootNode"/>
+                    <jGraph:label text="&lt;&lt;EventHandle&gt;&gt;&#10;id:rootNoOpNode_101&#10;class:com.telamin.fluxtion.test.performance.nodes.RootNoOpNode"/>
                     <jGraph:Style properties="EVENTHANDLER"/>
                 </jGraph:ShapeNode>
             </data>
@@ -1006,7 +1006,7 @@
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="2" source="marketDataRootNode_101" target="noOpNode_100">
+        <edge id="2" source="rootNoOpNode_101" target="noOpNode_100">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
@@ -1536,7 +1536,7 @@
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="108" source="MarketDataEvent" target="marketDataRootNode_101">
+        <edge id="108" source="MarketDataEvent" target="rootNoOpNode_101">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>

@@ -7,7 +7,7 @@ import com.telamin.fluxtion.test.performance.validation.events.ValidationMarketE
 import com.telamin.fluxtion.test.performance.validation.events.ValidationTradeEvent;
 import com.telamin.fluxtion.test.performance.validation.nodes.DataCollector;
 import com.telamin.fluxtion.test.performance.validation.nodes.EventContext;
-import com.telamin.fluxtion.test.performance.validation.nodes.ValidationNodeBase;
+import com.telamin.fluxtion.test.performance.validation.nodes.ValidationNode;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.subjects.PublishSubject;
 import org.HdrHistogram.Histogram;
@@ -210,26 +210,30 @@ public class ValidationBenchmark {
     }
 
     private void setupFluxtion() throws Exception {
-        String className = "com.telamin.fluxtion.test.performance.validation.generated.ValidationDiamond"
-                + size + "Processor";
-        Class<?> cls = Class.forName(className);
-        fluxtionProcessor = (DataFlow) cls.getDeclaredConstructor().newInstance();
-        fluxtionProcessor.init();
+        fluxtionProcessor = com.telamin.fluxtion.test.performance.benchmark.DimensionBenchmarkBase.buildFluxtionProcessor("validation", size);
+        Class<?> cls = fluxtionProcessor.getClass();
 
-        Field dcField = cls.getDeclaredField("dataCollector");
-        dcField.setAccessible(true);
-        fluxtionDc = (DataCollector) dcField.get(fluxtionProcessor);
+        fluxtionDc = null;
+        EventContext ec = null;
 
-        Field ecField = cls.getDeclaredField("eventContext");
-        ecField.setAccessible(true);
-        EventContext ec = (EventContext) ecField.get(fluxtionProcessor);
+        for (Field f : cls.getDeclaredFields()) {
+            f.setAccessible(true);
+            if (DataCollector.class.isAssignableFrom(f.getType())) {
+                fluxtionDc = (DataCollector) f.get(fluxtionProcessor);
+            } else if (EventContext.class.isAssignableFrom(f.getType())) {
+                ec = (EventContext) f.get(fluxtionProcessor);
+            }
+        }
 
-        // Wire dataCollector + eventContext into all ValidationNodeBase instances
+        if (fluxtionDc == null) throw new IllegalStateException("DataCollector field not found in " + cls.getName());
+        if (ec == null) throw new IllegalStateException("EventContext field not found in " + cls.getName());
+
+        // Wire dataCollector + eventContext into all ValidationNode instances
         for (Field f : cls.getDeclaredFields()) {
             f.setAccessible(true);
             Object val = f.get(fluxtionProcessor);
-            if (val instanceof ValidationNodeBase) {
-                ValidationNodeBase node = (ValidationNodeBase) val;
+            if (val instanceof ValidationNode) {
+                ValidationNode node = (ValidationNode) val;
                 node.setDataCollector(fluxtionDc);
                 node.setEventContext(ec);
             }

@@ -2,9 +2,6 @@ package com.telamin.fluxtion.test.performance.benchmark;
 
 import com.telamin.fluxtion.runtime.DataFlow;
 import com.telamin.fluxtion.test.performance.events.TradeSignalEvent;
-import com.telamin.fluxtion.test.performance.generators.BenchmarkConfig;
-import com.telamin.fluxtion.test.performance.generators.GraphGeneratorBase;
-import com.telamin.fluxtion.test.performance.generators.PolymorphicGraphGenerator;
 import io.reactivex.rxjava3.core.Flowable;
 import io.reactivex.rxjava3.processors.PublishProcessor;
 import org.HdrHistogram.Histogram;
@@ -34,8 +31,6 @@ import java.util.concurrent.atomic.AtomicLong;
 public class PolymorphicBenchmark extends DimensionBenchmarkBase {
 
     private static final String DIM = "polymorphic";
-    private static final BenchmarkConfig CONFIG =
-            GraphGeneratorBase.loadConfig("benchmark-configs/polymorphic.yaml");
 
     @Param({"5", "10", "20", "50", "100"})
     public int size;
@@ -61,8 +56,7 @@ public class PolymorphicBenchmark extends DimensionBenchmarkBase {
         fluxtionKey = DIM + "/fluxtion/" + size;
         rxJavaKey   = DIM + "/rxjava/"   + size;
         // --- Fluxtion ---
-        fluxtionProcessor = buildFluxtionProcessor(
-                new PolymorphicGraphGenerator(), CONFIG, size);
+        fluxtionProcessor = buildFluxtionProcessor(DIM, size);
 
         // --- RxJava: mirror the three-subtype cycle with distinct lambda types ---
         rxRoot = PublishProcessor.create();

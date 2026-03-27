@@ -2,9 +2,6 @@ package com.telamin.fluxtion.test.performance.benchmark;
 
 import com.telamin.fluxtion.runtime.DataFlow;
 import com.telamin.fluxtion.test.performance.events.TradeSignalEvent;
-import com.telamin.fluxtion.test.performance.generators.BenchmarkConfig;
-import com.telamin.fluxtion.test.performance.generators.GraphGeneratorBase;
-import com.telamin.fluxtion.test.performance.generators.IntermediateHandlersGraphGenerator;
 import io.reactivex.rxjava3.core.Flowable;
 import io.reactivex.rxjava3.processors.PublishProcessor;
 import org.HdrHistogram.Histogram;
@@ -40,8 +37,6 @@ public class IntermediateHandlersBenchmark extends DimensionBenchmarkBase {
 
     private static final String DIM = "intermediate_handlers";
     private static final int    HANDLER_EVERY_N = 5;
-    private static final BenchmarkConfig CONFIG =
-            GraphGeneratorBase.loadConfig("benchmark-configs/intermediate_handlers.yaml");
 
     @Param({"10", "20", "50", "100"})
     public int size;
@@ -65,8 +60,7 @@ public class IntermediateHandlersBenchmark extends DimensionBenchmarkBase {
         fluxtionKey = DIM + "/fluxtion/" + size;
         rxJavaKey   = DIM + "/rxjava/"   + size;
         // --- Fluxtion ---
-        fluxtionProcessor = buildFluxtionProcessor(
-                new IntermediateHandlersGraphGenerator(), CONFIG, size);
+        fluxtionProcessor = buildFluxtionProcessor(DIM, size);
 
         // --- RxJava: one processor per entry point, merged and chained ---
         rxHandlers = new ArrayList<>();

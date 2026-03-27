@@ -2,9 +2,6 @@ package com.telamin.fluxtion.test.performance.benchmark;
 
 import com.telamin.fluxtion.runtime.DataFlow;
 import com.telamin.fluxtion.test.performance.events.ShortChainEvent;
-import com.telamin.fluxtion.test.performance.generators.BenchmarkConfig;
-import com.telamin.fluxtion.test.performance.generators.GraphGeneratorBase;
-import com.telamin.fluxtion.test.performance.generators.ShortChainGraphGenerator;
 import com.telamin.fluxtion.test.performance.service.IShortChainProcessor;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.subjects.PublishSubject;
@@ -65,8 +62,6 @@ public class ServiceDispatchBenchmark extends DimensionBenchmarkBase {
 
     private static final String DIM_ONEVENT = "short_chain_onEvent";
     private static final String DIM_SERVICE = "short_chain_service";
-    private static final BenchmarkConfig CONFIG =
-            GraphGeneratorBase.loadConfig("benchmark-configs/short_chain.yaml");
 
     @Param({"3", "5", "10"})
     public int size;
@@ -96,7 +91,7 @@ public class ServiceDispatchBenchmark extends DimensionBenchmarkBase {
         fluxtionServiceKey = DIM_SERVICE + "/fluxtion/" + size;
         rxJavaKey          = DIM_SERVICE + "/rxjava/"   + size;
         // --- Fluxtion ---
-        fluxtionProcessor = buildFluxtionProcessor(new ShortChainGraphGenerator(), CONFIG, size);
+        fluxtionProcessor = buildFluxtionProcessor("short_chain", size);
         // The generated processor implements @ExportService IShortChainProcessor — safe cast
         serviceProcessor = (IShortChainProcessor) fluxtionProcessor;
 

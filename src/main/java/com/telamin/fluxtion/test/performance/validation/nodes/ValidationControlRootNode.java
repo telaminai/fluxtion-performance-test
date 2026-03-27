@@ -8,7 +8,7 @@ import com.telamin.fluxtion.test.performance.validation.events.ValidationControl
  * Publishes activeIds to EventContext and captures the threshold as its output value.
  * Routes through the shortest chain (max(1, size/4)) — administrative, low-frequency.
  */
-public class ValidationControlRootNode extends ValidationNodeBase {
+public class ValidationControlRootNode extends ValidationNode {
 
     @OnEventHandler
     public boolean onControlEvent(ValidationControlEvent event) {

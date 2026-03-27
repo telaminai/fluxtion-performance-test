@@ -20,371 +20,200 @@
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="md_1">
+        <node id="multiEventPathNode_20">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:md_1&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:multiEventPathNode_20&#10;class:com.telamin.fluxtion.test.performance.nodes.MultiEventPathNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="md_root">
+        <node id="multiEventPathRootNode_21">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="&lt;&lt;EventHandle&gt;&gt;&#10;id:md_root&#10;class:com.telamin.fluxtion.test.performance.nodes.MarketDataRootNode"/>
+                    <jGraph:label text="&lt;&lt;EventHandle&gt;&gt;&#10;id:multiEventPathRootNode_21&#10;class:com.telamin.fluxtion.test.performance.nodes.MultiEventPathRootNode"/>
                     <jGraph:Style properties="EVENTHANDLER"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="md_2">
+        <node id="multiEventPathNode_19">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:md_2&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:multiEventPathNode_19&#10;class:com.telamin.fluxtion.test.performance.nodes.MultiEventPathNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="md_3">
+        <node id="multiEventPathNode_18">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:md_3&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:multiEventPathNode_18&#10;class:com.telamin.fluxtion.test.performance.nodes.MultiEventPathNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="md_4">
+        <node id="multiEventPathNode_17">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:md_4&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:multiEventPathNode_17&#10;class:com.telamin.fluxtion.test.performance.nodes.MultiEventPathNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="md_5">
+        <node id="multiEventPathNode_16">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:md_5&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:multiEventPathNode_16&#10;class:com.telamin.fluxtion.test.performance.nodes.MultiEventPathNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="md_6">
+        <node id="multiEventPathNode_15">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:md_6&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:multiEventPathNode_15&#10;class:com.telamin.fluxtion.test.performance.nodes.MultiEventPathNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="md_7">
+        <node id="multiEventPathNode_14">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:md_7&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:multiEventPathNode_14&#10;class:com.telamin.fluxtion.test.performance.nodes.MultiEventPathNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="md_8">
+        <node id="multiEventPathNode_13">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:md_8&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:multiEventPathNode_13&#10;class:com.telamin.fluxtion.test.performance.nodes.MultiEventPathNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="md_9">
+        <node id="multiEventPathNode_12">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:md_9&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:multiEventPathNode_12&#10;class:com.telamin.fluxtion.test.performance.nodes.MultiEventPathNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="md_10">
+        <node id="multiEventPathNode_11">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:md_10&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:multiEventPathNode_11&#10;class:com.telamin.fluxtion.test.performance.nodes.MultiEventPathNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="md_11">
+        <node id="multiEventPathNode_10">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:md_11&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:multiEventPathNode_10&#10;class:com.telamin.fluxtion.test.performance.nodes.MultiEventPathNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="md_12">
+        <node id="multiEventPathNode_9">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:md_12&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:multiEventPathNode_9&#10;class:com.telamin.fluxtion.test.performance.nodes.MultiEventPathNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="md_13">
+        <node id="multiEventPathNode_8">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:md_13&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:multiEventPathNode_8&#10;class:com.telamin.fluxtion.test.performance.nodes.MultiEventPathNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="md_14">
+        <node id="multiEventPathNode_7">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:md_14&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:multiEventPathNode_7&#10;class:com.telamin.fluxtion.test.performance.nodes.MultiEventPathNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="md_15">
+        <node id="multiEventPathNode_6">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:md_15&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:multiEventPathNode_6&#10;class:com.telamin.fluxtion.test.performance.nodes.MultiEventPathNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="md_16">
+        <node id="multiEventPathNode_5">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:md_16&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:multiEventPathNode_5&#10;class:com.telamin.fluxtion.test.performance.nodes.MultiEventPathNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="md_17">
+        <node id="multiEventPathNode_4">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:md_17&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:multiEventPathNode_4&#10;class:com.telamin.fluxtion.test.performance.nodes.MultiEventPathNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="md_18">
+        <node id="multiEventPathNode_3">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:md_18&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:multiEventPathNode_3&#10;class:com.telamin.fluxtion.test.performance.nodes.MultiEventPathNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="md_19">
+        <node id="multiEventPathNode_2">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:md_19&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:multiEventPathNode_2&#10;class:com.telamin.fluxtion.test.performance.nodes.MultiEventPathNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="md_20">
+        <node id="multiEventPathNode_1">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:md_20&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:multiEventPathNode_1&#10;class:com.telamin.fluxtion.test.performance.nodes.MultiEventPathNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="md_sink">
+        <node id="sink">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:md_sink&#10;class:com.telamin.fluxtion.test.performance.nodes.PublisherNode"/>
-                    <jGraph:Style properties="NODE"/>
-                </jGraph:ShapeNode>
-            </data>
-        </node>
-        <node id="ts_1">
-            <data key="vertex_label">
-                <jGraph:ShapeNode>
-                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:ts_1&#10;class:com.telamin.fluxtion.test.performance.nodes.AccumulatorNode"/>
-                    <jGraph:Style properties="NODE"/>
-                </jGraph:ShapeNode>
-            </data>
-        </node>
-        <node id="ts_root">
-            <data key="vertex_label">
-                <jGraph:ShapeNode>
-                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="&lt;&lt;EventHandle&gt;&gt;&#10;id:ts_root&#10;class:com.telamin.fluxtion.test.performance.nodes.TradeSignalRootNode"/>
-                    <jGraph:Style properties="EVENTHANDLER"/>
-                </jGraph:ShapeNode>
-            </data>
-        </node>
-        <node id="ts_2">
-            <data key="vertex_label">
-                <jGraph:ShapeNode>
-                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:ts_2&#10;class:com.telamin.fluxtion.test.performance.nodes.AccumulatorNode"/>
-                    <jGraph:Style properties="NODE"/>
-                </jGraph:ShapeNode>
-            </data>
-        </node>
-        <node id="ts_3">
-            <data key="vertex_label">
-                <jGraph:ShapeNode>
-                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:ts_3&#10;class:com.telamin.fluxtion.test.performance.nodes.AccumulatorNode"/>
-                    <jGraph:Style properties="NODE"/>
-                </jGraph:ShapeNode>
-            </data>
-        </node>
-        <node id="ts_4">
-            <data key="vertex_label">
-                <jGraph:ShapeNode>
-                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:ts_4&#10;class:com.telamin.fluxtion.test.performance.nodes.AccumulatorNode"/>
-                    <jGraph:Style properties="NODE"/>
-                </jGraph:ShapeNode>
-            </data>
-        </node>
-        <node id="ts_5">
-            <data key="vertex_label">
-                <jGraph:ShapeNode>
-                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:ts_5&#10;class:com.telamin.fluxtion.test.performance.nodes.AccumulatorNode"/>
-                    <jGraph:Style properties="NODE"/>
-                </jGraph:ShapeNode>
-            </data>
-        </node>
-        <node id="ts_6">
-            <data key="vertex_label">
-                <jGraph:ShapeNode>
-                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:ts_6&#10;class:com.telamin.fluxtion.test.performance.nodes.AccumulatorNode"/>
-                    <jGraph:Style properties="NODE"/>
-                </jGraph:ShapeNode>
-            </data>
-        </node>
-        <node id="ts_7">
-            <data key="vertex_label">
-                <jGraph:ShapeNode>
-                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:ts_7&#10;class:com.telamin.fluxtion.test.performance.nodes.AccumulatorNode"/>
-                    <jGraph:Style properties="NODE"/>
-                </jGraph:ShapeNode>
-            </data>
-        </node>
-        <node id="ts_8">
-            <data key="vertex_label">
-                <jGraph:ShapeNode>
-                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:ts_8&#10;class:com.telamin.fluxtion.test.performance.nodes.AccumulatorNode"/>
-                    <jGraph:Style properties="NODE"/>
-                </jGraph:ShapeNode>
-            </data>
-        </node>
-        <node id="ts_9">
-            <data key="vertex_label">
-                <jGraph:ShapeNode>
-                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:ts_9&#10;class:com.telamin.fluxtion.test.performance.nodes.AccumulatorNode"/>
-                    <jGraph:Style properties="NODE"/>
-                </jGraph:ShapeNode>
-            </data>
-        </node>
-        <node id="ts_10">
-            <data key="vertex_label">
-                <jGraph:ShapeNode>
-                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:ts_10&#10;class:com.telamin.fluxtion.test.performance.nodes.AccumulatorNode"/>
-                    <jGraph:Style properties="NODE"/>
-                </jGraph:ShapeNode>
-            </data>
-        </node>
-        <node id="ts_sink">
-            <data key="vertex_label">
-                <jGraph:ShapeNode>
-                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:ts_sink&#10;class:com.telamin.fluxtion.test.performance.nodes.PublisherNode"/>
-                    <jGraph:Style properties="NODE"/>
-                </jGraph:ShapeNode>
-            </data>
-        </node>
-        <node id="ctrl_1">
-            <data key="vertex_label">
-                <jGraph:ShapeNode>
-                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:ctrl_1&#10;class:com.telamin.fluxtion.test.performance.nodes.FilteringNode"/>
-                    <jGraph:Style properties="NODE"/>
-                </jGraph:ShapeNode>
-            </data>
-        </node>
-        <node id="ctrl_root">
-            <data key="vertex_label">
-                <jGraph:ShapeNode>
-                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="&lt;&lt;EventHandle&gt;&gt;&#10;id:ctrl_root&#10;class:com.telamin.fluxtion.test.performance.nodes.ControlRootNode"/>
-                    <jGraph:Style properties="EVENTHANDLER"/>
-                </jGraph:ShapeNode>
-            </data>
-        </node>
-        <node id="ctrl_2">
-            <data key="vertex_label">
-                <jGraph:ShapeNode>
-                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:ctrl_2&#10;class:com.telamin.fluxtion.test.performance.nodes.FilteringNode"/>
-                    <jGraph:Style properties="NODE"/>
-                </jGraph:ShapeNode>
-            </data>
-        </node>
-        <node id="ctrl_3">
-            <data key="vertex_label">
-                <jGraph:ShapeNode>
-                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:ctrl_3&#10;class:com.telamin.fluxtion.test.performance.nodes.FilteringNode"/>
-                    <jGraph:Style properties="NODE"/>
-                </jGraph:ShapeNode>
-            </data>
-        </node>
-        <node id="ctrl_4">
-            <data key="vertex_label">
-                <jGraph:ShapeNode>
-                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:ctrl_4&#10;class:com.telamin.fluxtion.test.performance.nodes.FilteringNode"/>
-                    <jGraph:Style properties="NODE"/>
-                </jGraph:ShapeNode>
-            </data>
-        </node>
-        <node id="ctrl_5">
-            <data key="vertex_label">
-                <jGraph:ShapeNode>
-                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:ctrl_5&#10;class:com.telamin.fluxtion.test.performance.nodes.FilteringNode"/>
-                    <jGraph:Style properties="NODE"/>
-                </jGraph:ShapeNode>
-            </data>
-        </node>
-        <node id="ctrl_sink">
-            <data key="vertex_label">
-                <jGraph:ShapeNode>
-                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:ctrl_sink&#10;class:com.telamin.fluxtion.test.performance.nodes.PublisherNode"/>
+                    <jGraph:label text="id:sink&#10;class:com.telamin.fluxtion.test.performance.nodes.MultiEventPathPublisherNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -434,6 +263,15 @@
                 </jGraph:ShapeNode>
             </data>
         </node>
+        <node id="ControlEvent">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="&lt;&lt;Event&gt;&gt;&#10;ControlEvent&#10;class:com.telamin.fluxtion.test.performance.events.ControlEvent&#10;"/>
+                    <jGraph:Style properties="EVENT"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
         <node id="MarketDataEvent">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
@@ -452,15 +290,6 @@
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="ControlEvent">
-            <data key="vertex_label">
-                <jGraph:ShapeNode>
-                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="&lt;&lt;Event&gt;&gt;&#10;ControlEvent&#10;class:com.telamin.fluxtion.test.performance.events.ControlEvent&#10;"/>
-                    <jGraph:Style properties="EVENT"/>
-                </jGraph:ShapeNode>
-            </data>
-        </node>
         <node id="ServiceListener">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
@@ -475,237 +304,152 @@
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="2" source="md_root" target="md_1">
+        <edge id="2" source="multiEventPathRootNode_21" target="multiEventPathNode_20">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="3" source="md_1" target="md_2">
+        <edge id="3" source="multiEventPathNode_20" target="multiEventPathNode_19">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="4" source="md_2" target="md_3">
+        <edge id="4" source="multiEventPathNode_19" target="multiEventPathNode_18">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="5" source="md_3" target="md_4">
+        <edge id="5" source="multiEventPathNode_18" target="multiEventPathNode_17">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="6" source="md_4" target="md_5">
+        <edge id="6" source="multiEventPathNode_17" target="multiEventPathNode_16">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="7" source="md_5" target="md_6">
+        <edge id="7" source="multiEventPathNode_16" target="multiEventPathNode_15">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="8" source="md_6" target="md_7">
+        <edge id="8" source="multiEventPathNode_15" target="multiEventPathNode_14">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="9" source="md_7" target="md_8">
+        <edge id="9" source="multiEventPathNode_14" target="multiEventPathNode_13">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="10" source="md_8" target="md_9">
+        <edge id="10" source="multiEventPathNode_13" target="multiEventPathNode_12">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="11" source="md_9" target="md_10">
+        <edge id="11" source="multiEventPathNode_12" target="multiEventPathNode_11">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="12" source="md_10" target="md_11">
+        <edge id="12" source="multiEventPathNode_11" target="multiEventPathNode_10">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="13" source="md_11" target="md_12">
+        <edge id="13" source="multiEventPathNode_10" target="multiEventPathNode_9">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="14" source="md_12" target="md_13">
+        <edge id="14" source="multiEventPathNode_9" target="multiEventPathNode_8">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="15" source="md_13" target="md_14">
+        <edge id="15" source="multiEventPathNode_8" target="multiEventPathNode_7">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="16" source="md_14" target="md_15">
+        <edge id="16" source="multiEventPathNode_7" target="multiEventPathNode_6">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="17" source="md_15" target="md_16">
+        <edge id="17" source="multiEventPathNode_6" target="multiEventPathNode_5">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="18" source="md_16" target="md_17">
+        <edge id="18" source="multiEventPathNode_5" target="multiEventPathNode_4">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="19" source="md_17" target="md_18">
+        <edge id="19" source="multiEventPathNode_4" target="multiEventPathNode_3">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="20" source="md_18" target="md_19">
+        <edge id="20" source="multiEventPathNode_3" target="multiEventPathNode_2">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="21" source="md_19" target="md_20">
+        <edge id="21" source="multiEventPathNode_2" target="multiEventPathNode_1">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="22" source="md_20" target="md_sink">
+        <edge id="22" source="multiEventPathNode_1" target="sink">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="23" source="ts_root" target="ts_1">
+        <edge id="23" source="context" target="serviceRegistry">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="24" source="ts_1" target="ts_2">
+        <edge id="24" source="nodeNameLookup" target="context">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="25" source="ts_2" target="ts_3">
+        <edge id="25" source="callbackDispatcher" target="context">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="26" source="ts_3" target="ts_4">
+        <edge id="26" source="subscriptionManager" target="context">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="27" source="ts_4" target="ts_5">
+        <edge id="27" source="ClockStrategyEvent" target="clock">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="28" source="ts_5" target="ts_6">
+        <edge id="28" source="ControlEvent" target="multiEventPathRootNode_21">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="29" source="ts_6" target="ts_7">
+        <edge id="29" source="MarketDataEvent" target="multiEventPathRootNode_21">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="30" source="ts_7" target="ts_8">
+        <edge id="30" source="TradeSignalEvent" target="multiEventPathRootNode_21">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="31" source="ts_8" target="ts_9">
-            <data key="edge_label">
-                <jGraph:ShapeEdge/>
-            </data>
-        </edge>
-        <edge id="32" source="ts_9" target="ts_10">
-            <data key="edge_label">
-                <jGraph:ShapeEdge/>
-            </data>
-        </edge>
-        <edge id="33" source="ts_10" target="ts_sink">
-            <data key="edge_label">
-                <jGraph:ShapeEdge/>
-            </data>
-        </edge>
-        <edge id="34" source="ctrl_root" target="ctrl_1">
-            <data key="edge_label">
-                <jGraph:ShapeEdge/>
-            </data>
-        </edge>
-        <edge id="35" source="ctrl_1" target="ctrl_2">
-            <data key="edge_label">
-                <jGraph:ShapeEdge/>
-            </data>
-        </edge>
-        <edge id="36" source="ctrl_2" target="ctrl_3">
-            <data key="edge_label">
-                <jGraph:ShapeEdge/>
-            </data>
-        </edge>
-        <edge id="37" source="ctrl_3" target="ctrl_4">
-            <data key="edge_label">
-                <jGraph:ShapeEdge/>
-            </data>
-        </edge>
-        <edge id="38" source="ctrl_4" target="ctrl_5">
-            <data key="edge_label">
-                <jGraph:ShapeEdge/>
-            </data>
-        </edge>
-        <edge id="39" source="ctrl_5" target="ctrl_sink">
-            <data key="edge_label">
-                <jGraph:ShapeEdge/>
-            </data>
-        </edge>
-        <edge id="40" source="context" target="serviceRegistry">
-            <data key="edge_label">
-                <jGraph:ShapeEdge/>
-            </data>
-        </edge>
-        <edge id="41" source="nodeNameLookup" target="context">
-            <data key="edge_label">
-                <jGraph:ShapeEdge/>
-            </data>
-        </edge>
-        <edge id="42" source="callbackDispatcher" target="context">
-            <data key="edge_label">
-                <jGraph:ShapeEdge/>
-            </data>
-        </edge>
-        <edge id="43" source="subscriptionManager" target="context">
-            <data key="edge_label">
-                <jGraph:ShapeEdge/>
-            </data>
-        </edge>
-        <edge id="44" source="ClockStrategyEvent" target="clock">
-            <data key="edge_label">
-                <jGraph:ShapeEdge/>
-            </data>
-        </edge>
-        <edge id="45" source="MarketDataEvent" target="md_root">
-            <data key="edge_label">
-                <jGraph:ShapeEdge/>
-            </data>
-        </edge>
-        <edge id="46" source="TradeSignalEvent" target="ts_root">
-            <data key="edge_label">
-                <jGraph:ShapeEdge/>
-            </data>
-        </edge>
-        <edge id="47" source="ControlEvent" target="ctrl_root">
-            <data key="edge_label">
-                <jGraph:ShapeEdge/>
-            </data>
-        </edge>
-        <edge id="48" source="ServiceListener" target="serviceRegistry">
+        <edge id="31" source="ServiceListener" target="serviceRegistry">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>

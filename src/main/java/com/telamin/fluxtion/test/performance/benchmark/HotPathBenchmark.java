@@ -2,9 +2,6 @@ package com.telamin.fluxtion.test.performance.benchmark;
 
 import com.telamin.fluxtion.runtime.DataFlow;
 import com.telamin.fluxtion.test.performance.events.MarketDataEvent;
-import com.telamin.fluxtion.test.performance.generators.BenchmarkConfig;
-import com.telamin.fluxtion.test.performance.generators.GraphGeneratorBase;
-import com.telamin.fluxtion.test.performance.generators.HotPathGraphGenerator;
 import io.reactivex.rxjava3.core.Flowable;
 import io.reactivex.rxjava3.processors.PublishProcessor;
 import org.HdrHistogram.Histogram;
@@ -36,8 +33,6 @@ import java.util.concurrent.atomic.AtomicLong;
 public class HotPathBenchmark extends DimensionBenchmarkBase {
 
     private static final String DIM = "hot_path";
-    private static final BenchmarkConfig CONFIG =
-            GraphGeneratorBase.loadConfig("benchmark-configs/hot_path.yaml");
 
     @Param({"2", "4", "8", "16", "32"})
     public int size;
@@ -59,8 +54,7 @@ public class HotPathBenchmark extends DimensionBenchmarkBase {
         fluxtionKey = DIM + "/fluxtion/" + size;
         rxJavaKey   = DIM + "/rxjava/"   + size;
         // --- Fluxtion ---
-        fluxtionProcessor = buildFluxtionProcessor(
-                new HotPathGraphGenerator(), CONFIG, size);
+        fluxtionProcessor = buildFluxtionProcessor(DIM, size);
 
         // --- RxJava: one hot branch (always passes filter) + (size-1) cold branches ---
         rxRoot = PublishProcessor.create();

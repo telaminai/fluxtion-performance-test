@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?><graphml xmlns="http://graphml.graphdrawing.org/xmlns" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd" xmlns:jGraph="http://www.jgraph.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <key id="vertex_label" for="node" attr.name="nodeData" attr.type="string"/>
+    <key id="edge_label" for="edge" attr.name="edgeData" attr.type="string"/>
+    <graph edgedefault="undirected">
+        <node id="context">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="id:context&#10;class:com.telamin.fluxtion.runtime.node.MutableDataFlowContext"/>
+                    <jGraph:Style properties="NODE"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="clock">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="&lt;&lt;EventHandle&gt;&gt;&#10;id:clock&#10;class:com.telamin.fluxtion.runtime.time.Clock"/>
+                    <jGraph:Style properties="EVENTHANDLER"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="sink">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="id:sink&#10;class:com.telamin.fluxtion.test.performance.validation.nodes.ValidationSinkNode"/>
+                    <jGraph:Style properties="NODE"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="eventContext_2">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="id:eventContext_2&#10;class:com.telamin.fluxtion.test.performance.validation.nodes.EventContext"/>
+                    <jGraph:Style properties="NODE"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="dataCollector_3">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="id:dataCollector_3&#10;class:com.telamin.fluxtion.test.performance.validation.nodes.DataCollector"/>
+                    <jGraph:Style properties="NODE"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="validationBaseNode_6">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="id:validationBaseNode_6&#10;class:com.telamin.fluxtion.test.performance.validation.nodes.ValidationBaseNode"/>
+                    <jGraph:Style properties="NODE"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="validationMarketRootNode_7">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="&lt;&lt;EventHandle&gt;&gt;&#10;id:validationMarketRootNode_7&#10;class:com.telamin.fluxtion.test.performance.validation.nodes.ValidationMarketRootNode"/>
+                    <jGraph:Style properties="EVENTHANDLER"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="validationBaseNode_5">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="id:validationBaseNode_5&#10;class:com.telamin.fluxtion.test.performance.validation.nodes.ValidationBaseNode"/>
+                    <jGraph:Style properties="NODE"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="validationBaseNode_4">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="id:validationBaseNode_4&#10;class:com.telamin.fluxtion.test.performance.validation.nodes.ValidationBaseNode"/>
+                    <jGraph:Style properties="NODE"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="validationAccumulatorNode_10">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="id:validationAccumulatorNode_10&#10;class:com.telamin.fluxtion.test.performance.validation.nodes.ValidationAccumulatorNode"/>
+                    <jGraph:Style properties="NODE"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="validationTradeRootNode_11">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="&lt;&lt;EventHandle&gt;&gt;&#10;id:validationTradeRootNode_11&#10;class:com.telamin.fluxtion.test.performance.validation.nodes.ValidationTradeRootNode"/>
+                    <jGraph:Style properties="EVENTHANDLER"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="validationAccumulatorNode_9">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="id:validationAccumulatorNode_9&#10;class:com.telamin.fluxtion.test.performance.validation.nodes.ValidationAccumulatorNode"/>
+                    <jGraph:Style properties="NODE"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="validationAccumulatorNode_8">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="id:validationAccumulatorNode_8&#10;class:com.telamin.fluxtion.test.performance.validation.nodes.ValidationAccumulatorNode"/>
+                    <jGraph:Style properties="NODE"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="control_sink">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="id:control_sink&#10;class:com.telamin.fluxtion.test.performance.validation.nodes.ValidationBaseNode"/>
+                    <jGraph:Style properties="NODE"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="validationControlRootNode_12">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="&lt;&lt;EventHandle&gt;&gt;&#10;id:validationControlRootNode_12&#10;class:com.telamin.fluxtion.test.performance.validation.nodes.ValidationControlRootNode"/>
+                    <jGraph:Style properties="EVENTHANDLER"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="serviceRegistry">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="id:serviceRegistry&#10;class:com.telamin.fluxtion.runtime.service.ServiceRegistryNode"/>
+                    <jGraph:Style properties="NODE"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="nodeNameLookup">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="id:nodeNameLookup&#10;class:com.telamin.fluxtion.runtime.audit.NodeNameAuditor"/>
+                    <jGraph:Style properties="NODE"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="callbackDispatcher">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="id:callbackDispatcher&#10;class:com.telamin.fluxtion.runtime.callback.CallbackDispatcherImpl"/>
+                    <jGraph:Style properties="NODE"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="subscriptionManager">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="id:subscriptionManager&#10;class:com.telamin.fluxtion.runtime.input.SubscriptionManagerNode"/>
+                    <jGraph:Style properties="NODE"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="ClockStrategyEvent">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="&lt;&lt;Event&gt;&gt;&#10;ClockStrategyEvent&#10;class:com.telamin.fluxtion.runtime.time.ClockStrategy$ClockStrategyEvent&#10;"/>
+                    <jGraph:Style properties="EVENT"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="ValidationMarketEvent">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="&lt;&lt;Event&gt;&gt;&#10;ValidationMarketEvent&#10;class:com.telamin.fluxtion.test.performance.validation.events.ValidationMarketEvent&#10;"/>
+                    <jGraph:Style properties="EVENT"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="ValidationTradeEvent">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="&lt;&lt;Event&gt;&gt;&#10;ValidationTradeEvent&#10;class:com.telamin.fluxtion.test.performance.validation.events.ValidationTradeEvent&#10;"/>
+                    <jGraph:Style properties="EVENT"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="ValidationControlEvent">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="&lt;&lt;Event&gt;&gt;&#10;ValidationControlEvent&#10;class:com.telamin.fluxtion.test.performance.validation.events.ValidationControlEvent&#10;"/>
+                    <jGraph:Style properties="EVENT"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="ServiceListener">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="&lt;&lt;ExportService&gt;&gt;&#10;class:com.telamin.fluxtion.runtime.service.ServiceListener&#10;"/>
+                    <jGraph:Style properties="EXPORTSERVICE"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <edge id="1" source="clock" target="context">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="2" source="eventContext_2" target="sink">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="3" source="dataCollector_3" target="sink">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="4" source="validationMarketRootNode_7" target="validationBaseNode_6">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="5" source="validationBaseNode_6" target="validationBaseNode_5">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="6" source="validationBaseNode_5" target="validationBaseNode_4">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="7" source="validationBaseNode_4" target="sink">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="8" source="validationTradeRootNode_11" target="validationAccumulatorNode_10">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="9" source="validationAccumulatorNode_10" target="validationAccumulatorNode_9">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="10" source="validationAccumulatorNode_9" target="validationAccumulatorNode_8">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="11" source="validationAccumulatorNode_8" target="sink">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="12" source="validationControlRootNode_12" target="control_sink">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="13" source="context" target="serviceRegistry">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="14" source="nodeNameLookup" target="context">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="15" source="callbackDispatcher" target="context">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="16" source="subscriptionManager" target="context">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="17" source="eventContext_2" target="validationBaseNode_4">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="18" source="dataCollector_3" target="validationBaseNode_4">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="19" source="eventContext_2" target="validationBaseNode_5">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="20" source="dataCollector_3" target="validationBaseNode_5">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="21" source="eventContext_2" target="validationBaseNode_6">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="22" source="dataCollector_3" target="validationBaseNode_6">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="23" source="eventContext_2" target="validationMarketRootNode_7">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="24" source="dataCollector_3" target="validationMarketRootNode_7">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="25" source="validationMarketRootNode_7" target="validationBaseNode_5">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="26" source="validationMarketRootNode_7" target="validationBaseNode_4">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="27" source="eventContext_2" target="validationAccumulatorNode_8">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="28" source="dataCollector_3" target="validationAccumulatorNode_8">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="29" source="eventContext_2" target="validationAccumulatorNode_9">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="30" source="dataCollector_3" target="validationAccumulatorNode_9">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="31" source="eventContext_2" target="validationAccumulatorNode_10">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="32" source="dataCollector_3" target="validationAccumulatorNode_10">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="33" source="eventContext_2" target="validationTradeRootNode_11">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="34" source="dataCollector_3" target="validationTradeRootNode_11">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="35" source="validationTradeRootNode_11" target="validationAccumulatorNode_9">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="36" source="validationTradeRootNode_11" target="validationAccumulatorNode_8">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="37" source="eventContext_2" target="control_sink">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="38" source="dataCollector_3" target="control_sink">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="39" source="eventContext_2" target="validationControlRootNode_12">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="40" source="dataCollector_3" target="validationControlRootNode_12">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="41" source="ClockStrategyEvent" target="clock">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="42" source="ValidationMarketEvent" target="validationMarketRootNode_7">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="43" source="ValidationTradeEvent" target="validationTradeRootNode_11">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="44" source="ValidationControlEvent" target="validationControlRootNode_12">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="45" source="ServiceListener" target="serviceRegistry">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+    </graph>
+</graphml>

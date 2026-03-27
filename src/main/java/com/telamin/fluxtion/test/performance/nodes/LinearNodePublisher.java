@@ -7,21 +7,19 @@ import com.telamin.fluxtion.runtime.annotations.OnTrigger;
  * - Reference to concrete LinearNode.
  */
 public class LinearNodePublisher {
-    private String nodeId = "publisher";
-    private LinearNode upstream1;
-    private double value;
+    public LinearNode upstream1;
+    public double value;
     private long publishCount;
 
     @OnTrigger
     public boolean onUpstreamUpdate() {
-        value = upstream1.getValue();
+        value = upstream1.value;
         publishCount++;
         return true;
     }
 
-    public double getValue() { return value; }
-    public String getNodeId() { return nodeId; }
-    public void setNodeId(String nodeId) { this.nodeId = nodeId; }
+    public void setNodeId(String nodeId) { }
     public void setUpstream1(LinearNode upstream1) { this.upstream1 = upstream1; }
+    public double getValue() { return value; }
     public long getPublishCount() { return publishCount; }
 }

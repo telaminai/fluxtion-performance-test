@@ -9,7 +9,7 @@ import com.telamin.fluxtion.test.performance.validation.events.ValidationTradeEv
  * Fluxtion compiles a completely separate dispatch path for this event type —
  * firing a ValidationTradeEvent never touches the market or control chains.
  */
-public class ValidationTradeRootNode extends ValidationNodeBase {
+public class ValidationTradeRootNode extends ValidationNode {
 
     @OnEventHandler
     public boolean onTradeEvent(ValidationTradeEvent event) {

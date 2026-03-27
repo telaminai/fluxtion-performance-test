@@ -20,101 +20,101 @@
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_1">
+        <node id="dirtyFilterBaseNode_10">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_1&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:dirtyFilterBaseNode_10&#10;class:com.telamin.fluxtion.test.performance.nodes.DirtyFilterBaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="root">
+        <node id="dirtyFilterControlRootNode_11">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="&lt;&lt;EventHandle&gt;&gt;&#10;id:root&#10;class:com.telamin.fluxtion.test.performance.nodes.ControlRootNode"/>
+                    <jGraph:label text="&lt;&lt;EventHandle&gt;&gt;&#10;id:dirtyFilterControlRootNode_11&#10;class:com.telamin.fluxtion.test.performance.nodes.DirtyFilterControlRootNode"/>
                     <jGraph:Style properties="EVENTHANDLER"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_2">
+        <node id="dirtyFilterBaseNode_9">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_2&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:dirtyFilterBaseNode_9&#10;class:com.telamin.fluxtion.test.performance.nodes.DirtyFilterBaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_3">
+        <node id="dirtyFilterFilteringNode_8">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_3&#10;class:com.telamin.fluxtion.test.performance.nodes.FilteringNode"/>
+                    <jGraph:label text="id:dirtyFilterFilteringNode_8&#10;class:com.telamin.fluxtion.test.performance.nodes.DirtyFilterFilteringNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_4">
+        <node id="dirtyFilterBaseNode_7">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_4&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:dirtyFilterBaseNode_7&#10;class:com.telamin.fluxtion.test.performance.nodes.DirtyFilterBaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_5">
+        <node id="dirtyFilterBaseNode_6">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_5&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:dirtyFilterBaseNode_6&#10;class:com.telamin.fluxtion.test.performance.nodes.DirtyFilterBaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_6">
+        <node id="dirtyFilterFilteringNode_5">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_6&#10;class:com.telamin.fluxtion.test.performance.nodes.FilteringNode"/>
+                    <jGraph:label text="id:dirtyFilterFilteringNode_5&#10;class:com.telamin.fluxtion.test.performance.nodes.DirtyFilterFilteringNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_7">
+        <node id="dirtyFilterBaseNode_4">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_7&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:dirtyFilterBaseNode_4&#10;class:com.telamin.fluxtion.test.performance.nodes.DirtyFilterBaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_8">
+        <node id="dirtyFilterBaseNode_3">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_8&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:dirtyFilterBaseNode_3&#10;class:com.telamin.fluxtion.test.performance.nodes.DirtyFilterBaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_9">
+        <node id="dirtyFilterFilteringNode_2">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_9&#10;class:com.telamin.fluxtion.test.performance.nodes.FilteringNode"/>
+                    <jGraph:label text="id:dirtyFilterFilteringNode_2&#10;class:com.telamin.fluxtion.test.performance.nodes.DirtyFilterFilteringNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="node_10">
+        <node id="dirtyFilterBaseNode_1">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:node_10&#10;class:com.telamin.fluxtion.test.performance.nodes.BaseNode"/>
+                    <jGraph:label text="id:dirtyFilterBaseNode_1&#10;class:com.telamin.fluxtion.test.performance.nodes.DirtyFilterBaseNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -123,7 +123,7 @@
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="id:sink&#10;class:com.telamin.fluxtion.test.performance.nodes.PublisherNode"/>
+                    <jGraph:label text="id:sink&#10;class:com.telamin.fluxtion.test.performance.nodes.DirtyFilterPublisherNode"/>
                     <jGraph:Style properties="NODE"/>
                 </jGraph:ShapeNode>
             </data>
@@ -196,57 +196,57 @@
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="2" source="root" target="node_1">
+        <edge id="2" source="dirtyFilterControlRootNode_11" target="dirtyFilterBaseNode_10">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="3" source="node_1" target="node_2">
+        <edge id="3" source="dirtyFilterBaseNode_10" target="dirtyFilterBaseNode_9">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="4" source="node_2" target="node_3">
+        <edge id="4" source="dirtyFilterBaseNode_9" target="dirtyFilterFilteringNode_8">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="5" source="node_3" target="node_4">
+        <edge id="5" source="dirtyFilterFilteringNode_8" target="dirtyFilterBaseNode_7">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="6" source="node_4" target="node_5">
+        <edge id="6" source="dirtyFilterBaseNode_7" target="dirtyFilterBaseNode_6">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="7" source="node_5" target="node_6">
+        <edge id="7" source="dirtyFilterBaseNode_6" target="dirtyFilterFilteringNode_5">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="8" source="node_6" target="node_7">
+        <edge id="8" source="dirtyFilterFilteringNode_5" target="dirtyFilterBaseNode_4">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="9" source="node_7" target="node_8">
+        <edge id="9" source="dirtyFilterBaseNode_4" target="dirtyFilterBaseNode_3">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="10" source="node_8" target="node_9">
+        <edge id="10" source="dirtyFilterBaseNode_3" target="dirtyFilterFilteringNode_2">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="11" source="node_9" target="node_10">
+        <edge id="11" source="dirtyFilterFilteringNode_2" target="dirtyFilterBaseNode_1">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="12" source="node_10" target="sink">
+        <edge id="12" source="dirtyFilterBaseNode_1" target="sink">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
@@ -276,7 +276,7 @@
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="18" source="ControlEvent" target="root">
+        <edge id="18" source="ControlEvent" target="dirtyFilterControlRootNode_11">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>

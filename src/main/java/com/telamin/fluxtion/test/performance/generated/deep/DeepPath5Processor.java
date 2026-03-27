@@ -109,24 +109,24 @@ public class DeepPath5Processor
     }
     context.setClock(clock);
     serviceRegistry.setDataFlowContext(context);
-    sink.setNodeId("sink");
     sink.setUpstream1(linearNode_1);
-    linearNode_1.setNodeId("node_5");
+    sink.upstream1 = linearNode_1;
+    sink.value = 0.0;
     linearNode_1.setUpstream1(linearNode_2);
     linearNode_1.value = 0.0;
-    linearNode_2.setNodeId("node_4");
+    linearNode_1.upstream1 = linearNode_2;
     linearNode_2.setUpstream1(linearNode_3);
     linearNode_2.value = 0.0;
-    linearNode_3.setNodeId("node_3");
+    linearNode_2.upstream1 = linearNode_3;
     linearNode_3.setUpstream1(linearNode_4);
     linearNode_3.value = 0.0;
-    linearNode_4.setNodeId("node_2");
+    linearNode_3.upstream1 = linearNode_4;
     linearNode_4.setUpstream1(linearNode_5);
     linearNode_4.value = 0.0;
-    linearNode_5.setNodeId("node_1");
+    linearNode_4.upstream1 = linearNode_5;
     linearNode_5.setUpstream1(rootLinearNode_6);
     linearNode_5.value = 0.0;
-    rootLinearNode_6.setNodeId("root");
+    linearNode_5.upstream1 = rootLinearNode_6;
     rootLinearNode_6.value = 0.0;
     //node auditors
     initialiseAuditor(clock);

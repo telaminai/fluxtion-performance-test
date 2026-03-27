@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?><graphml xmlns="http://graphml.graphdrawing.org/xmlns" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd" xmlns:jGraph="http://www.jgraph.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <key id="vertex_label" for="node" attr.name="nodeData" attr.type="string"/>
+    <key id="edge_label" for="edge" attr.name="edgeData" attr.type="string"/>
+    <graph edgedefault="undirected">
+        <node id="context">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="id:context&#10;class:com.telamin.fluxtion.runtime.node.MutableDataFlowContext"/>
+                    <jGraph:Style properties="NODE"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="clock">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="&lt;&lt;EventHandle&gt;&gt;&#10;id:clock&#10;class:com.telamin.fluxtion.runtime.time.Clock"/>
+                    <jGraph:Style properties="EVENTHANDLER"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="node_1">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="id:node_1&#10;class:com.telamin.fluxtion.test.performance.service.ShortChainNode"/>
+                    <jGraph:Style properties="NODE"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="root">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="&lt;&lt;EventHandle&gt;&gt;&#10;id:root&#10;class:com.telamin.fluxtion.test.performance.service.ShortChainRootNode"/>
+                    <jGraph:Style properties="EVENTHANDLER"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="node_2">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="id:node_2&#10;class:com.telamin.fluxtion.test.performance.service.ShortChainNode"/>
+                    <jGraph:Style properties="NODE"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="node_3">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="id:node_3&#10;class:com.telamin.fluxtion.test.performance.service.ShortChainNode"/>
+                    <jGraph:Style properties="NODE"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="node_4">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="id:node_4&#10;class:com.telamin.fluxtion.test.performance.service.ShortChainNode"/>
+                    <jGraph:Style properties="NODE"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="node_5">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="id:node_5&#10;class:com.telamin.fluxtion.test.performance.service.ShortChainNode"/>
+                    <jGraph:Style properties="NODE"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="sink">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="id:sink&#10;class:com.telamin.fluxtion.test.performance.service.ShortChainSinkNode"/>
+                    <jGraph:Style properties="NODE"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="serviceRegistry">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="id:serviceRegistry&#10;class:com.telamin.fluxtion.runtime.service.ServiceRegistryNode"/>
+                    <jGraph:Style properties="NODE"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="nodeNameLookup">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="id:nodeNameLookup&#10;class:com.telamin.fluxtion.runtime.audit.NodeNameAuditor"/>
+                    <jGraph:Style properties="NODE"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="callbackDispatcher">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="id:callbackDispatcher&#10;class:com.telamin.fluxtion.runtime.callback.CallbackDispatcherImpl"/>
+                    <jGraph:Style properties="NODE"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="subscriptionManager">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="id:subscriptionManager&#10;class:com.telamin.fluxtion.runtime.input.SubscriptionManagerNode"/>
+                    <jGraph:Style properties="NODE"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="ClockStrategyEvent">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="&lt;&lt;Event&gt;&gt;&#10;ClockStrategyEvent&#10;class:com.telamin.fluxtion.runtime.time.ClockStrategy$ClockStrategyEvent&#10;"/>
+                    <jGraph:Style properties="EVENT"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="ShortChainEvent">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="&lt;&lt;Event&gt;&gt;&#10;ShortChainEvent&#10;class:com.telamin.fluxtion.test.performance.events.ShortChainEvent&#10;"/>
+                    <jGraph:Style properties="EVENT"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="IShortChainProcessor">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="&lt;&lt;ExportService&gt;&gt;&#10;class:com.telamin.fluxtion.test.performance.service.IShortChainProcessor&#10;"/>
+                    <jGraph:Style properties="EXPORTSERVICE"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="ServiceListener">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="&lt;&lt;ExportService&gt;&gt;&#10;class:com.telamin.fluxtion.runtime.service.ServiceListener&#10;"/>
+                    <jGraph:Style properties="EXPORTSERVICE"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <edge id="1" source="clock" target="context">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="2" source="root" target="node_1">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="3" source="node_1" target="node_2">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="4" source="node_2" target="node_3">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="5" source="node_3" target="node_4">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="6" source="node_4" target="node_5">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="7" source="node_5" target="sink">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="8" source="context" target="serviceRegistry">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="9" source="nodeNameLookup" target="context">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="10" source="callbackDispatcher" target="context">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="11" source="subscriptionManager" target="context">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="12" source="ClockStrategyEvent" target="clock">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="13" source="ShortChainEvent" target="root">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="14" source="IShortChainProcessor" target="root">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+        <edge id="15" source="ServiceListener" target="serviceRegistry">
+            <data key="edge_label">
+                <jGraph:ShapeEdge/>
+            </data>
+        </edge>
+    </graph>
+</graphml>

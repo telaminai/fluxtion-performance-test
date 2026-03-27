@@ -1,9 +1,6 @@
 package com.telamin.fluxtion.test.performance.benchmark;
 import com.telamin.fluxtion.runtime.DataFlow;
 import com.telamin.fluxtion.test.performance.events.MarketDataEvent;
-import com.telamin.fluxtion.test.performance.generators.BenchmarkConfig;
-import com.telamin.fluxtion.test.performance.generators.DeepPathGraphGenerator;
-import com.telamin.fluxtion.test.performance.generators.GraphGeneratorBase;
 import com.telamin.fluxtion.test.performance.nodes.LinearNodePublisher;
 import io.reactivex.rxjava3.core.Flowable;
 import io.reactivex.rxjava3.processors.PublishProcessor;
@@ -39,8 +36,6 @@ import java.util.concurrent.atomic.AtomicLong;
 @Fork(1)
 public class DeepPathBenchmark extends DimensionBenchmarkBase {
     private static final String DIM = "deep_path";
-    private static final BenchmarkConfig CONFIG =
-            GraphGeneratorBase.loadConfig("benchmark-configs/deep_path.yaml");
 
     @Param({"5", "10", "20", "50", "100"})
     public int size;
@@ -67,8 +62,7 @@ public class DeepPathBenchmark extends DimensionBenchmarkBase {
         fluxtionKey = DIM + "/fluxtion/" + size;
         rxJavaKey   = DIM + "/rxjava/"   + size;
         // --- Fluxtion ---
-        fluxtionProcessor = buildFluxtionProcessor(
-                new DeepPathGraphGenerator(), CONFIG, size);
+        fluxtionProcessor = buildFluxtionProcessor(DIM, size);
 
         // Reflection to find the sink node (Fluxtion generates private fields)
         for (java.lang.reflect.Field field : fluxtionProcessor.getClass().getDeclaredFields()) {

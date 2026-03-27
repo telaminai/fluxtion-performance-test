@@ -2,9 +2,6 @@ package com.telamin.fluxtion.test.performance.benchmark;
 
 import com.telamin.fluxtion.runtime.DataFlow;
 import com.telamin.fluxtion.test.performance.events.MarketDataEvent;
-import com.telamin.fluxtion.test.performance.generators.BenchmarkConfig;
-import com.telamin.fluxtion.test.performance.generators.DiamondMeshGraphGenerator;
-import com.telamin.fluxtion.test.performance.generators.GraphGeneratorBase;
 import io.reactivex.rxjava3.core.Flowable;
 import io.reactivex.rxjava3.processors.PublishProcessor;
 import org.HdrHistogram.Histogram;
@@ -27,8 +24,6 @@ import java.util.concurrent.TimeUnit;
 @Fork(1)
 public class DiamondMeshBenchmark extends DimensionBenchmarkBase {
     private static final String DIM = "diamond_mesh";
-    private static final BenchmarkConfig CONFIG =
-            GraphGeneratorBase.loadConfig("benchmark-configs/diamond_mesh.yaml");
 
     @Param({"101"})
     public int size;
@@ -46,8 +41,7 @@ public class DiamondMeshBenchmark extends DimensionBenchmarkBase {
         String fluxtionKey = DIM + "/fluxtion/" + size;
         String rxJavaKey = DIM + "/rxjava/" + size;
 
-        fluxtionProcessor = buildFluxtionProcessor(
-                new DiamondMeshGraphGenerator(), CONFIG, size);
+        fluxtionProcessor = buildFluxtionProcessor(DIM, size);
 
         rxJavaInput = PublishProcessor.create();
         rxJavaResult = buildRxJavaGraph(size);
