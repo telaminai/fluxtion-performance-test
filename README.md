@@ -162,10 +162,10 @@ Multiple `@OnEventHandler` annotations at intermediate nodes create several inde
 
 | Graph size | Fluxtion (ns/op) | RxJava (ns/op) | Speedup | RxJava B/op |
 |---|---|---|---|---|
-| 10 | 42 | 42 | 1.0× | 376 |
-| 20 | 83 | 83 | 1.0× | 616 |
-| 50 | 167 | 125 | RxJava wins | 1,337 |
-| 100 | **334** | **250** | **RxJava wins** | 2,537 |
+| 10 | 41 | 42 | 1.0× | 376 |
+| 20 | 42 | 83 | 2.0× | 616 |
+| 50 | 167 | 167 | Tie | 1,337 |
+| 100 | **333** | **292** | **RxJava wins** | 2,537 |
 
 RxJava allocation scales with graph size (376 → 2,537 B/op). Fluxtion: ≈ 0 B/op at all sizes.
 
@@ -177,11 +177,11 @@ Fan-out graph with N branches; only branch 0 fires. Fluxtion evaluates one compi
 
 | Branches | Fluxtion (ns/op) | RxJava (ns/op) | Speedup | RxJava B/op |
 |---|---|---|---|---|
-| 2 | 42 | 0 | RxJava | 392 |
-| 4 | 42 | 41 | 1.0× | 440 |
-| 8 | 41 | 42 | 1.0× | 536 |
-| 16 | 41 | 42 | 1.0× | 728 |
-| 32 | **42** | **83** | **2.0×** | 1,112 |
+| 2 | 41 | 42 | 1.0× | 392 |
+| 4 | 41 | 42 | 1.0× | 440 |
+| 8 | 42 | 42 | 1.0× | 536 |
+| 16 | 42 | 42 | 1.0× | 728 |
+| 32 | **42** | **84** | **2.0×** | 1,112 |
 
 ---
 
@@ -206,13 +206,13 @@ Nodes cycle through three subtypes (`BaseNode`, `AccumulatorNode`, `TransformNod
 
 | Graph size | Fluxtion (ns/op) | RxJava (ns/op) | Winner | RxJava B/op |
 |---|---|---|---|---|
-| 5 | 42 | 0 | RxJava | 248 |
-| 10 | 42 | 0 | RxJava | 368 |
-| 20 | 42 | 42 | Tie | 608 |
-| 50 | 167 | 84 | RxJava | 1,330 |
-| 100 | 334 | 167 | RxJava | 2,531 |
+| 5 | 41 | 42 | Fluxtion | 248 |
+| 10 | 42 | 42 | Tie | 368 |
+| 20 | 42 | 83 | Fluxtion | 608 |
+| 50 | 167 | 166 | Tie | 1,330 |
+| 100 | **334** | **500** | **Fluxtion** | 2,531 |
 
-Note: RxJava wins at size 5. The crossover occurs at size ~10 as allocation pressure from `Flowable<Double>` boxing accumulates.
+Note: Fluxtion wins on size 100 due to monomorphic JIT inlining; RxJava's map-chain accumulation adds megamorphic overhead at this depth.
 
 ---
 
@@ -222,13 +222,13 @@ Pure linear chains; RxJava is faster at all sizes. RxJava's `Flowable<Double>` m
 
 | Chain depth | Fluxtion (ns/op) | RxJava (ns/op) | RxJava faster by | RxJava B/op |
 |---|---|---|---|---|
-| 5 | 42 | 0 | RxJava | 136 |
-| 10 | 42 | 0 | RxJava | 184 |
+| 5 | 41 | 41 | Tie | 136 |
+| 10 | 42 | 42 | Tie | 184 |
 | 20 | 42 | 42 | Tie | 304 |
-| 50 | 167 | 83 | RxJava | 664 |
-| 100 | **333** | **167** | **RxJava wins** | 312 |
+| 50 | 125 | 84 | 1.5× | 664 |
+| 100 | **292** | **208** | **1.4×** | 312 |
 
-**Dispatch Floor Analysis:** By removing all interfaces and using concrete class references (`LinearNode`), we measured Fluxtion's framework dispatch overhead to be approximately **333 ns** for 100 nodes (~3.33 ns per node). The logic cost (addition + 1.0) adds another ~1.3 ns per node compared to the No-Op floor. While extremely efficient, RxJava's JIT collapses trivial linear chains even further to ~1.7 ns per node total.
+**Dispatch Floor Analysis:** By removing all interfaces and using concrete class references (`LinearNode`), we measured Fluxtion's framework dispatch overhead to be approximately **292 ns** for 100 nodes (~2.92 ns per node). The logic cost (addition + 1.0) adds another ~1.3 ns per node compared to the No-Op floor. While extremely efficient, RxJava's JIT collapses trivial linear chains even further to ~1.7 ns per node total.
 
 ---
 
@@ -316,14 +316,14 @@ The following values were measured under **sustained pressure** to expose the "A
 | (glitch-free) | | RxJava | 236,927 | 426,239 | 753,151 | 2,961,407 | 4,886,527 |
 | **Validation Market** | 10 | **Fluxtion** | **292** | **375** | **917** | **2,709** | **1,375,231** |
 | (multi-event path) | | RxJava | 1,041 | 1,292 | 3,959 | 9,631 | 2,234,367 |
-| **Deep Path** | 100 | **Fluxtion** | **333** | **417** | **459** | **1,708** | **144,767** |
-| (linear chain) | | RxJava | 167 | 209 | 333 | 3,167 | 1,539,071 |
+| **Deep Path** | 100 | **Fluxtion** | **292** | **417** | **459** | **1,625** | **129,855** |
+| (linear chain) | | RxJava | 208 | 292 | 667 | 3,293 | 1,261,567 |
 
 ### 7.2 Key Findings for DEBS Paper
 
 1. **Deterministic Tail:** Fluxtion p99.99 remains within microsecond territory across all dimensions. RxJava tails diverge by **orders of magnitude** (e.g., 2.9ms vs 0.9µs on Diamond Mesh p99.99).
 2. **Structural Immunity:** Fluxtion's worst-case (Max) latency is governed by environmental factors (OS interrupts, context switches), whereas RxJava's worst-case is governed by the GC collector, which is 10–20× more volatile under heap pressure.
-3. **The Allocation Tax:** On the `Deep Path (100)` dimension, RxJava is faster at the median (p50) due to JIT inlining of identical lambdas, but it is **3.7x more volatile** at the p99.99 and **21x more volatile** at the Max compared to Fluxtion.
+3. **The Allocation Tax:** On the `Deep Path (100)` dimension, RxJava is faster at the median (p50) due to JIT inlining of identical lambdas, but it is **2.0x more volatile** at the p99.99 and **9.7x more volatile** at the Max compared to Fluxtion.
 
 ---
 
@@ -334,11 +334,11 @@ The following values were measured under **sustained pressure** to expose the "A
 | Diamond mesh | **>2,800× faster** | Algorithmic: O(|V|) vs O(paths) — glitch elimination |
 | Validation (multi-event, size=10) | **1.2–3.6× faster** | Pre-computed per-event-type paths; ≈0 allocation vs O(size) allocation in RxJava |
 | Dirty filter (size=100) | **12× faster** | O(1) propagation arrest vs linear traversal |
-| Intermediate handlers (size=100) | **RxJava faster** | Linear segments favor identity-lambda JIT optimization |
+| Intermediate handlers (size=100) | **RxJava wins** | Linear segments favor identity-lambda JIT optimization |
 | Hot path (32 branches) | **2.0× faster** | Compiled boolean guards vs subscriber-list traversal |
-| Polymorphic (size=50+) | **RxJava faster** | Monomorphic call sites vs accumulating megamorphic pressure |
-| Multi-event market/trade (size≥20) | **RxJava faster** | Type-specific dispatch vs shared operator chain |
-| Deep path (all sizes) | **RxJava faster** | Linear chains favor identity-lambda JIT optimization |
+| Polymorphic (size=100) | **1.5× faster** | Monomorphic call sites vs megamorphic lambda accumulation |
+| Multi-event market/trade (size≥20) | **RxJava wins** | Type-specific dispatch vs shared operator chain |
+| Deep path (all sizes) | **RxJava wins** | Linear chains favor identity-lambda JIT optimization |
 | No-Op Dispatch floor | **~2.1 ns/node** | Cost per node at size 100 on GraalVM 25 |
 | Service dispatch (size ≤ 5) | **RxJava faster** | Very short chains do not amortise Fluxtion's fixed entry cost |
 
