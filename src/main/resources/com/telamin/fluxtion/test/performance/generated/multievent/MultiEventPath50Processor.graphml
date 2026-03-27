@@ -533,20 +533,20 @@
                 </jGraph:ShapeNode>
             </data>
         </node>
-        <node id="ControlEvent">
-            <data key="vertex_label">
-                <jGraph:ShapeNode>
-                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
-                    <jGraph:label text="&lt;&lt;Event&gt;&gt;&#10;ControlEvent&#10;class:com.telamin.fluxtion.test.performance.events.ControlEvent&#10;"/>
-                    <jGraph:Style properties="EVENT"/>
-                </jGraph:ShapeNode>
-            </data>
-        </node>
         <node id="MarketDataEvent">
             <data key="vertex_label">
                 <jGraph:ShapeNode>
                     <jGraph:Geometry height="70" width="160" x="20" y="20"/>
                     <jGraph:label text="&lt;&lt;Event&gt;&gt;&#10;MarketDataEvent&#10;class:com.telamin.fluxtion.test.performance.events.MarketDataEvent&#10;"/>
+                    <jGraph:Style properties="EVENT"/>
+                </jGraph:ShapeNode>
+            </data>
+        </node>
+        <node id="ControlEvent">
+            <data key="vertex_label">
+                <jGraph:ShapeNode>
+                    <jGraph:Geometry height="70" width="160" x="20" y="20"/>
+                    <jGraph:label text="&lt;&lt;Event&gt;&gt;&#10;ControlEvent&#10;class:com.telamin.fluxtion.test.performance.events.ControlEvent&#10;"/>
                     <jGraph:Style properties="EVENT"/>
                 </jGraph:ShapeNode>
             </data>
@@ -854,12 +854,12 @@
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="58" source="ControlEvent" target="multiEventPathRootNode_51">
+        <edge id="58" source="MarketDataEvent" target="multiEventPathRootNode_51">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>
         </edge>
-        <edge id="59" source="MarketDataEvent" target="multiEventPathRootNode_51">
+        <edge id="59" source="ControlEvent" target="multiEventPathRootNode_51">
             <data key="edge_label">
                 <jGraph:ShapeEdge/>
             </data>

@@ -293,7 +293,8 @@ public class GenerateAllProcessors {
                 procCfg.addNode(tsRoot, "ts_root");
                 
                 List<ValidationNode> prevTsLayer = List.of(tsRoot);
-                for (int l = 1; l <= size; l++) {
+                int tsLayers = Math.max(1, size - 1);
+                for (int l = 1; l <= tsLayers; l++) {
                     List<ValidationNode> currentLayer = new ArrayList<>();
                     for (int n = 0; n < size; n++) {
                         ValidationAccumulatorNode nt = new ValidationAccumulatorNode();
@@ -329,10 +330,10 @@ public class GenerateAllProcessors {
                 procCfg.addNode(ctrlRoot, "ctrl_root");
                 
                 List<ValidationNode> prevCtrlLayer = List.of(ctrlRoot);
-                int ctrlSize = Math.max(1, size / 4);
-                for (int l = 1; l <= ctrlSize; l++) {
+                int ctrlLayers = Math.max(1, size - 1);
+                for (int l = 1; l <= ctrlLayers; l++) {
                     List<ValidationNode> currentLayer = new ArrayList<>();
-                    for (int n = 0; n < ctrlSize; n++) {
+                    for (int n = 0; n < size; n++) {
                         ValidationBaseNode nc = new ValidationBaseNode();
                         String id = "ctrl_l" + l + "_n" + n;
                         nc.setNodeId(id);
