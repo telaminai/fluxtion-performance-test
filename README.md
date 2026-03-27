@@ -241,8 +241,8 @@ Measures the absolute floor of the Fluxtion framework by dispatching through a c
 | 5 | 42 | 8.4 |
 | 10 | 42 | 4.2 |
 | 20 | 42 | 2.1 |
-| 50 | 83 | 0.82 |
-| 100 | **208** | **1.66** |
+| 50 | 83 | 1.66 |
+| 100 | **208** | **2.08** |
 
 **Observation:** For small chains, the fixed entry cost (~42ns) dominates. As the chain grows, the total dispatch cost remains around **2.1 ns per node**, with a marginal framework overhead as low as **1.66 ns**. This demonstrates that Fluxtion's AOT-compiled execution path remains extremely efficient even with value propagation side-effects.
 
@@ -339,7 +339,7 @@ The following values were measured under **sustained pressure** to expose the "A
 | Polymorphic (size=50+) | **RxJava faster** | Monomorphic call sites vs accumulating megamorphic pressure |
 | Multi-event market/trade (size≥20) | **RxJava faster** | Type-specific dispatch vs shared operator chain |
 | Deep path (all sizes) | **RxJava faster** | Linear chains favor identity-lambda JIT optimization |
-| No-Op Dispatch floor | **~2.1 ns/node** | Marginal cost per node at size 100 on GraalVM 25 |
+| No-Op Dispatch floor | **~2.1 ns/node** | Cost per node at size 100 on GraalVM 25 |
 | Service dispatch (size ≤ 5) | **RxJava faster** | Very short chains do not amortise Fluxtion's fixed entry cost |
 
 **The pattern is clear:** Fluxtion's structural advantages (glitch elimination, propagation arrest, zero allocation, per-event-type path isolation) materialise at topological complexity, graph scale, and multi-event workloads. RxJava wins only on trivial linear chains where its identical-lambda JIT optimisation is most effective. Production systems are complex, not trivial.
